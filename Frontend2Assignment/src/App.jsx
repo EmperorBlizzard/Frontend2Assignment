@@ -1,13 +1,9 @@
-import Thomas from "./components/thomas";
-import Annelie from "./components/individuals/annelie";
-
+import ListingPage from "./Pages/ListingPage";
 
 function App() {
   return (
     <div>
-      <Annelie />
-      <Thomas />
-      
+      <ListingPage/>
     </div>
   );
 }
