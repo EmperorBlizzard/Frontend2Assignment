@@ -1,6 +1,5 @@
 import Thomas from "./components/thomas";
 import Annelie from "./components/individuals/annelie";
-import Tina from "./Views/tina";
 import Emil from "./components/sections/Emil"
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
     <div>
       <Annelie />
       <Thomas />
-      <Tina />
       <Emil />
     </div>
   );
