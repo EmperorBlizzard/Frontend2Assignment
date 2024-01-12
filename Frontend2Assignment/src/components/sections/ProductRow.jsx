@@ -13,7 +13,6 @@ function ProductRow() {
 			<ProductCard />
 			<ProductCard />
 			<ProductCard />
-			<ProductCard />
 		</ProductCardRow>
 	);
 }

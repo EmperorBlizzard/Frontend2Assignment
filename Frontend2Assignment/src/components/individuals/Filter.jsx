@@ -14,7 +14,10 @@ const FilterPanel = styled.select({
 function Filter() {
 	return (
 		<FilterPanel>
-			<option value="Filter">Filter</option>
+			<option value="Filter">Kläder</option>
+			<option value="Filter">Herr</option>
+			<option value="Filter">Dam</option>
+			<option value="Filter">Barn</option>
 		</FilterPanel>
 	);
 }
