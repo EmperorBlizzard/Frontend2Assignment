@@ -1,13 +1,12 @@
-import ProductCard from "../components/sections/ProductCard";
-import Header from "./components/sections/Header";
-import Footer from "./components/sections/Footer";
+
+import PageContent from "../components/sections/PageContent";
 
 function ListingPage() {
-	return <>
-    <Header/>
-        <ProductCard />
-        <Footer/>
-    </>
+	return (
+		<>
+			<PageContent />
+		</>
+	);
 }
 
 export default ListingPage;

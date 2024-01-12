@@ -1,13 +1,7 @@
-import Header from "./components/sections/Header";
-import Footer from "./components/sections/Footer";
-
 function Cartpage() {
-    return ( 
-        <>
-        <Header/>
-        <Footer/>
-        </>
-     );
+	return <>
+    <h1>Cartpage</h1>
+    </>;
 }
 
 export default Cartpage;

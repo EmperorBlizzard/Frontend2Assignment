@@ -1,11 +1,9 @@
-import Header from "./components/sections/Header";
-import Footer from "./components/sections/Footer";
+
 
 function ProductDetailPage() {
 	return (
 		<>
-			<Header />
-			<Footer />
+        <h1>ProductDetailPage</h1>
 		</>
 	);
 }
