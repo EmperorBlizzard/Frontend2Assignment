@@ -11,7 +11,7 @@ const PCard = styled.div({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    border: '1px solid #798490'
+    border: '1px solid #798490',
 })
 
 function ProductCard() {
@@ -21,7 +21,6 @@ function ProductCard() {
 			<PCardDescription/>
 			<PriceBuyButton/>
         </PCard>
-		
 	);
 }
 
