@@ -1,4 +1,3 @@
-
 import PageContent from "../components/sections/PageContent";
 
 function ListingPage() {

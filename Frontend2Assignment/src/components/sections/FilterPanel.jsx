@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
-const Panel = styled.div({
-	display: "flex",
-	alignItems: "flex-start",
-	alignContent: "flex-start",
-	gap: "16px",
-	alignSelf: "stretch",
-	flexWrap: "wrap",
-});
+const Panel = styled.div`
+	display: flex;
+	align-items: flex-start;
+	align-content: flex-start;
+	gap: 16px;
+	align-self: stretch;
+	flex-wrap: wrap;
+`;
 
-const Filter = styled.select({
-	display: "flex",
-	width: "106px",
-	height: "40px",
-	padding: "8.5px 16px",
-	justifyContent: "space-between",
-	alignItems: "center",
-	border: "1px solid  #798490",
-	background: "#FFF",
-});
+const Filter = styled.select`
+	display: flex;
+	width: 106px;
+	height: 40px;
+	padding: 8.5px 16px;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid  #798490;
+	background: #FFF;
+`;
 
 function FilterPanel() {
 	return (

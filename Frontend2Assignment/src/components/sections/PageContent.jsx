@@ -1,24 +1,27 @@
-import ProductRow from "./ProductRow";
+import ProductCardContainer from "./ProductCardContainer";
 import Breadcrumb from "../individuals/Breadcrumb";
 import FilterPanel from "./FilterPanel";
-import Pagination from "./TopPagination"
+import TopPagination from "./TopPagination";
 import styled from "styled-components";
+import Pagination from "../individuals/Pagination";
 
-const PageContentStyle = styled.div({
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "flex-start",
-	gap: "10px",
-});
+const PageContentStyle = styled.div`
+display: flex;
+flex-direction: column;
+align-Items: flex-start;
+gap: 10px;
+`
+
+
 
 function PageContent() {
 	return (
 		<PageContentStyle>
 			<Breadcrumb />
 			<FilterPanel />
-			<Pagination/>
-			<ProductRow />
-			<ProductRow />
+			<TopPagination />
+			<ProductCardContainer />
+			<Pagination />
 		</PageContentStyle>
 	);
 }
