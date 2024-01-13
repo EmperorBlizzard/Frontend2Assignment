@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const InputContainer = styled.select({
-	display: 'flex',
-height: '40px',
-paddingRight: '12px',
-justifyContent: 'space-between',
-alignItems: 'center',
-alignSelf: 'stretch',
-});
+const InputContainer = styled.select`
+	display: flex;
+	height: 40px;
+	padding-right: 12px;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+`;
 
 function Input() {
 	return (
@@ -17,8 +17,7 @@ function Input() {
 			<option value="">Pris Låg-Hög</option>
 			<option value="">Pris Hög-Låg</option>
 			<option value="">Mest lämpade</option>
-        </InputContainer>
-		
+		</InputContainer>
 	);
 }
 

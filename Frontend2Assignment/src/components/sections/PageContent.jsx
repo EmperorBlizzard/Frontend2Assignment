@@ -4,6 +4,7 @@ import FilterPanel from "./FilterPanel";
 import TopPagination from "./TopPagination";
 import styled from "styled-components";
 import Pagination from "../individuals/Pagination";
+import ButtonFilter from "../individuals/ButtonFilter";
 
 const PageContentStyle = styled.div`
 display: flex;
@@ -19,6 +20,7 @@ function PageContent() {
 		<PageContentStyle>
 			<Breadcrumb />
 			<FilterPanel />
+			<ButtonFilter/>
 			<TopPagination />
 			<ProductCardContainer />
 			<Pagination />
