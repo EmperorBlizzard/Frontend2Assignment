@@ -30,7 +30,7 @@ function TopContent() {
 		<TopContainer>
 			<ImageContainer>
 				<img
-					src="./src/images/chair.png"
+					src="/src/images/chair.png"
 					alt="Det skall komma en bild här"
 					style={{ height: "200px", width: "273.5px" }}
 				/>
