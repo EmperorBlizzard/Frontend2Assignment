@@ -11,28 +11,36 @@ import ProductDetailPage from "./Pages/ProductDetailPage"
 function App() {
 	let Component
 	console.log(window.location.pathname)
-	switch (window.location.pathname) {
-		case "/startPage":
-			Component = StartPage
-			break;
-		case "/ListingPage":
-			Component = ListingPage
-			break;
-		case "/Cartpage":
-			Component = CartPage
-			break;
-		case "/BuildingPageToBeDeleted":
-			Component = Building
-			break;
-		case "/Checkoutpage":
-			Component = CheckOutPage
-			break;
-		case "/ProductDetailPage":
-			Component = ProductDetailPage
-			break;
+	const PageLocation = window.location.pathname;
+	if(PageLocation === "/"){
+		Component = StartPage;
+	}
+	else{
+		console.log(PageLocation)
+		switch (window.location.pathname) {
+			case "/StartPage":
+				Component = StartPage
+				break;
+			case "/ListingPage":
+				Component = ListingPage
+				break;
+			case "/Cartpage":
+				Component = CartPage
+				break;
+			case "/BuildingPageToBeDeleted":
+				Component = Building
+				break;
+			case "/Checkoutpage":
+				Component = CheckOutPage
+				break;
+			case "/ProductDetailPage":
+				Component = ProductDetailPage
+				break;
+		
+			default:
+				break;
+		}
 	
-		default:
-			break;
 	}
 
 	return (
