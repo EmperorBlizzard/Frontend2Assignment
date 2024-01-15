@@ -8,8 +8,11 @@ const P = styled.p`
 	align-self: stretch;
 `;
 
+const BcLink = window.location.href
+let NewBcLink = BcLink.replace("http://localhost:5173/", " GroupAssignment > ")
+
 function Breadcrumb() {
-	return <P>breadcrumb breadcrumb breadcrumb</P>;
+	return <P>{NewBcLink}</P>;
 }
 
 export default Breadcrumb;
