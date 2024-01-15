@@ -10,23 +10,24 @@ import ProductDetailPage from "./Pages/ProductDetailPage"
 
 function App() {
 	let Component
+	console.log(window.location.pathname)
 	switch (window.location.pathname) {
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/startPage":
+		case "/startPage":
 			Component = StartPage
 			break;
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/ListingPage":
+		case "/ListingPage":
 			Component = ListingPage
 			break;
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Cartpage":
+		case "/Cartpage":
 			Component = CartPage
 			break;
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/BuildingPageToBeDeleted":
+		case "/BuildingPageToBeDeleted":
 			Component = Building
 			break;
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Checkoutpage":
+		case "/Checkoutpage":
 			Component = CheckOutPage
 			break;
-		case "/Pages/Pages/Pages/Pages/Pages/Pages/Pages/Pages/ProductDetailPage":
+		case "/ProductDetailPage":
 			Component = ProductDetailPage
 			break;
 	
@@ -38,7 +39,7 @@ function App() {
 		<>
 			<Header />
 			<DeleteMe/>
-			<Component />
+			<Component/>
 			<Footer />
 		</>
 	);
