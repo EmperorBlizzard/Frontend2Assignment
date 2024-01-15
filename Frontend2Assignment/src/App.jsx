@@ -18,7 +18,7 @@ function App() {
 	else{
 		console.log(PageLocation)
 		switch (window.location.pathname) {
-			case "/startPage":
+			case "/StartPage":
 				Component = StartPage
 				break;
 			case "/ListingPage":
