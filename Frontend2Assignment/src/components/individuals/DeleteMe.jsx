@@ -18,7 +18,7 @@ function DeleteMe() {
         <a href="./ProductDetailPage">Product Detail Page</a>
       </li>
       <li>
-        <a href="./startPage">StartPage</a>
+        <a href="./StartPage">StartPage</a>
       </li>
     </>
   );
