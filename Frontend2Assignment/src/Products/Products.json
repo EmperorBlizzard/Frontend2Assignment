@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Cykel",
+            "description": "Lorem50",
+            "price": "50$"
+        },
+        {
+            "id": 2,
+            "name": "Mockasin",
+            "description": "Lorem50",
+            "price": "50$"
+        },
+        {
+            "id": 3,
+            "name": "Handväska",
+            "description": "Lorem50",
+            "price": "50$"
+        },
+        {
+            "id": 4,
+            "name": "Mugg",
+            "description": "Lorem50",
+            "price": "50$"
+        }
+    ]
+}

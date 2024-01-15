@@ -10,13 +10,11 @@ import ProductDetailPage from "./Pages/ProductDetailPage"
 
 function App() {
 	let Component
-	console.log(window.location.pathname)
 	const PageLocation = window.location.pathname;
 	if(PageLocation === "/"){
 		Component = StartPage;
 	}
 	else{
-		console.log(PageLocation)
 		switch (window.location.pathname) {
 			case "/StartPage":
 				Component = StartPage
