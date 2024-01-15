@@ -20,7 +20,6 @@ function PageContent() {
 		<PageContentStyle>
 			<Breadcrumb />
 			<FilterPanel />
-			<ButtonFilter/>
 			<TopPagination />
 			<ProductCardContainer />
 			<Pagination />

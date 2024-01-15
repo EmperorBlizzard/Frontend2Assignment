@@ -21,10 +21,16 @@ const StyledFilterText = styled.p`
 	line-height: 1.3125rem;
 `;
 
+const StyledFilterIcon = styled.svg`
+width: 1.125rem;
+height: 1.125rem;
+
+`
+
 function ButtonFilter() {
 	return (
 		<StyledButton>
-			<StyledFilterText>
+			<StyledFilterIcon>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="18"
@@ -39,6 +45,9 @@ function ButtonFilter() {
 						fill="#0B539B"
 					/>
 				</svg>
+			</StyledFilterIcon>
+			<StyledFilterText>
+				
 				Filter
 			</StyledFilterText>
 		</StyledButton>
