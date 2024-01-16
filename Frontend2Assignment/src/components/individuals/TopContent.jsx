@@ -1,29 +1,34 @@
 import styled from "styled-components";
 
-const TopContainer = styled.div({
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "flex-start",
-	gap: "28px",
-	alignSelf: "stretch",
-});
+const TopContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 28px;
+	align-self: stretch;
+`;
 
-const ImageContainer = styled.div({
-    display: "flex",
-	flexDirection: "column",
-	justifyContent: "center",
-	alignItems: "center",
-	alignSelf: "stretch",
-});
+const ImageContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: stretch;
+`;
 
-const Headline = styled.div({
-    display: "flex",
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: '10px',
-    alignSelf: 'stretch',
-    margin: '0'
-});
+const Headline = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	align-self: stretch;
+	margin: 0;
+`;
+const P600 = styled.p`
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0;
+`;
 
 function TopContent() {
 	return (
@@ -36,8 +41,7 @@ function TopContent() {
 				/>
 			</ImageContainer>
 			<Headline>
-				<p style={{ fontSize: "18px", fontWeight: 600, margin: 0 }}>Product Headline</p>
-				<p style={{ fontSize: "12px", fontWeight: 400, margin: 0 }}>Diameter: 9,9 mm</p>
+				<P600>Product Headline</P600>
 			</Headline>
 		</TopContainer>
 	);
