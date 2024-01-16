@@ -1,9 +1,12 @@
-
+import Header from "../components/sections/Header"
+import Footer from "../components/sections/Footer"
 
 function CheckOutPage() {
     return (  
         <>
-        <h1>CheckOutPage</h1>
+            <Header />
+            <h1>CheckOutPage</h1>
+            <Footer />
         </>
     );
 }
