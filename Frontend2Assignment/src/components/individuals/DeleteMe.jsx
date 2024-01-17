@@ -11,7 +11,6 @@ function DeleteMe() {
   
   return (
     <>
-<<<<<<< HEAD
       <NavigationBar>
         <DeleteMeNav name="StartPage" link="/" />
         <DeleteMeNav name="ProductDetailPage" link="/productdetailpage" />
@@ -22,27 +21,7 @@ function DeleteMe() {
       </NavigationBar>
 
       <Outlet />
-=======
-      <li>
-        <a href="./BuildingPageToBeDeleted">BuildPage</a>
-      </li>
-      <li>
-        <a href="./Cartpage">CartPage</a>
-      </li>
-      <li>
-        <a href="./Checkoutpage">Check outpage</a>
-      </li>
-      <li>
-        <a href="./ListingPage">ListingPage</a>
-      </li>
-      <li>
-        <a href="./ProductDetailPage">Product Detail Page</a>
-      </li>
-      <li>
-        <a href="./StartPage">StartPage</a>
-      </li>
->>>>>>> 18931122f43a1142552aae1555c7815282ac93c6
     </>
   );
-  }
+}
 export default DeleteMe;
