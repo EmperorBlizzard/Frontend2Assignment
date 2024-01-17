@@ -3,14 +3,12 @@ import Header from '../components/sections/Header'
 import Footer from "../components/sections/Footer"
 
 
-function Contact() {
+function Delivery() {
     return (
       <div>
         <Header />
-        <h2>Kontaktinformation</h2>
-        <p>Email: info@example.com</p>
-        <p>Telefon: 123-456-7890</p>
-              
+        <h2>Leveranser</h2>
+             
 		<Footer />
       </div>
 
@@ -18,4 +16,4 @@ function Contact() {
     );
   }
   
-  export default Contact
+  export default Delivery

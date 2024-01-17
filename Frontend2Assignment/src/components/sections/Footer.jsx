@@ -62,20 +62,27 @@ function Footer() {
       <FooterColumn>
         <FooterHeading>Shop Service</FooterHeading>
         <StyledParagraph>Newsletter</StyledParagraph>
-        <StyledParagraph>Merchant login</StyledParagraph>
+        
         <Link to="/contactpage">
           <StyledParagraph>Contact</StyledParagraph>
         </Link>
-        <StyledParagraph>Return</StyledParagraph>
+        <Link to="/returnpage">
+          <StyledParagraph>Returns</StyledParagraph>
+        </Link>     
         <StyledParagraph>Repair request</StyledParagraph>
       </FooterColumn>
 
       <FooterColumn>
         <FooterHeading>Information</FooterHeading>
-        <StyledParagraph>General terms</StyledParagraph>
-        <StyledParagraph>Privacy</StyledParagraph>
-        <StyledParagraph>Shipping and payment</StyledParagraph>
-        <StyledParagraph>Right of rescission</StyledParagraph>
+
+        <Link to="/termsandconditionspage"> 
+        <StyledParagraph>Terms and Conditions</StyledParagraph>
+        </Link>
+        
+        <Link to="/deliverypage">    
+        <StyledParagraph>Delivery</StyledParagraph>
+        </Link> 
+
         <StyledParagraph>About</StyledParagraph>
       </FooterColumn>
     </FooterContent>
