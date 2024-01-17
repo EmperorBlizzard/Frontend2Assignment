@@ -5,6 +5,8 @@ import ListingPage from "./Pages/ListingPage";
 import CheckoutPage from "./Pages/CheckoutPage";
 import CartPage from "./Pages/CartPage";
 import BuildingPageToBeDeleted from "./Pages/BuildingPageToBeDeleted";
+import ContactPage from "./Pages/ContactPage";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
 				<Route path="/checkoutpage" element={<CheckoutPage />} />
 				<Route path="/cartpage" element={<CartPage />} />
 				<Route path="/buildingpagetobedeleted" element={<BuildingPageToBeDeleted />} />
+				<Route path="/contactpage" element={<ContactPage />} /> 
 			</Routes>
 		</BrowserRouter>
 	);

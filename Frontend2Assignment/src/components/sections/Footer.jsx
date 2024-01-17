@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 
 const FooterContent = styled.div`
   border-top: 1px solid #798490;
   background: #FFF;
   display: flex;
-  height: 40px;
+ 
   width: 100%; 
   margin: 0 auto;
-  padding: 0 50px 300px 50px;
+  gap: 40px;
   justify-content: space-between; 
   align-items: stretch; 
    `;
@@ -27,7 +28,7 @@ const FooterColumn = styled.div`
 
 const FooterHeading = styled.h5`
   color: #0B539B;
-  font-family: 'Inter, sans-serif'; 
+  font-family: 'Inter', sans-serif;
   font-size: 16px; 
   font-style: normal;
   font-weight: 700;
@@ -38,7 +39,7 @@ const FooterHeading = styled.h5`
 
 const StyledParagraph = styled.p`
   color: #2B3136;
-  font-family: 'Inter, sans-serif';
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +63,9 @@ function Footer() {
         <FooterHeading>Shop Service</FooterHeading>
         <StyledParagraph>Newsletter</StyledParagraph>
         <StyledParagraph>Merchant login</StyledParagraph>
-        <StyledParagraph>Contact</StyledParagraph>
+        <Link to="/contactpage">
+          <StyledParagraph>Contact</StyledParagraph>
+        </Link>
         <StyledParagraph>Return</StyledParagraph>
         <StyledParagraph>Repair request</StyledParagraph>
       </FooterColumn>
