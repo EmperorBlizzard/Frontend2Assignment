@@ -8,41 +8,6 @@ import BuildingPageToBeDeleted from "./Pages/BuildingPageToBeDeleted";
 
 
 function App() {
-<<<<<<< HEAD
-=======
-	let Component
-	const PageLocation = window.location.pathname;
-	if(PageLocation === "/"){
-		Component = StartPage;
-	}
-	else{
-		switch (window.location.pathname) {
-			case "/StartPage":
-				Component = StartPage
-				break;
-			case "/ListingPage":
-				Component = ListingPage
-				break;
-			case "/Cartpage":
-				Component = CartPage
-				break;
-			case "/BuildingPageToBeDeleted":
-				Component = Building
-				break;
-			case "/Checkoutpage":
-				Component = CheckOutPage
-				break;
-			case "/ProductDetailPage":
-				Component = ProductDetailPage
-				break;
-		
-			default:
-				break;
-		}
-	
-	}
->>>>>>> 18931122f43a1142552aae1555c7815282ac93c6
-
 	return (
 		<BrowserRouter>
 			<Routes>
