@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import LogoSearchBarActions from '../individuals/LogoSearchBarActions';
 import HeaderNavigation from '../individuals/HeaderNavigation';
-import DeleteMe from '../individuals/DeleteMe';
+import Menu from '../individuals/Menu';
 
 
 const StyledHeader = styled.header`
@@ -21,7 +21,7 @@ function Header() {
     <StyledHeader>
       <LogoSearchBarActions />
       <HeaderNavigation />
-      <DeleteMe />
+      <Menu />
     </StyledHeader>
     
   )
