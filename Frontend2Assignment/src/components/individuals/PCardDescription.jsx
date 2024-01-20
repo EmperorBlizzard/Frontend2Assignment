@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types"
 
 const DescriptionContainer = styled.div({
 	display: "flex",
@@ -38,6 +39,11 @@ const Description = ({description, pRange}) => {
 			</ProductPrice>
 		</DescriptionCon>
 	);
+}
+
+Description.propTypes = {
+	description: PropTypes.string,
+	pRange: PropTypes.string
 }
 
 export default Description;

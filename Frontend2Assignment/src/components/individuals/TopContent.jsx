@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types"
 
 const TopContainer = styled.div`
 	display: flex;
@@ -45,6 +46,11 @@ const TopContent = ({name, image}) => {
 					</Headline>
 		</TopContainer>
 	);
+}
+
+TopContent.propTypes = {
+	name: PropTypes.string,
+	image: PropTypes.string
 }
 
 export default TopContent;
