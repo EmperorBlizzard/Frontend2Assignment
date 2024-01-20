@@ -2,27 +2,39 @@
     "products": [
         {
             "id": 1,
-            "name": "Cykel",
-            "description": "Lorem50",
-            "price": "50$"
+            "name": "Kronan Damcykel Stilig D3 3-Växlad Olive Green",
+            "description": "Sportig klassiker med underbar komfort och massor av praktisk funktion. ",
+            "lDescription": "Sportig klassiker med underbar komfort och massor av praktisk funktion. Tilltalas du av en sportig klassiker med modernt raka linjer så är den eleganta Kronan Stilig D3 helt rätt cykel för dig. Det här är en helt vanlig cykel utan en massa onödiga krusiduller och den är lika omtyckt av killar som av tjejer och av unga såväl som gamla. Helt perfekt hoj för dig som vill glida fram på lätthanterlig cykel med skön komfort och massor av praktisk funktion. Denna sportiga hoj besitter skandinaviskt raka former och en bergsäker 3-växlad drivlina som i princip aldrig strular och funkar bra i såväl uppförsbackar som på långa raksträckor. Oavsett om du helst håller till hemma i stan eller ute på den svepande landsvägar så kommer din cyklingen att förvandlas till ett rent nöje när du smärtfritt sveper fram på detta beroendeframkallande transportmedel. Och du, glöm inte att cykla 20 minuter om dagen stärker både knopp och kropp.",
+            "price": "5490:-",
+            "priceRange": "3490-7990",
+            "image": "src/images/kronan-damcykel-stilig-d3-3-vaxlad-olive-green.jpeg"
         },
         {
             "id": 2,
-            "name": "Mockasin",
-            "description": "Lorem50",
-            "price": "50$"
+            "name": "Cannondale Racer Aero S6 Evo Crb 3 Chalk/Fluorange/Jet Black",
+            "description": "Potent landsvägshoj för kräsna fartdårar som vill stå högst upp på pallen.",
+            "lDescription":"Potent landsvägshoj för kräsna fartdårar som vill stå högst upp på pallen. Den aerodynamisk speedkulan Cannondale SuperSix EVO CRB 3 är en vägvinnande vidareutveckling av jänkarnas smått ikoniska landsvägsracer. Och den här versionen har samma låga vikt och samma intuitiva egenskaper som sina flerfaldigt prisbelönta föregångare, men i princip allt annat har man lyckats lyfta helt nya nivåer. En smidigare, mer kapabel och mycket, snabbare landsvägsracer som är skapad för att du ska kunna dominera på släta underlag. Så letar du efter en fullt tävlingsklar landsvägshoj som både är lättare, smidigare, bekvämare och snabbare än stallkamraterna glassiga italienare... ja då är du inne på helt rätt spår.",
+            "price": "39999:-",
+            "priceRange":"34990-69990",
+            "image": "src/images/cannondale-racer-aero-s6-evo-crb-3-chalkfluorangejet-black.jpeg"
         },
         {
             "id": 3,
-            "name": "Handväska",
-            "description": "Lorem50",
-            "price": "50$"
+            "name": "Trek Racer Komfort Racercykel Domane Sl 6 Etap Gen 4 Crimson",
+            "description": "Kolfiber, komfort och kusligt hög kapacitet i en extremt väl avvägd balans",
+            "lDescription":"Om du är på jakt efter en snabb landsvägsracer som alltid levererar potent tävlingsprestanda, men som fortfarande är bekväm nog för dina episka söndagsrundor med stallkamraterna så kommer den flerfaldiga testvinnaren Trek Domane SL 6 eTap Gen 4 inte att göra dig besviken. En vass kolfiberhoj med SRAMs helt trådlösa elektroniska 2x-drivlina Rival eTap AXS med en 12-delad kassett för blixtsnabba precisionsväxlingar som älskar långa rundor och som präglas av sin höga hastighet. Med de enorma fördelar man får med plats för 38 mm däck är Domane SL 6 redo att flyga fram över både kullersten och asfalt. En fullständigt integrerad styrcockpit gör att cykeln ser lika elegant ut som den känns, och i det lättåtkomliga förvaringsfacket ryms det viktigaste för cyklingen. Tillsammans med vägutslätande IsoSpeed bak, ett lättåtkomligt inbyggt förvaringsfack och TLR-hjul kommer du att sväva fram, oavsett om underlaget är slät väg, kullerstenar eller grus. Den invändiga kabeldragningen skapar ett elegant utseende och de nya formerna gör den både snabbare och betydligt mer aerodynamisk än sina tidigare upplagor. Den är både jämngående, snabb och så extremt mångsidig att du kan tävla på tandskallrande kullersten, cykla på gropiga grusvägar och trampa runt hela dagen på ändlösa långturer.",
+            "price": "58795:-",
+            "priceRange":"55990-69990",
+            "image": "src/images/trek-racer-komfort-racercykel-domane-sl-6-etap-gen-4-crimson.jpeg"
         },
         {
             "id": 4,
-            "name": "Mugg",
-            "description": "Lorem50",
-            "price": "50$"
+            "name": "Trek Trail MTB Fuel Ex 8 XT",
+            "description": "Kolfiber, komfort och kusligt hög kapacitet i en extremt väl avvägd balans",
+            "lDescription":"Mäter du kvalitet i prestanda per investerad krona så hittar du inget bättre! Den mytomspunna Trek Fuel EX 8 är både greppsäker, reaktionssnabb, grymt kapabel och ser till att du bibehåller full kontroll i de mest skiftande typer av terräng. Tack vare kombinationen av en modern trailgeometri och en perfekt balanserade dämpning ger den dig rätt mod inför utförslöpor och massor av kraft i klättringarna, på allt ifrån episka långfärdsrepor i Järvsö till vilda kvällsrundor med stallkamraterna. En imponerande mångsidig stigcykel med högklassig specifikation och mer än tillräckligt med slaglängd för att du ska kunna att ge dig i kast med riktigt häftiga grejer ute på stigarna. Nope, det är inte flaggskeppet i serien, men den här cykeln har potenta komponenter som ser till att du kan bibehålla höga farter även i den stökigaste terräng. Den här populära versionen levererar effektiv cykling med Shimano legendariska 1x12-drivlina (XT) med ett enastående växelomfång samt även Treks unika RE:aktiv-dämpare som ger fast stöd för trampningen utan att kompromissa med den mjuka följsamheten. Vi är generellt sätt emot att du ska behöva välja en enda mountainbike, men om du nu måste - välj den här!",
+            "price": "34072:-",
+            "priceRange":"55990-69990",
+            "image": "src/images/trek-trail-mtb-fuel-ex-8-xt (1).jpeg"
         }
     ]
 }

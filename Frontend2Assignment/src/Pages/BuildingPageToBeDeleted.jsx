@@ -1,14 +1,19 @@
-import Header from "../components/sections/Header"
-import Footer from "../components/sections/Footer"
+import Header from "../components/sections/Header";
+import Footer from "../components/sections/Footer";
+
+
+
 
 function Building() {
-  return (
-    <> 
-      <Header />
-      <h1>BuildingPage</h1>
-      <Footer />
-    </>
-  );
+	
+
+	return (
+		<>
+			<Header />
+			<h1>building page</h1>
+			<Footer />
+		</>
+	);
 }
 
 export default Building;

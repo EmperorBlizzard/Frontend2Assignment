@@ -30,19 +30,19 @@ const P600 = styled.p`
 	margin: 0;
 `;
 
-function TopContent() {
+const TopContent = ({name, image}) => {
 	return (
 		<TopContainer>
 			<ImageContainer>
 				<img
-					src="/src/images/chair.png"
+					src={image}
 					alt="Det skall komma en bild här"
 					style={{ height: "200px", width: "273.5px" }}
-				/>
+					/>
 			</ImageContainer>
-			<Headline>
-				<P600>Product Headline</P600>
-			</Headline>
+					<Headline>
+						<P600>{name}</P600>
+					</Headline>
 		</TopContainer>
 	);
 }

@@ -32,7 +32,7 @@ function handleInfoClick() {
 	console.log("Skicka till infoSidan")
 }
 
-function PriceBuyButton() {
+const PriceBuyButton = ({price}) => {
 	return (
 		<PriceBuyButtonContainer>
 			<p
@@ -43,7 +43,7 @@ function PriceBuyButton() {
 					margin: 0,
 				}}
 			>
-				£155,00*
+				{price}
 			</p>
 			<Button onClick={handleClick}>
 				Add to shopping cart

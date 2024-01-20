@@ -14,12 +14,12 @@ const PCard = styled.div`
     border: 1px solid #798490;
 `
 
-function ProductCard() {
+const ProductCard = ({name,description,price, pRange, image}) => {
 	return (
         <PCard>
-			<TopContent/>
-			<PCardDescription/>
-			<PriceBuyButton/>
+			<TopContent name={name} image={image}/>
+			<PCardDescription description={description} pRange={pRange}/>
+			<PriceBuyButton price={price}/>
         </PCard>
 	);
 }
