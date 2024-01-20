@@ -16,28 +16,22 @@ const Filter = styled.select`
 	padding: 8.5px 16px;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid  #798490;
-	background: #FFF;
+	border: 1px solid #798490;
+	background: #fff;
 `;
 
 function FilterPanel() {
 	return (
 		<Panel>
 			<Filter>
-				<option value="Filter">------</option>
-				<option value="Filter">Kläder</option>
+				<option value="Filter">Sex</option>
+				<option value="Filter">Female</option>
+				<option value="Filter">Male</option>
 			</Filter>
 			<Filter>
-				<option value="Filter">------</option>
-				<option value="Filter">Herr</option>
-			</Filter>
-			<Filter>
-				<option value="Filter">------</option>
-				<option value="Filter">Dam</option>
-			</Filter>
-			<Filter>
-				<option value="Filter">------</option>
-				<option value="Filter">Barn</option>
+				<option value="Filter">Bike</option>
+				<option value="Filter">Roadbike</option>
+				<option value="Filter">MTB</option>
 			</Filter>
 			<Filter>
 				<option value="Filter">Storlek</option>
