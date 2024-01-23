@@ -19,7 +19,6 @@ const Filter = styled.select`
 	border: 1px solid #798490;
 	background: #fff;
 `;
-
 function FilterPanel() {
 	return (
 		<Panel>
