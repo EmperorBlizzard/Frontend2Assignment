@@ -16,7 +16,6 @@ gap: 10px;
 function PageContent() {
 	return (
 		<PageContentStyle>
-			
 			<FilterPanel />
 			<TopPagination />
 			<ProductCardContainer />

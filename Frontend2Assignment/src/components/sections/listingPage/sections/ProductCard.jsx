@@ -13,6 +13,8 @@ const PCard = styled.div`
 	justify-content: space-between;
 	align-items: flex-start;
 	border: 1px solid #798490;
+	border-radius: 0.7rem;
+	box-shadow: 0 0 5px
 `;
 
 const ProductCard = ({ name, description, price, pRange, image }) => {
