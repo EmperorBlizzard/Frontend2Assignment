@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   background-color: salmon;
   display: flex;
   width: 87.5rem;
-  padding: 0rem 1.25rem 1rem 1.25rem;
+  padding: 2rem 1.25rem 1rem 1.25rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;

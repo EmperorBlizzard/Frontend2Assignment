@@ -16,7 +16,6 @@ function DeleteMe() {
         <MenuLinks name="ProductDetailPage" link="/productdetailpage" />
         <MenuLinks name="ListingPage" link="/listingpage" />
         <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
-        <MenuLinks name="CartPage" link="/cartpage" />
         <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
       </NavigationBar>
 
