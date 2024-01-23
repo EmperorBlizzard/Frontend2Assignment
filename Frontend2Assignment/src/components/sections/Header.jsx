@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import LogoSearchBarActions from '../individuals/LogoSearchBarActions';
 import HeaderNavigation from '../individuals/HeaderNavigation';
 import Menu from '../individuals/Menu';
+import Sidebar from '../individuals/Sidebar';
 
 
 const StyledHeader = styled.header`
@@ -20,6 +21,10 @@ function Header() {
   return (
     <StyledHeader>
       <LogoSearchBarActions />
+      <Sidebar />
+      <button onClick={()=>{
+        document.querySelector(".sidebar").style.width = "250px";
+      }}>☰</button>
       <HeaderNavigation />
       <Menu />
     </StyledHeader>
