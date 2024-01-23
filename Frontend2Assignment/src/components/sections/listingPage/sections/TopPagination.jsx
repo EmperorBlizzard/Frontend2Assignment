@@ -1,4 +1,3 @@
-import Input from "../individuals/input";
 import styled from "styled-components";
 import Pagination from "../individuals/Pagination";
 
@@ -12,8 +11,7 @@ const TopPage = styled.div({
 function TopPagination() {
 	return (
 		<TopPage>
-			<Pagination/>
-			<Input />
+			<Pagination />
 		</TopPage>
 	);
 }

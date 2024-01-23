@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Kronan Damcykel Stilig D3 3-Växlad Olive Green",
+      "name": "Kronan Damcykel Stilig 3-Växlad",
       "description": "Sportig klassiker med underbar komfort och massor av praktisk funktion. ",
       "lDescription": "Sportig klassiker med underbar komfort och massor av praktisk funktion. Tilltalas du av en sportig klassiker med modernt raka linjer så är den eleganta Kronan Stilig D3 helt rätt cykel för dig. Det här är en helt vanlig cykel utan en massa onödiga krusiduller och den är lika omtyckt av killar som av tjejer och av unga såväl som gamla. Helt perfekt hoj för dig som vill glida fram på lätthanterlig cykel med skön komfort och massor av praktisk funktion. Denna sportiga hoj besitter skandinaviskt raka former och en bergsäker 3-växlad drivlina som i princip aldrig strular och funkar bra i såväl uppförsbackar som på långa raksträckor. Oavsett om du helst håller till hemma i stan eller ute på den svepande landsvägar så kommer din cyklingen att förvandlas till ett rent nöje när du smärtfritt sveper fram på detta beroendeframkallande transportmedel. Och du, glöm inte att cykla 20 minuter om dagen stärker både knopp och kropp.",
       "price": "5490:-",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "name": "Cannondale Racer Aero S6 Evo Crb 3 Chalk/Fluorange/Jet Black",
+      "name": "Cannondale Racer Aero S6 Evo",
       "description": "Potent landsvägshoj för kräsna fartdårar som vill stå högst upp på pallen.",
       "lDescription": "Potent landsvägshoj för kräsna fartdårar som vill stå högst upp på pallen. Den aerodynamisk speedkulan Cannondale SuperSix EVO CRB 3 är en vägvinnande vidareutveckling av jänkarnas smått ikoniska landsvägsracer. Och den här versionen har samma låga vikt och samma intuitiva egenskaper som sina flerfaldigt prisbelönta föregångare, men i princip allt annat har man lyckats lyfta helt nya nivåer. En smidigare, mer kapabel och mycket, snabbare landsvägsracer som är skapad för att du ska kunna dominera på släta underlag. Så letar du efter en fullt tävlingsklar landsvägshoj som både är lättare, smidigare, bekvämare och snabbare än stallkamraterna glassiga italienare... ja då är du inne på helt rätt spår.",
       "price": "39999:-",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "name": "Trek Racer Komfort Racercykel Domane Sl 6 Etap Gen 4 Crimson",
+      "name": "Trek Racercykel Domane Sl 6 ",
       "description": "Kolfiber, komfort och kusligt hög kapacitet i en extremt väl avvägd balans",
       "lDescription": "Om du är på jakt efter en snabb landsvägsracer som alltid levererar potent tävlingsprestanda, men som fortfarande är bekväm nog för dina episka söndagsrundor med stallkamraterna så kommer den flerfaldiga testvinnaren Trek Domane SL 6 eTap Gen 4 inte att göra dig besviken. En vass kolfiberhoj med SRAMs helt trådlösa elektroniska 2x-drivlina Rival eTap AXS med en 12-delad kassett för blixtsnabba precisionsväxlingar som älskar långa rundor och som präglas av sin höga hastighet. Med de enorma fördelar man får med plats för 38 mm däck är Domane SL 6 redo att flyga fram över både kullersten och asfalt. En fullständigt integrerad styrcockpit gör att cykeln ser lika elegant ut som den känns, och i det lättåtkomliga förvaringsfacket ryms det viktigaste för cyklingen. Tillsammans med vägutslätande IsoSpeed bak, ett lättåtkomligt inbyggt förvaringsfack och TLR-hjul kommer du att sväva fram, oavsett om underlaget är slät väg, kullerstenar eller grus. Den invändiga kabeldragningen skapar ett elegant utseende och de nya formerna gör den både snabbare och betydligt mer aerodynamisk än sina tidigare upplagor. Den är både jämngående, snabb och så extremt mångsidig att du kan tävla på tandskallrande kullersten, cykla på gropiga grusvägar och trampa runt hela dagen på ändlösa långturer.",
       "price": "58795:-",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "name": "Trek MTB Fuel Ex 5 Grey/Yellow",
+      "name": "Trek MTB Fuel Ex 5",
       "description": "Vill du skaffa en heldämpad terränghoj som klarar allt? Välj den här!",
       "lDescription": "Den redan mytomspunna Trek Fuel EX 5 är både greppsäker, reaktionssnabb, kapabel och ser till att du bibehåller full kontroll oavsett var du cyklar. Tack vare kombinationen av en tidsenlig geometri och perfekt balanserade dämpning ger den dig både mod inför utförslöpor och kraft i klättringarna, på allt ifrån episka långfärdrepor till de vilda kvällsrundor med polarna. En imponerande mångsidig stigcykel med pålitlig specifikation samt mer än tillräckligt med slaglängd för att du ska kunna att ge dig i kast med riktigt häftiga grejer ute på stigarna. Visst, det här är absolut inte flaggskeppet i serien, men den har robusta komponenter som ser till att du kan bibehålla farten även i riktigt stökig terräng... och dessutom till ett pris som ser till att du slipper krossa familjens spargris. Vi är generellt sätt emot att du ska behöva välja en enda mountainbike, men om du nu måste - välj den här!",
       "price": "24995:-",
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "name": "Trek Top Fuel 5 Lithium Grey",
+      "name": "Trek Top Fuel 5 Lithium",
       "description": "En prisvärd heldämpad XC-hoj med en terrängcykelns lite djärvare attityd",
       "lDescription": "Heldämpade Trek Top Fuel 5 kombinerar hastigheten hos en XC-cykel med en terrängcykels djärva attityd. En smidig hoj med en imponerande robust aluminiumram som bjuder på seriöst rolig cykling. En kvick MTB som fixar de mesta, den är sannerligen effektiv men den är samtidigt fullt kapabel att ge sig i kast med riktigt häftiga grejer. Kortfattat kan den beskrivas som en lätt och välbalanserad XC-hoj som är skapad för höga hastigheter, men den upplevs faktiskt lika kapabel och förlåtande som en mer traditionell heldämpad stigcykel. Optimal hoj för dig som vill tänja gränserna och vill kunna tänja gränserna på allt från flödande stigcykling till betydligt mer stökiga underlag. En perfekt hoj för dig som vill ha en heldämpad MTB-cykel som är snabb både på plant och på böljande underlag, men som har tillräckligt med slaglängd för att du ska kunna leva lite rövare ute på stigarna. En kompetent cykel med pålitlig specifikation, och dessutom till ett pris som ser till att du inte behöver krossa familjens spargris.",
       "price": "27992:-",
@@ -62,7 +62,7 @@
     },
     {
       "id": 7,
-      "name": "Ecoride Elcykel Ambassador Axs H-7 Dam Black",
+      "name": "Ecoride Elcykel Ambassador",
       "description": "Komfortabel och användarvänlig 7-växlad elcykel med praktiskt lågt insteg",
       "lDescription": "Den funktionella skönheten Ecoride Ambassador 26 AXS H-7 har pålitliga svenska gener och är skapad utifrån nästan 15 års erfarenhet av att bygga högkvalitativa elcyklar som är anpassade för vårt strama nordiska klimat. Det här är en robust brukscykel med lågt insteg som säkerställer att du dagligen kan tillryggalägga långa distanser utan att du blir det minsta trött, andfådd eller sliten. Stora mängder last utgör inga större problem, framtill sitter en robust cykelkorg och i kombination med den anpassningsbara AVS-plattformen (pakethållaren) så kan cykeln hantera dina skiftande transportbehov med en packåsnas imponerande effektivitet. Ambassador kommer se till att du smidigt kan ta dig fram under alla fyra årstider och kanske nog så viktigt... den lutar sig mot en kombination av vackra kulörer och moderna former, vilket gör den till en riktigt godbit för ögat. Och som du säkert listat ut vid det här laget så är det ingen slump att den här lättkörda och prisvärda klassikern tillhör en av våra absolut mest sålda modeller. ",
       "price": "22495:-",
@@ -72,7 +72,7 @@
     },
     {
       "id": 8,
-      "name": "Merida Elcykel Unisex Espresso Cc 400 Eq",
+      "name": "Merida Elcykel Unisex Espresso ",
       "description": "Kraftfull urban hybrid som kanske kan vara lösningen på det eviga dilemmat",
       "lDescription": "Välutrustade, smidiga och moderna Merida eSPRESSO CC 400 EQ är en kraftfull elassisterad hybrid med tydligt urbana vibbar som ser till att du med gott samvete kan lämna bilen hemma! En smart, sportig och miljömedveten elcykel med hjälpsam drivlina som ger dig imponerande räckvidd och högvis med underhållande körglädje. Ett praktiskt och underhållande transportmedel som fixar den där sköna känslan att frihet och ser till att du kan utforska nya områden helt i din egen takt. Den är utrustad med både skärmar, belysning, pakethållare, lås och cykelstöd som gör livet lite enklare och det matchas med 10 slagkraftiga växlar på en cykel som alltid ställer upp. Användningsområdet är sannerligen horisontbrett och den trivs precis lika bra på slät asfalt som på betydligt stökigare underlag.",
       "price": "26990:-",

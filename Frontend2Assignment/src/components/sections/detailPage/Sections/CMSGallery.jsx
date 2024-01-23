@@ -1,5 +1,5 @@
-import Thumbnails from "./Thumbnails";
-import Slider from "./Slider";
+import Thumbnails from "../../../individuals/Thumbnails";
+import Slider from "../../../individuals/Slider";
 import styled from "styled-components";
 
 const StyledCMSGallery = styled.div`

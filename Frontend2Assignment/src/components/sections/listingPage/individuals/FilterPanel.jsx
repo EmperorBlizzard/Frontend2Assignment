@@ -18,6 +18,7 @@ const Filter = styled.select`
 	align-items: center;
 	border: 1px solid #798490;
 	background: #fff;
+	margin-top: 1rem;
 `;
 function FilterPanel() {
 	return (
@@ -37,6 +38,13 @@ function FilterPanel() {
 				<option value="Filter">Small</option>
 				<option value="Filter">Medium</option>
 				<option value="Filter">Large</option>
+			</Filter>
+			<Filter>
+			<option value="">Name A-Z</option>
+			<option value="">Name Z-A</option>
+			<option value="">Pris Låg-Hög</option>
+			<option value="">Pris Hög-Låg</option>
+			<option value="">Mest lämpade</option>
 			</Filter>
 		</Panel>
 	);

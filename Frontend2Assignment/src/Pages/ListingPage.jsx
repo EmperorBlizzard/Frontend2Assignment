@@ -1,4 +1,4 @@
-import PageContent from "../components/sections/PageContent";
+import PageContent from "../components/sections/listingPage/sections/PageContent";
 import Header from "../components/sections/Header"
 import Footer from "../components/sections/Footer"
 

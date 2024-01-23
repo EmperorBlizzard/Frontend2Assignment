@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import Products from "../../Products/Products.json";
+import Products from "../../../../Products/Products.json";
 
 const StyledProductCardContainer = styled.div`
 	display: flex;
