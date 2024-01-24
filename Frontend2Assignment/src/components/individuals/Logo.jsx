@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../../images/logo/TETA.png'
 
 const LogoDiv = styled.div`
     width: 15rem;
@@ -8,7 +9,9 @@ const LogoDiv = styled.div`
 
 function Logo() {
   return (
-    <div>Logo</div>
+    <div>
+      <img src='' alt="logo" />
+    </div>
   )
 }
 
