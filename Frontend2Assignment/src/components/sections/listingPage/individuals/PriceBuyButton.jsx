@@ -24,7 +24,7 @@ const Button = styled.button`
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 20px;
-	border-radius: .7rem;
+	border-radius: 0.7rem;
 `;
 
 const StyledP = styled.h2`
@@ -35,26 +35,29 @@ const StyledP = styled.h2`
 `;
 
 function handleClick() {
-	console.log("Köp köp");
+	console.log(`Köp köp köp`);
 }
 
-function handleInfoClick() {
-	console.log("Skicka till infoSidan");
+function handleInfoClick(prod) {
+	console.log(`Produkt id: ${prod.id}`);
+	<a href="/productdetailpage"></a>
 }
 
 const PriceBuyButton = () => {
-	const prod = useContext(ProductContext)
+	const prod = useContext(ProductContext);
 	return (
 		<PriceBuyButtonContainer>
 			<StyledP>Pris: {prod.price}</StyledP>
 			<Button onClick={handleClick}>Add to shopping cart</Button>
-			<Button onClick={handleInfoClick}>Info</Button>
+			<Button onClick={() => {
+				handleInfoClick(prod)
+			}}>Info</Button>
 		</PriceBuyButtonContainer>
 	);
 };
 
 PriceBuyButton.propTypes = {
-	price: PropTypes.string
-}
+	price: PropTypes.string,
+};
 
 export default PriceBuyButton;

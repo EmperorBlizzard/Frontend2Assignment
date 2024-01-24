@@ -27,7 +27,7 @@ function App() {
 				<Route path="/deliverypage" element={<DeliveryPage />} /> 
 				<Route path="/termsandconditionspage" element={<TermsAndConditionsPage />} />
 				<Route path="/searchpage" element={<SearchPage />} />
-
+				
 			</Routes>
 		</BrowserRouter>
 	);
