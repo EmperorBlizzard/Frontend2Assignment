@@ -7,20 +7,21 @@ import styled from "styled-components";
 const PCard = styled.div`
 	display: flex;
 	width: 305px;
-	height: 647px;
 	padding: 16px;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
 	border: 1px solid #798490;
+	border-radius: 0.7rem;
+	box-shadow: 0 0 5px;
 `;
 
-const ProductCard = ({ name, description, price, pRange, image }) => {
+const ProductCard = () => {
 	return (
 		<PCard>
-			<TopContent name={name} image={image} />
-			<PCardDescription description={description} pRange={pRange} />
-			<PriceBuyButton price={price} />
+			<TopContent />
+			<PCardDescription />
+			<PriceBuyButton />
 		</PCard>
 	);
 };

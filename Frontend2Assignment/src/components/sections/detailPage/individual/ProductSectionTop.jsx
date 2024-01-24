@@ -1,4 +1,4 @@
-import CMSGallery from "./CMSGallery";
+import CMSGallery from "../Sections/CMSGallery";
 import styled from "styled-components";
 const StyledPST = styled.div`
 display: flex;

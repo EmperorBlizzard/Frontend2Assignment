@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types"
+import { useContext } from "react";
+import { ProductContext } from "../sections/ProductCardContainer";
 
 const TopContainer = styled.div`
 	display: flex;
@@ -31,18 +33,20 @@ const P600 = styled.p`
 	margin: 0;
 `;
 
-const TopContent = ({name, image}) => {
+const TopContent = () => {
+const prod = useContext(ProductContext)
+
 	return (
 		<TopContainer>
 			<ImageContainer>
 				<img
-					src={image}
+					src={prod.image}
 					alt="Det skall komma en bild här"
 					style={{ height: "200px", width: "273.5px" }}
 					/>
 			</ImageContainer>
 					<Headline>
-						<P600>{name}</P600>
+						<P600>{prod.name}</P600>
 					</Headline>
 		</TopContainer>
 	);
