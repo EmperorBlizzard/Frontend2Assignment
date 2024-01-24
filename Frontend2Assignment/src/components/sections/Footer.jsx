@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 
 const FooterContent = styled.div`
   border-top: 1px solid #798490;
   background: #FFF;
-  display: flex;
- 
+  display: flex; 
   width: 100%; 
   margin: 0 auto;
   gap: 40px;
   justify-content: space-between; 
   align-items: stretch; 
+  
    `;
 
 const FooterColumn = styled.div`
@@ -44,9 +44,8 @@ const StyledParagraph = styled.p`
   font-style: normal;
   font-weight: 400;
   padding: 0 40px 0 40px;
-
-
-`;
+  
+  `;
 
 function Footer() {
   return (
@@ -63,25 +62,25 @@ function Footer() {
         <FooterHeading>Shop Service</FooterHeading>
         <StyledParagraph>Newsletter</StyledParagraph>
         
-        <Link to="/contactpage">
+        <NavLink to="/contactpage">
           <StyledParagraph>Contact</StyledParagraph>
-        </Link>
-        <Link to="/returnpage">
+        </NavLink>
+        <NavLink to="/returnpage">
           <StyledParagraph>Returns</StyledParagraph>
-        </Link>     
+        </NavLink>     
         <StyledParagraph>Repair request</StyledParagraph>
       </FooterColumn>
 
       <FooterColumn>
         <FooterHeading>Information</FooterHeading>
 
-        <Link to="/termsandconditionspage"> 
+        <NavLink to="/termsandconditionspage"> 
         <StyledParagraph>Terms and Conditions</StyledParagraph>
-        </Link>
+        </NavLink>
         
-        <Link to="/deliverypage">    
+        <NavLink to="/deliverypage">    
         <StyledParagraph>Delivery</StyledParagraph>
-        </Link> 
+        </NavLink> 
 
         <StyledParagraph>About</StyledParagraph>
       </FooterColumn>
