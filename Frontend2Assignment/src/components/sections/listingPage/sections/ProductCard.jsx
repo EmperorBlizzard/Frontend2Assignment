@@ -14,15 +14,15 @@ const PCard = styled.div`
 	align-items: flex-start;
 	border: 1px solid #798490;
 	border-radius: 0.7rem;
-	box-shadow: 0 0 5px
+	box-shadow: 0 0 5px;
 `;
 
-const ProductCard = ({ name, description, price, pRange, image }) => {
+const ProductCard = () => {
 	return (
 		<PCard>
-			<TopContent name={name} image={image} />
-			<PCardDescription description={description} pRange={pRange} />
-			<PriceBuyButton price={price} />
+			<TopContent />
+			<PCardDescription />
+			<PriceBuyButton />
 		</PCard>
 	);
 };

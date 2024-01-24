@@ -1,29 +1,35 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ProductContext } from "../sections/ProductCardContainer";
 
-const DescriptionContainer = styled.div({
-	display: "flex",
-	height: "63px",
-	alignItems: "flex-start",
-	alignSelf: "stretch",
-});
-
-const DescriptionCon = styled.div({
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "flex-start",
-	gap: "16px",
-	alignSelf: "stretch",
-});
-
-const StyledP = styled.p`fontSize: "14px", fontWeight: "400", lineHeight: "21px", margin:0
+const DescriptionContainer = styled.div`
+	display: flex;
+	height: 63px;
+	align-items: flex-start;
+	align-self: stretch;
 `;
 
-const Description = ({ description }) => {
+const DescriptionCon = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+	align-self: stretch;
+`;
+const StyledP = styled.p`
+	fontsize: 14px;
+	fontweight: 400;
+	lineheight: 21px;
+	margin: 0;
+`;
+
+const Description = () => {
+	const prod = useContext(ProductContext);
 	return (
 		<DescriptionCon>
 			<DescriptionContainer>
-				<StyledP>{description}</StyledP>
+				<StyledP>{prod.description}</StyledP>
 			</DescriptionContainer>
 		</DescriptionCon>
 	);

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ProductContext } from "../sections/ProductCardContainer";
 
 const PriceBuyButtonContainer = styled.div`
 	display: flex;
@@ -40,10 +42,11 @@ function handleInfoClick() {
 	console.log("Skicka till infoSidan");
 }
 
-const PriceBuyButton = ({ price }) => {
+const PriceBuyButton = () => {
+	const prod = useContext(ProductContext)
 	return (
 		<PriceBuyButtonContainer>
-			<StyledP>Pris: {price}</StyledP>
+			<StyledP>Pris: {prod.price}</StyledP>
 			<Button onClick={handleClick}>Add to shopping cart</Button>
 			<Button onClick={handleInfoClick}>Info</Button>
 		</PriceBuyButtonContainer>
