@@ -11,8 +11,6 @@ align-Items: flex-start;
 gap: 10px;
 `
 
-
-
 function PageContent() {
 	return (
 		<PageContentStyle>
