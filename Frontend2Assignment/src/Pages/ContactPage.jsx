@@ -5,7 +5,7 @@ import Footer from "../components/sections/Footer"
 
 function Contact() {
     return (
-      <div>
+      <div className='ContactContent'>
         <Header />
         <h2>Kontaktinformation</h2>
         <p>Email: info@example.com</p>
