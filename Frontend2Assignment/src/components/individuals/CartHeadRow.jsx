@@ -8,13 +8,68 @@ align-items: flex-start;
 align-self: stretch;
 
 `
+const StyledProduct = styled.div`
+
+display: flex;
+width: 9.375rem;
+align-items: flex-start;
+
+color: var(--Typestyle-Headlines, #2B3136);
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* Headlines/H5 */
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.3125rem; /* 131.25% */
+`
+const StyledQuantity = styled.div`
+
+
+display: flex;
+width: 9.375rem;
+align-items: flex-start;
+
+color: var(--Typestyle-Headlines, #2B3136);
+font-feature-settings: 'clig' off, 'liga' off;
+
+display: flex;
+width: 9.375rem;
+align-items: flex-start;
+
+/* Headlines/H5 */
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.3125rem; /* 131.25% */
+`
+
+const StyledSubtotal = styled.div`
+    
+display: flex;
+width: 9.375rem;
+align-items: flex-start;
+
+color: var(--Typestyle-Headlines, #2B3136);
+text-align: right;
+font-feature-settings: 'clig' off, 'liga' off;
+
+/* Headlines/H5 */
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.3125rem; /* 131.25% */
+`
 
 const CartHeadRow = () => {
     return ( <Styleheadrow>
         
-            <p>Product</p>
-            <p>Quantity</p>
-            <p>Subtotal</p>
+            <StyledProduct>Product</StyledProduct>
+            <StyledQuantity>Quantity</StyledQuantity>
+            <StyledSubtotal>Subtotal</StyledSubtotal>
             
             
         
