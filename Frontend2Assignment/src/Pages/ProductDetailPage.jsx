@@ -1,7 +1,7 @@
 import Header from "../components/sections/Header"
 import Footer from "../components/sections/Footer"
-import ProductDetailContent from "../components/sections/ProductDetailContent";
-import Breadcrumb from "../components/individuals/Breadcrumb";
+
+import ProductDetailContent from "../components/sections/detailPage/Sections/ProductDetailContent";
 import styled from "styled-components";
 
 const StyledPDP = styled.div`display: flex;
@@ -13,7 +13,6 @@ function ProductDetailPage() {
 	return (
 		<StyledPDP>
 			<Header />
-			<Breadcrumb/>
 			<ProductDetailContent/>
 			<Footer />
 		</StyledPDP>

@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import Products from "../../Products/Products.json";
+import Products from "../../../../Products/Products.json";
+import { createContext } from "react";
 
 const StyledProductCardContainer = styled.div`
 	display: flex;
@@ -8,29 +9,25 @@ const StyledProductCardContainer = styled.div`
 	align-items: flex-Start;
 	flex-wrap: wrap;
 	gap: 32px;
-
 	@media (max-width: 600px) {
 		flex-direction: column;
 	}
 `;
 
+export const ProductContext = createContext(null);
+
 function ProductCardContainer() {
-	const Test = () => {
+	const Kolla = () => {
 		return Products.products.map((product) => (
-			<div key={product.id}>
-				<ProductCard
-					name={product.name}
-					description={product.description}
-					price={product.price}
-					pRange={product.priceRange}
-					image={product.image}
-				/>
-			</div>
+			<ProductContext.Provider key={product.id} value={product}>
+				<ProductCard />
+			</ProductContext.Provider>
 		));
 	};
+
 	return (
 		<StyledProductCardContainer>
-			<Test />
+			<Kolla />
 		</StyledProductCardContainer>
 	);
 }

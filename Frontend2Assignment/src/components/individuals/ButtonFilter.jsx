@@ -1,3 +1,5 @@
+// Denna kommer till användning när man krymper ihop för att ha den mobil anpassad
+
 import styled from "styled-components";
 
 const StyledButton = styled.button`

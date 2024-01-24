@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProductSectionTop from "../individuals/ProductSectionTop";
+import ProductSectionTop from "../individual/ProductSectionTop";
 
 const StyledProduductDetailContent = styled.div`
 	display: flex;
