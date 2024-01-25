@@ -1,32 +1,32 @@
-import styled from 'styled-components';
+import styles from '../../styling/HeaderStyle.module.css';
 
 import LogoSearchBarActions from '../individuals/LogoSearchBarActions';
-import HeaderNavigation from '../individuals/HeaderNavigation';
 import Menu from '../individuals/Menu';
 import Sidebar from '../individuals/Sidebar';
+import Logo from '../individuals/Logo'
+import SearchInput from '../individuals/SearchInput'
+import HeaderActions from '../individuals/HeaderActions'
 
-
-const StyledHeader = styled.header`
-  background-color: salmon;
-  display: flex;
-  width: 87.5rem;
-  padding: 2rem 1.25rem 1rem 1.25rem;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  `;
+// const StyledHeader = styled.header`
+//   display: grid;
+//   width: 100%;
+//   padding: 2rem 1.25rem 1rem 1.25rem;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 1.5rem;
+//   `;
 
 function Header() {
   return (
-    <StyledHeader>
-      <LogoSearchBarActions />
+    <div className={styles.header}>
+      <div className={styles.logoSearchBarActions}>
+        <Logo />
+        <SearchInput />
+        <HeaderActions />
+      </div>
       <Sidebar />
-      {/* <button onClick={()=>{
-        document.querySelector(".sidebar").style.width = "250px";
-      }}>☰</button> */}
-      <HeaderNavigation />
       <Menu />
-    </StyledHeader>
+    </div>
     
   )
 }

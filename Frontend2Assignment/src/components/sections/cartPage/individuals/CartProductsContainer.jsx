@@ -1,6 +1,5 @@
 import CartProduct from "./CartProduct";
 import CartHeadRow from "./CartHeadRow";
-
 /*Use grid */
 
 
@@ -10,11 +9,6 @@ const CartProductsContainer = () => {
             <CartHeadRow />
             {/* <Product /> */}
 
-
-
-            {/* <quantity /> */}
-
-            {/*<subtotal /> */}
 
             {/*Remove product button */}
 

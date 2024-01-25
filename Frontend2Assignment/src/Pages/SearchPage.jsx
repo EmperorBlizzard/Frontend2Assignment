@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/sections/Header'
 import Footer from '../components/sections/Footer'
 
+
 function SearchPage() {
   return (
     <div>
