@@ -17,6 +17,8 @@
   justify-content: space-between;
   align-items: flex-end;
   align-self: stretch;
+
+  
 }
 
 
@@ -68,6 +70,7 @@
   grid-area: menu;
   display:flex;
   gap: 1em;
+
 }
 
 
@@ -140,11 +143,11 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     'logo search headerAction'
-    'Menu Menu Menu'
+    'menu menu menu'
   }
 
   .sidebarMenu{
-    visibility: hidden;
+    display: none;
   }
 
 }
