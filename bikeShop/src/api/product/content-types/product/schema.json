@@ -47,6 +47,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::gender.gender"
+    },
+    "Slider": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
