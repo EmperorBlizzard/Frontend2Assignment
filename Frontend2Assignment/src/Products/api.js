@@ -6,6 +6,7 @@ const token =
 const GetApi = async () => {
   const data = await axios.get(import.meta.env.VITE_STRAPI_URL + "api/products/", {
     headers: {  },
+
   });
   console.log(data);
 
