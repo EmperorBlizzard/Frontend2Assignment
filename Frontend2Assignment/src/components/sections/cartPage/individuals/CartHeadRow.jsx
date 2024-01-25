@@ -6,6 +6,7 @@ display: flex;
 padding-bottom: 0.625rem;
 align-items: flex-start;
 align-self: stretch;
+border-bottom: 1px solid var(--Border-Default, #798490);
 
 `
 const StyledProduct = styled.div`
@@ -65,6 +66,8 @@ line-height: 1.3125rem; /* 131.25% */
 `
 
 const CartHeadRow = () => {
+
+    
     return ( <Styleheadrow>
         
             <StyledProduct>Product</StyledProduct>

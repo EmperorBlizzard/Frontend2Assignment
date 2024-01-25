@@ -1,6 +1,7 @@
 import Header from "../components/sections/Header"
 import Footer from "../components/sections/Footer"
-import CartProductTable from "../components/sections/CartProductTable";
+import CartProductTable from "../components/sections/cartPage/individuals/CartProductTable";
+import CartContainer from "../components/sections/cartPage/sections/CartContainer";
 import styled from "styled-components";
 
 const Styledcartpage = styled.div`
@@ -19,9 +20,9 @@ function Cartpage() {
         <>
             <Header />
             <Styledcartpage>
-
                 <h1>Shopping cart</h1>
-                <CartProductTable />
+                <CartContainer />
+                {/* <CartProductTable /> */}
             </Styledcartpage>
             <Footer />
         </>
