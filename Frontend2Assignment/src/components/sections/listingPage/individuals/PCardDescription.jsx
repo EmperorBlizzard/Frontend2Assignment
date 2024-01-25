@@ -5,7 +5,7 @@ import { ProductContext } from "../sections/ProductCardContainer";
 
 const DescriptionContainer = styled.div`
 	display: flex;
-	height: 63px;
+	padding: 1rem 0;
 	align-items: flex-start;
 	align-self: stretch;
 `;

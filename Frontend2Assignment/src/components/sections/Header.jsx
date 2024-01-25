@@ -21,9 +21,9 @@ function Header() {
     <StyledHeader>
       <LogoSearchBarActions />
       <Sidebar />
-      <button onClick={()=>{
+      {/* <button onClick={()=>{
         document.querySelector(".sidebar").style.width = "250px";
-      }}>☰</button>
+      }}>☰</button> */}
       <HeaderNavigation />
       <Menu />
     </StyledHeader>

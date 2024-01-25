@@ -7,7 +7,6 @@ import styled from "styled-components";
 const PCard = styled.div`
 	display: flex;
 	width: 305px;
-	height: 550px;
 	padding: 16px;
 	flex-direction: column;
 	justify-content: space-between;

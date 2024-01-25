@@ -17,7 +17,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route index path="/" element={<StartPage />} />
-				<Route path="/productdetailpage" element={<ProductDetailPage />} />
+				<Route path="/productdetailpage/:id" element={<ProductDetailPage />} />
 				<Route path="/listingpage" element={<ListingPage />} />
 				<Route path="/checkoutpage" element={<CheckoutPage />} />
 				<Route path="/cartpage" element={<CartPage />} />

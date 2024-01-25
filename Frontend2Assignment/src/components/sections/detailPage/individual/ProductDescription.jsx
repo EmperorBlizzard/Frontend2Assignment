@@ -1,5 +1,10 @@
-const ProductDescription = () => {
-	return <p>Här kommer en produkt beskrivning</p>;
+const ProductDesc = () => {
+	return (
+		<>
+			<h1>Här är ditt nya hem</h1>
+			<button>Kolla liyte</button>
+		</>
+	);
 };
 
-export default ProductDescription;
+export default ProductDesc;
