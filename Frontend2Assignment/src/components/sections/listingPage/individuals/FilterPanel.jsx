@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Panel = styled.div`
 	display: flex;
@@ -20,7 +21,15 @@ const Filter = styled.select`
 	background: #fff;
 	margin-top: 1rem;
 `;
-function FilterPanel() {
+const FilterPanel = ({onSortChange}) => {
+	const [sortValueBike, setSortValueBike] = useState("");
+
+	const handleSortChangeBike = (event)=> {
+		const selectedValue = event.target.value
+		setSortValueBike(selectedValue);
+		onSortChange(selectedValue)
+	};
+
 	return (
 		<Panel>
 			<Filter>
@@ -28,10 +37,10 @@ function FilterPanel() {
 				<option value="Filter">Female</option>
 				<option value="Filter">Male</option>
 			</Filter>
-			<Filter>
-				<option value="Filter">Bike</option>
-				<option value="Filter">Roadbike</option>
-				<option value="Filter">MTB</option>
+			<Filter onChange={handleSortChangeBike}>
+				<option value="Bike">Bike</option>
+				<option value="Roadbike">Roadbike</option>
+				<option value="MTB">MTB</option>
 			</Filter>
 			<Filter>
 				<option value="Filter">Storlek</option>
