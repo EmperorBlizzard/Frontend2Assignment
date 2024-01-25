@@ -46,7 +46,7 @@ function CheckOutPage() {
 
       <StyledCheckout>
         <StyledH1>Complete order</StyledH1>
-        <StyledH5 hasBorder>Terms and conditions and cancellation policy</StyledH5>
+        <StyledH5>Terms and conditions and cancellation policy</StyledH5>
         <StyledParagraph color="#0B539B">Please note our cancellation policy</StyledParagraph>
         <StyledH5>Billing address</StyledH5>
         <StyledH5>Shipping address</StyledH5>

@@ -1,25 +1,20 @@
 import MenuLinks from "./MenuLinks";
 import { Outlet } from "react-router-dom";
-import styled from "styled-components";
+import styles from '../../styling/HeaderStyle.module.css'
 
-const NavigationBar = styled.nav`
-  display:flex;
-  gap: 1em;
-`;
 
 function Menu() {
   
   return (
-    <>
-      <NavigationBar>
-        <MenuLinks name="StartPage" link="/" />
-        <MenuLinks name="ListingPage" link="/listingpage" />
-        <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
-        <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
-      </NavigationBar>
+    <nav className={styles.navigationBar}>
+      <MenuLinks name="StartPage" link="/" />
+      <MenuLinks name="ListingPage" link="/listingpage" />
+      <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
+      <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
+
 
       <Outlet />
-    </>
+    </nav>
   );
 }
 export default Menu;

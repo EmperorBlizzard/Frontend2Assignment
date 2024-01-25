@@ -7,8 +7,8 @@ import Pagination from "../individuals/Pagination";
 const PageContentStyle = styled.div`
 display: flex;
 flex-direction: column;
-align-Items: flex-start;
-gap: 10px;
+align-items: center;
+gap: 5rem;
 `
 
 function PageContent() {
