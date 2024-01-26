@@ -35,14 +35,17 @@ function handleClick() {
 const PriceBuyButton = () => {
 	const prod = useContext(ProductContext);
 	return (
+		<>
+		<h3>Pris: {prod.attributes.price}</h3>
 		<PriceBuyButtonContainer>
-			<>
+			<>	
 				<Button onClick={handleClick}>Add to shopping cart</Button>
 				<Link to={`/ProductDetailPage/${prod.id}`}>
 					<Button>Info</Button>
 				</Link>
 			</>
 		</PriceBuyButtonContainer>
+		</>
 	);
 };
 

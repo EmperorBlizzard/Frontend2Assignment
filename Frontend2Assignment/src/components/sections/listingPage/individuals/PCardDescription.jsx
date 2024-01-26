@@ -29,7 +29,7 @@ const Description = () => {
 	return (
 		<DescriptionCon>
 			<DescriptionContainer>
-				<StyledP>{prod.description}</StyledP>
+				<StyledP>{prod.attributes.shortDescription}</StyledP>
 			</DescriptionContainer>
 		</DescriptionCon>
 	);
@@ -37,7 +37,6 @@ const Description = () => {
 
 Description.propTypes = {
 	description: PropTypes.string,
-	pRange: PropTypes.string,
 };
 
 export default Description;

@@ -1,5 +1,7 @@
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
+import BillingContainer from "../components/sections/checkoutPage/sections/BillingAddress.jsx";
+import ShippingContainer from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import styled from "styled-components";
 
 const StyledCheckout = styled.div`
@@ -25,13 +27,12 @@ const StyledH5 = styled.h5`
   font-style: normal;
   font-weight: 700;
   line-height: 1.3125rem;
-  border-bottom: ${(props) => (props.hasBorder ? '1px solid #798490' : 'none')};
   margin-bottom: 10px;
   margin-top: 10px;
 `;
 
 const StyledParagraph = styled.p`
-  color: ${(props) => props.color};
+  color: #2B3136;
   font-family: Inter;
   font-size: 0.875rem;
   font-style: normal;
@@ -47,9 +48,9 @@ function CheckOutPage() {
       <StyledCheckout>
         <StyledH1>Complete order</StyledH1>
         <StyledH5>Terms and conditions and cancellation policy</StyledH5>
-        <StyledParagraph color="#0B539B">Please note our cancellation policy</StyledParagraph>
-        <StyledH5>Billing address</StyledH5>
-        <StyledH5>Shipping address</StyledH5>
+        <StyledParagraph>Please note our cancellation policy</StyledParagraph>
+        <BillingContainer />
+        <ShippingContainer />
       </StyledCheckout>
 
       <Footer />
