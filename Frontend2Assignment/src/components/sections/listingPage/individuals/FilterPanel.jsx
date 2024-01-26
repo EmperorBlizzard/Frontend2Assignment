@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { createContext, useState } from "react";
 
 const Panel = styled.div`
 	display: flex;
@@ -21,16 +21,18 @@ const Filter = styled.select`
 	background: #fff;
 	margin-top: 1rem;
 `;
-const FilterPanel = ({onSortChange}) => {
+
+export const BikeContext = createContext(null)
+
+const FilterPanel = () => {
 	const [sortValueBike, setSortValueBike] = useState("");
 
 	const handleSortChangeBike = (event)=> {
 		const selectedValue = event.target.value
 		setSortValueBike(selectedValue);
-		onSortChange(selectedValue)
 	};
-
 	return (
+		<BikeContext.Provider value={sortValueBike}>
 		<Panel>
 			<Filter>
 				<option value="Filter">Sex</option>
@@ -38,9 +40,10 @@ const FilterPanel = ({onSortChange}) => {
 				<option value="Filter">Male</option>
 			</Filter>
 			<Filter onChange={handleSortChangeBike}>
-				<option value="Bike">Bike</option>
+				<option value="">Bike</option>
 				<option value="Roadbike">Roadbike</option>
 				<option value="MTB">MTB</option>
+				<option value="Elbike">Elbike</option>
 			</Filter>
 			<Filter>
 				<option value="Filter">Storlek</option>
@@ -56,6 +59,7 @@ const FilterPanel = ({onSortChange}) => {
 			<option value="">Mest lämpade</option>
 			</Filter>
 		</Panel>
+		</BikeContext.Provider>
 	);
 }
 

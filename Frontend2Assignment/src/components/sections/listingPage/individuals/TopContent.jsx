@@ -37,7 +37,6 @@ const TopContent = () => {
 	const prod = useContext(ProductContext);
 	const imgLink = `${import.meta.env.VITE_STRAPI_URL}${prod.attributes.image.data.attributes.url}`
 	const img = imgLink.replace("/api/", "")
-	console.log(img);
 	return (
 		<TopContainer>
 			<ImageContainer>

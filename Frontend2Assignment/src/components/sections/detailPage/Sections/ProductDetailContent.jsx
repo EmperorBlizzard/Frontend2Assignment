@@ -36,8 +36,8 @@ const Button = styled.button`
 `;
 function ProductDetailContent() {
 	const { id } = useParams();
-
 	
+
 	
 	return (
 		<StyledProduductDetailContent>
