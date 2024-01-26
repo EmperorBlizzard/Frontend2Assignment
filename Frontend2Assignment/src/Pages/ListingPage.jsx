@@ -5,10 +5,8 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 
 const ListingPageStyle = styled.div `
-	display: inline-flex;
-	width: 95%;
+	display: flex;
 	flex-direction: column;
-	align-items: center;
 	gap: 2.0625rem;
 `
 

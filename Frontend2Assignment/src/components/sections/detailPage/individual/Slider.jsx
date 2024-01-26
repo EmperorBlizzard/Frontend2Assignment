@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom";
-import Product from "../../../../Products/Products.json"
+import { DetailContext } from "../Sections/ProductDetailContent";
+import { useContext } from "react";
 
 function Slider() {
-    const {id} = useParams();
-    const bikeImage = "/" + Product.products[id-1].image
+    const shareValue = useContext(DetailContext)
+    const imgLink = `${import.meta.env.VITE_STRAPI_URL}${shareValue.attributes.image.data.attributes.url}`
+	const img = imgLink.replace("/api/", "")
     return ( <>
-    <img src={bikeImage} alt="Här skall de vara en bild" /> 
+    <img src={img} alt="Här skall de vara en bild" /> 
     </>
     );
 }
