@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './styling/Global.css'
 import StartPage from "./Pages/StartPage";
 import ProductDetailPage from "./Pages/ProductDetailPage";
 import ListingPage from "./Pages/ListingPage";

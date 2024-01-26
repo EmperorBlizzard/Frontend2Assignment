@@ -19,11 +19,11 @@ import HeaderActions from '../individuals/HeaderActions'
 function Header() {
   return (
     <div className={styles.header}>
-      <div className={styles.logoSearchBarActions}>
+      {/* <div className={styles.logoSearchBarActions}> */}
         <Logo />
         <SearchInput />
         <HeaderActions />
-      </div>
+      {/* </div> */}
       <Sidebar />
       <Menu />
     </div>
