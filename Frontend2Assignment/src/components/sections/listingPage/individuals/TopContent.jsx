@@ -35,7 +35,7 @@ const P600 = styled.p`
 
 const TopContent = () => {
 const prod = useContext(ProductContext)
-
+	console.log(prod)
 	return (
 		<TopContainer>
 			<ImageContainer>
@@ -46,7 +46,7 @@ const prod = useContext(ProductContext)
 					/>
 			</ImageContainer>
 					<Headline>
-						<P600>{prod.name}</P600>
+						<P600>{prod.attributes.productName}</P600>
 					</Headline>
 		</TopContainer>
 	);

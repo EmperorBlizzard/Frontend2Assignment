@@ -37,6 +37,8 @@ const Button = styled.button`
 function ProductDetailContent() {
 	const { id } = useParams();
 
+	
+	
 	return (
 		<StyledProduductDetailContent>
 			<StyledProductName>{Product.products[id - 1].name}</StyledProductName>
