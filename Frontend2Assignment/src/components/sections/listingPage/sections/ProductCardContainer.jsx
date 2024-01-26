@@ -1,6 +1,5 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import Products from "../../../../Products/Products.json";
 import { createContext, useEffect, useState } from "react";
 import GetApi from "../../../../Products/api";
 
