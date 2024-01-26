@@ -11,9 +11,9 @@ align-self: stretch;`
 function ProductSectionTop() {
     return ( 
         <StyledPST>
-            <CMSGallery/>
+            <CMSGallery />
         </StyledPST>
-     );
+    );
 }
 
 export default ProductSectionTop;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ProductContext } from "../sections/ProductCardContainer";
 
@@ -34,27 +34,28 @@ const P600 = styled.p`
 `;
 
 const TopContent = () => {
-const prod = useContext(ProductContext)
-	console.log(prod)
+	const prod = useContext(ProductContext);
+	const imgLink = `${import.meta.env.VITE_STRAPI_URL}${prod.attributes.image.data.attributes.url}`
+	const img = imgLink.replace("/api/", "")
 	return (
 		<TopContainer>
 			<ImageContainer>
 				<img
-					src={prod.image}
+					src={img}
 					alt="Det skall komma en bild här"
 					style={{ height: "200px", width: "273.5px" }}
-					/>
+				/>
 			</ImageContainer>
-					<Headline>
-						<P600>{prod.attributes.productName}</P600>
-					</Headline>
+			<Headline>
+				<P600>{prod.attributes.productName}</P600>
+			</Headline>
 		</TopContainer>
 	);
-}
+};
 
 TopContent.propTypes = {
 	name: PropTypes.string,
-	image: PropTypes.string
-}
+	image: PropTypes.string,
+};
 
 export default TopContent;
