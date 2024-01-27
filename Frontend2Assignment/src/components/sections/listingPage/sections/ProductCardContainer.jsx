@@ -1,8 +1,8 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import GetApi from "../../../../Products/api";
-import { BikeContext } from "../individuals/FilterPanel";
+import PropTypes from "prop-types"
 
 const StyledProductCardContainer = styled.div`
 	display: flex;
@@ -17,30 +17,22 @@ const StyledProductCardContainer = styled.div`
 
 export const ProductContext = createContext(null);
 
-const ProductCardContainer = () => {
+const ProductCardContainer = ({filter}) => {
 	const [products, setProducts] = useState(null);
-	const [filter, setFilter] = useState("products?filters[category][title][$eqi]=MTB&populate=*");
-	// const [filter, setFilter] = useState("products?filters[category][title][$eq]=Elbike&populate=*")
-
-	const filt = useContext(BikeContext);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				if (!filt) {
-					setFilter(
-						`products?filters[category][title][$eq]=${filt}&populate=*`
-					);
-					console.log(filter)
-				}
 				const result = await GetApi(filter);
 				setProducts(result.data.data);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
 			}
 		};
-		fetchData();
-	}, [filt, filter]);
+		if (filter !== "") {
+			fetchData();
+		}
+	}, [filter]);
 
 	const Kolla = () => {
 		if (products) {
@@ -57,6 +49,10 @@ const ProductCardContainer = () => {
 			<Kolla />
 		</StyledProductCardContainer>
 	);
+};
+
+ProductCardContainer.propTypes = {
+	filter: PropTypes.string,
 };
 
 export default ProductCardContainer;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { createContext, useState } from "react";
+import PropTypes from "prop-types"
 
 const Panel = styled.div`
 	display: flex;
@@ -22,45 +23,63 @@ const Filter = styled.select`
 	margin-top: 1rem;
 `;
 
-export const BikeContext = createContext(null)
+export const BikeContext = createContext("");
 
-const FilterPanel = () => {
+const FilterPanel = ({ setFilter }) => {
 	const [sortValueBike, setSortValueBike] = useState("");
-
-	const handleSortChangeBike = (event)=> {
-		const selectedValue = event.target.value
+	const handleSortChangeBike = (event) => {
+		const selectedValue = event.target.value;
 		setSortValueBike(selectedValue);
+		setFilter(updateFilter(selectedValue));
 	};
+
+	const updateFilter = (selectedValue) => {
+		switch (selectedValue) {
+			case "Roadbike":
+				return "products?filters[category][title][$eqi]=Roadbike&populate=*";
+			case "MTB":
+				return "products?filters[category][title][$eqi]=MTB&populate=*";
+			case "Elbike":
+				return "products?filters[category][title][$eqi]=ELbike&populate=*";
+			default:
+				return "products?&populate=*";
+		}
+	};
+
 	return (
 		<BikeContext.Provider value={sortValueBike}>
-		<Panel>
-			<Filter>
-				<option value="Filter">Sex</option>
-				<option value="Filter">Female</option>
-				<option value="Filter">Male</option>
-			</Filter>
-			<Filter onChange={handleSortChangeBike}>
-				<option value="">Bike</option>
-				<option value="Roadbike">Roadbike</option>
-				<option value="MTB">MTB</option>
-				<option value="Elbike">Elbike</option>
-			</Filter>
-			<Filter>
-				<option value="Filter">Storlek</option>
-				<option value="Filter">Small</option>
-				<option value="Filter">Medium</option>
-				<option value="Filter">Large</option>
-			</Filter>
-			<Filter>
-			<option value="">Name A-Z</option>
-			<option value="">Name Z-A</option>
-			<option value="">Pris Låg-Hög</option>
-			<option value="">Pris Hög-Låg</option>
-			<option value="">Mest lämpade</option>
-			</Filter>
-		</Panel>
+			<Panel>
+				<Filter>
+					<option value="Gender">Gender</option>
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+				</Filter>
+				<Filter onChange={handleSortChangeBike}>
+					<option value="">Bike</option>
+					<option value="Roadbike">Roadbike</option>
+					<option value="MTB">MTB</option>
+					<option value="Elbike">Elbike</option>
+				</Filter>
+				<Filter>
+					<option value="Size">Size</option>
+					<option value="Small">Small</option>
+					<option value="Medium">Medium</option>
+					<option value="Large">Large</option>
+				</Filter>
+				<Filter>
+					<option value="nameA-Z">Namn A-Z</option>
+					<option value="nameZ-A">Namn Z-A</option>
+					<option value="PriceLowHigh">Price Låg-Hög</option>
+					<option value="PriceHighLow">Price Hög-Låg</option>
+					<option value="BestChoice">Best Choice</option>
+				</Filter>
+			</Panel>
 		</BikeContext.Provider>
 	);
+};
+
+FilterPanel.propTypes = {
+	setFilter: PropTypes.any
 }
 
 export default FilterPanel;

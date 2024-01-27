@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-const StyledQuantitySelector = styled.div`
-display: flex;
-width: 9.375rem;
-align-items: flex-start;
-`
+
 
 const CartQuantity  = () => {
 
@@ -24,3 +20,4 @@ function handleplus () {
 }
  
 export default CartQuantity ;
+
