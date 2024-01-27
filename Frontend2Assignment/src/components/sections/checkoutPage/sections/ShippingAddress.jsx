@@ -4,19 +4,28 @@ import StyledAddressButton from '../individual/AddressButton';
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
-    max-width: 400px;
+    max-width: 25rem;
     margin: 0 auto; 
-`;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 48rem){
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  `;
 
 const StyledLabel = styled.label`
     display: block;
-    margin-bottom: 8px,
+    margin-bottom: 0.5rem,
 `;
 
 const StyledInput = styled.input `
     width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 `;
 
 
