@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useRef } from "react";
 import GetApi from "../../../../Products/api";
 import { BikeContext } from "../individuals/FilterPanel";
 
@@ -19,20 +19,39 @@ export const ProductContext = createContext(null);
 
 const ProductCardContainer = () => {
 	const [products, setProducts] = useState(null);
-	const [filter, setFilter] = useState("products?filters[category][title][$eqi]=MTB&populate=*");
+
+	const [filter, setFilter] = useState("");
 	// const [filter, setFilter] = useState("products?filters[category][title][$eq]=Elbike&populate=*")
 
-	const filt = useContext(BikeContext);
+	const test = useContext(BikeContext);
+	const testRef = useRef(test);
+
+	useEffect(() => {
+		testRef.current = test;
+	}, [test]);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				if (!filt) {
-					setFilter(
-						`products?filters[category][title][$eq]=${filt}&populate=*`
-					);
-					console.log(filter)
+				switch (testRef.current) {
+					case "MTB":
+						setFilter("products?filters[category][title][$eqi]=MTB&populate=*");
+						break;
+					case "Roadbike":
+						setFilter(
+							"products?filters[category][title][$eqi]=Roadbike&populate=*"
+						);
+						break;
+					case "Elbike":
+						setFilter(
+							"products?filters[category][title][$eqi]=ELbike&populate=*"
+						);
+						break;
+					default:
+						setFilter("products?&populate=*");
+						break;
 				}
+				console.log(filter);
 				const result = await GetApi(filter);
 				setProducts(result.data.data);
 			} catch (error) {
@@ -40,7 +59,7 @@ const ProductCardContainer = () => {
 			}
 		};
 		fetchData();
-	}, [filt, filter]);
+	}, [filter]);
 
 	const Kolla = () => {
 		if (products) {
