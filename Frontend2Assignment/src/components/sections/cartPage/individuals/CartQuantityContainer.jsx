@@ -1,10 +1,14 @@
+import CartContainer from "../sections/CartContainer";
+import CartQuantity from "./CartQuantity";
 
 const CartQuantityContainer = () => {
     return ( 
        <div>
-        <button>-</button>
-        <input text="number"  placeholder=""/>
-        <button>+</button>
+        <CartContainer/>
+        <CartQuantity/>
+       
+         
+        
        </div>
 
      );

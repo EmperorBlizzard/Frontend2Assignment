@@ -10,9 +10,10 @@
 
 export default CartProduct*/
 
+
 function CartProduct () {
     return (
-        <div>
+        <StyledCartProduct>
             <img src="" alt="" />
             <h3>Name</h3>
             <p>Artikelnummer</p>
@@ -20,8 +21,8 @@ function CartProduct () {
             <p>sex</p>
             
             <p></p>
-        </div>        
+        </StyledCartProduct>        
     )
 }
 
-export default CartProduct
+export default CartProduct;

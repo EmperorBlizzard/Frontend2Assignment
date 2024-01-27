@@ -1,11 +1,22 @@
 import CartProduct from "./CartProduct";
 import CartHeadRow from "./CartHeadRow";
+import styled from "styled-components";
+
+const StyledCartProductContainer = styled.div`
+display: flex;
+align-items: flex-start;
+gap: 0.625rem;
+flex: 1 0 0;
+
+width: 100%;
+
+`
 /*Use grid */
 
 
 const CartProductsContainer = () => {
     return (
-        <div>
+        <StyledCartProductContainer>
             <CartHeadRow />
             {/* <Product /> */}
 
@@ -13,7 +24,7 @@ const CartProductsContainer = () => {
             {/*Remove product button */}
 
 
-        </div>
+        </StyledCartProductContainer>
     );
 }
 export default CartProductsContainer;

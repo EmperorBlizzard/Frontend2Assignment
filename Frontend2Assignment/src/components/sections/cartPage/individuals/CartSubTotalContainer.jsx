@@ -1,6 +1,10 @@
+
+import CartSubtotal from "./CartSubtotal";
 const CartSubTotalContainer = () => {
     return ( 
-        <input type="text" placeholder="" />
+        <div>
+            <CartSubtotal />
+        </div>
      );
 }
  
