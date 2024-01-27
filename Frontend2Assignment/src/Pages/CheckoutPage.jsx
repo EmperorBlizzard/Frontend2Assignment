@@ -1,7 +1,7 @@
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
-import BillingContainer from "../components/sections/checkoutPage/sections/BillingAddress.jsx";
-import ShippingContainer from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
+import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx"; 
+import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import styled from "styled-components";
 
 const StyledCheckout = styled.div`
@@ -40,7 +40,12 @@ const StyledParagraph = styled.p`
   line-height: normal;
 `;
 
-function CheckOutPage() {
+const StyledFormsContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
+
+const CheckOutPage = () => {
   return (
     <>
       <Header />
@@ -49,8 +54,10 @@ function CheckOutPage() {
         <StyledH1>Complete order</StyledH1>
         <StyledH5>Terms and conditions and cancellation policy</StyledH5>
         <StyledParagraph>Please note our cancellation policy</StyledParagraph>
-        <BillingContainer />
-        <ShippingContainer />
+        <StyledFormsContainer>
+        <BillingAddress />        
+        <ShippingAddress />
+        </StyledFormsContainer>
       </StyledCheckout>
 
       <Footer />
