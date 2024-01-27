@@ -19,7 +19,7 @@ export const ProductContext = createContext(null);
 
 const ProductCardContainer = () => {
 	const [products, setProducts] = useState(null);
-	const [filter, setFilter] = useState("products?&populate=*");
+	const [filter, setFilter] = useState("products?filters[category][title][$eqi]=MTB&populate=*");
 	// const [filter, setFilter] = useState("products?filters[category][title][$eq]=Elbike&populate=*")
 
 	const filt = useContext(BikeContext);

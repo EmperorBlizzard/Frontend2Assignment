@@ -2,7 +2,7 @@ const CartQuantity  = () => {
     return ( 
         <div>
         <button>-</button>
-        <input text="number"  placeholder=""/>
+        <input text="number"  placeholder="Kolla lite"/>
         <button>+</button>
        </div>
      );
