@@ -5,7 +5,7 @@ import CartSubTotalContainer from "../individuals/CartSubTotalContainer";
 const CartContainer = () => {
     return (
         <>
-        <h1>CartContainer</h1>
+        
             <CartProductsContainer />
             <CartQuantityContainer />
             <CartSubTotalContainer />

@@ -75,6 +75,7 @@ const CartHeadRow = () => {
             <StyledSubtotal>Subtotal</StyledSubtotal>
             
             
+            
         
     </Styleheadrow> );
 }
