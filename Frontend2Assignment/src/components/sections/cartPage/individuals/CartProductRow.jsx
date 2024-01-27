@@ -6,6 +6,8 @@ height: 4.0625rem;
 background: url(<path-to-image>), lightgray 50% / cover no-repeat;
 
 `;
+
+
 /*Use grid */
 const productrow1 = () => {
 	return (

@@ -8,7 +8,7 @@ align-items: flex-start;
 align-self: stretch;
 border-bottom: 1px solid var(--Border-Default, #798490);
 
-`
+`;
 const StyledProduct = styled.div`
 
 display: flex;
@@ -24,7 +24,7 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: 1.3125rem; /* 131.25% */
-`
+`;
 const StyledQuantity = styled.div`
 
 
@@ -45,7 +45,7 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: 1.3125rem; /* 131.25% */
-`
+`;
 
 const StyledSubtotal = styled.div`
     
@@ -63,7 +63,7 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: 1.3125rem; /* 131.25% */
-`
+`;
 
 const CartHeadRow = () => {
 
@@ -73,7 +73,7 @@ const CartHeadRow = () => {
             <StyledProduct>Product</StyledProduct>
             <StyledQuantity>Quantity</StyledQuantity>
             <StyledSubtotal>Subtotal</StyledSubtotal>
-            
+
             
             
         
