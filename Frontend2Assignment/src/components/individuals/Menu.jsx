@@ -12,7 +12,6 @@ function Menu() {
       <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
       <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
 
-
       <Outlet />
     </nav>
   );
