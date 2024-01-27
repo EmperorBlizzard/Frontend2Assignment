@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { createContext, useState } from "react";
+import PropTypes from "prop-types"
 
 const Panel = styled.div`
 	display: flex;
@@ -24,13 +25,27 @@ const Filter = styled.select`
 
 export const BikeContext = createContext("");
 
-const FilterPanel = () => {
+const FilterPanel = ({ setFilter }) => {
 	const [sortValueBike, setSortValueBike] = useState("");
-
 	const handleSortChangeBike = (event) => {
 		const selectedValue = event.target.value;
 		setSortValueBike(selectedValue);
+		setFilter(updateFilter(selectedValue));
 	};
+
+	const updateFilter = (selectedValue) => {
+		switch (selectedValue) {
+			case "Roadbike":
+				return "products?filters[category][title][$eqi]=Roadbike&populate=*";
+			case "MTB":
+				return "products?filters[category][title][$eqi]=MTB&populate=*";
+			case "Elbike":
+				return "products?filters[category][title][$eqi]=ELbike&populate=*";
+			default:
+				return "products?&populate=*";
+		}
+	};
+
 	return (
 		<BikeContext.Provider value={sortValueBike}>
 			<Panel>
@@ -62,5 +77,9 @@ const FilterPanel = () => {
 		</BikeContext.Provider>
 	);
 };
+
+FilterPanel.propTypes = {
+	setFilter: PropTypes.any
+}
 
 export default FilterPanel;

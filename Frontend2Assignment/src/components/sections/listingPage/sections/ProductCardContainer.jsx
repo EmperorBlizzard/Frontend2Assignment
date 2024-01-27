@@ -1,8 +1,8 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import { createContext, useContext, useEffect, useState, useRef } from "react";
+import { createContext, useEffect, useState } from "react";
 import GetApi from "../../../../Products/api";
-import { BikeContext } from "../individuals/FilterPanel";
+import PropTypes from "prop-types"
 
 const StyledProductCardContainer = styled.div`
 	display: flex;
@@ -17,48 +17,21 @@ const StyledProductCardContainer = styled.div`
 
 export const ProductContext = createContext(null);
 
-const ProductCardContainer = () => {
+const ProductCardContainer = ({filter}) => {
 	const [products, setProducts] = useState(null);
-
-	const [filter, setFilter] = useState("");
-	// const [filter, setFilter] = useState("products?filters[category][title][$eq]=Elbike&populate=*")
-
-	const test = useContext(BikeContext);
-	const testRef = useRef(test);
-
-	useEffect(() => {
-		testRef.current = test;
-	}, [test]);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				switch (testRef.current) {
-					case "MTB":
-						setFilter("products?filters[category][title][$eqi]=MTB&populate=*");
-						break;
-					case "Roadbike":
-						setFilter(
-							"products?filters[category][title][$eqi]=Roadbike&populate=*"
-						);
-						break;
-					case "Elbike":
-						setFilter(
-							"products?filters[category][title][$eqi]=ELbike&populate=*"
-						);
-						break;
-					default:
-						setFilter("products?&populate=*");
-						break;
-				}
-				console.log(filter);
 				const result = await GetApi(filter);
 				setProducts(result.data.data);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
 			}
 		};
-		fetchData();
+		if (filter !== "") {
+			fetchData();
+		}
 	}, [filter]);
 
 	const Kolla = () => {
@@ -76,6 +49,10 @@ const ProductCardContainer = () => {
 			<Kolla />
 		</StyledProductCardContainer>
 	);
+};
+
+ProductCardContainer.propTypes = {
+	filter: PropTypes.string,
 };
 
 export default ProductCardContainer;
