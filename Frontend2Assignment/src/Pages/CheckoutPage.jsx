@@ -2,6 +2,7 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx"; 
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
+import CheckoutCart from "../components/sections/checkoutPage/sections/CheckoutCart.jsx";
 import styled from "styled-components";
 
 const StyledCheckout = styled.div`
@@ -57,6 +58,7 @@ const CheckOutPage = () => {
         <StyledFormsContainer>
         <BillingAddress />        
         <ShippingAddress />
+        <CheckoutCart />
         </StyledFormsContainer>
       </StyledCheckout>
 

@@ -6,43 +6,43 @@ const FooterContent = styled.div`
   border-top: 1px solid #798490;
   background: #FFF;
   display: flex; 
-  width: 100%; 
-  margin: 0 auto;
-  gap: 40px;
+  flex-wrap: wrap;
   justify-content: space-between; 
-  align-items: stretch; 
-  
+  padding: 1.25 rem;  
    `;
 
 const FooterColumn = styled.div`
   background-color: #FFF;
   display: flex;
-  width: 240px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px 50px 300px 50px;
+  padding: 1.5rem;
   flex-shrink: 0;
-  margin-top: 0;
+  width: 100%;
+
+  @media (min-width: 48rem){
+    width: 15rem;
+  }
   `;
 
 const FooterHeading = styled.h5`
   color: #0B539B;
   font-family: 'Inter', sans-serif;
-  font-size: 16px; 
+  font-size: 1rem; 
   font-style: normal;
   font-weight: 700;
-  line-height: 2px;
-  padding: 0 40px 0px 40px;
+  line-height: 0.125rem;
+  margin-bottom: 0.625rem;
   
 `;
 
 const StyledParagraph = styled.p`
   color: #2B3136;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
-  padding: 0 40px 0 40px;
+  margin-bottom: 0.625rem;
   
   `;
 
