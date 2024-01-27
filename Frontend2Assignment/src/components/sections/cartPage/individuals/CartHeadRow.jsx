@@ -69,4 +69,21 @@ const CartHeadRow = () => {
 	);
 };
 
+
 export default CartHeadRow;
+
+    
+    return ( <Styleheadrow>
+        
+            <StyledProduct>Product</StyledProduct>
+            <StyledQuantity>Quantity</StyledQuantity>
+            <StyledSubtotal>Subtotal</StyledSubtotal>
+            
+            
+            
+        
+    </Styleheadrow> );
+}
+ 
+export default CartHeadRow;
+
