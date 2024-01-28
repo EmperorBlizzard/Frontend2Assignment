@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { createContext, useState } from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
 const Panel = styled.div`
 	display: flex;
@@ -23,63 +23,73 @@ const Filter = styled.select`
 	margin-top: 1rem;
 `;
 
-export const BikeContext = createContext("");
-
 const FilterPanel = ({ setFilter }) => {
-	const [sortValueBike, setSortValueBike] = useState("");
-	const handleSortChangeBike = (event) => {
-		const selectedValue = event.target.value;
-		setSortValueBike(selectedValue);
-		setFilter(updateFilter(selectedValue));
-	};
+	const [bike, setBike] = useState("");
+	const [gender, setGender] = useState("");
 
-	const updateFilter = (selectedValue) => {
-		switch (selectedValue) {
+	useEffect(() => {
+		setFilter(
+			`products?${updateFilterBike(bike)}${updateFilterGender(
+				gender
+			)}populate=*`
+		);
+	}, [bike, gender, setFilter]);
+
+	const updateFilterBike = (bike) => {
+		switch (bike) {
 			case "Roadbike":
-				return "products?filters[category][title][$eqi]=Roadbike&populate=*";
+				return "filters[category][title][$eqi]=Roadbike&";
 			case "MTB":
-				return "products?filters[category][title][$eqi]=MTB&populate=*";
+				return "filters[category][title][$eqi]=MTB&";
 			case "Elbike":
-				return "products?filters[category][title][$eqi]=ELbike&populate=*";
+				return "filters[category][title][$eqi]=ELbike&";
 			default:
-				return "products?&populate=*";
+				return "";
+		}
+	};
+	const updateFilterGender = (bike) => {
+		switch (bike) {
+			case "Gender":
+				return "";
+			case "Unisex":
+				return "filters[gender][title][$eqi]=Unisex&";
+			case "Female":
+				return "filters[gender][title][$eqi]=Female&";
+			case "Male":
+				return "filters[gender][title][$eqi]=Male&";
+			default:
+				return "";
 		}
 	};
 
+	const handleSortChangeGender = (event) => {
+		setGender(event.target.value);
+	};
+
+	const handleSortChangeBike = (event) => {
+		setBike(event.target.value);
+	};
+
 	return (
-		<BikeContext.Provider value={sortValueBike}>
-			<Panel>
-				<Filter>
-					<option value="Gender">Gender</option>
-					<option value="Female">Female</option>
-					<option value="Male">Male</option>
-				</Filter>
-				<Filter onChange={handleSortChangeBike}>
-					<option value="">Bike</option>
-					<option value="Roadbike">Roadbike</option>
-					<option value="MTB">MTB</option>
-					<option value="Elbike">Elbike</option>
-				</Filter>
-				<Filter>
-					<option value="Size">Size</option>
-					<option value="Small">Small</option>
-					<option value="Medium">Medium</option>
-					<option value="Large">Large</option>
-				</Filter>
-				<Filter>
-					<option value="nameA-Z">Namn A-Z</option>
-					<option value="nameZ-A">Namn Z-A</option>
-					<option value="PriceLowHigh">Price Låg-Hög</option>
-					<option value="PriceHighLow">Price Hög-Låg</option>
-					<option value="BestChoice">Best Choice</option>
-				</Filter>
-			</Panel>
-		</BikeContext.Provider>
+		<Panel>
+			<Filter onChange={handleSortChangeGender}>
+				<option value="Gender">Gender</option>
+				<option value="Unisex">Unisex</option>
+				<option value="Female">Female</option>
+				<option value="Male">Male</option>
+			</Filter>
+			<Filter onChange={handleSortChangeBike}>
+				<option value="">Bike</option>
+				<option value="Roadbike">Roadbike</option>
+				<option value="MTB">MTB</option>
+				<option value="Elbike">Elbike</option>
+			</Filter>
+		</Panel>
 	);
 };
 
 FilterPanel.propTypes = {
-	setFilter: PropTypes.any
-}
+	setFilter: PropTypes.any,
+};
 
 export default FilterPanel;
