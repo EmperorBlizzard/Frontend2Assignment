@@ -3,7 +3,9 @@ import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx"; 
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import CheckoutCart from "../components/sections/checkoutPage/sections/CheckoutCart.jsx";
+import PurchaseButton from "../components/sections/checkoutPage/individual/PurchaseButton.jsx";
 import styled from "styled-components";
+
 
 const StyledCheckout = styled.div`
   display: flex;
@@ -59,6 +61,7 @@ const CheckOutPage = () => {
         <BillingAddress />        
         <ShippingAddress />
         <CheckoutCart />
+        <PurchaseButton />
         </StyledFormsContainer>
       </StyledCheckout>
 
