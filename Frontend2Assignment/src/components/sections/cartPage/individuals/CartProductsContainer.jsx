@@ -54,7 +54,7 @@ height: 1.5rem;
 flex-shrink: 0;
 `;
 
-const QuantitySelector = () => {
+const Selector = () => {
 	return ( 
 		<>
 		<StyledMinusselector>
@@ -81,7 +81,7 @@ const CartProductsContainer = () => {
 			<CartHeadRow />
 			<Styledplaceholder1 />
 			<CartProductdescription />
-			<QuantitySelector />
+			{/* <QuantitySelector /> */}
 			{/* <Product /> */}
 
 			{/*Remove product button */}
