@@ -9,7 +9,7 @@ const PageContentStyle = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 5rem;
+gap: 1rem;
 `
 
 const PageContent = () => {
