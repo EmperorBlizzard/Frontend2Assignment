@@ -30,7 +30,7 @@ const handleClick = () => {
     console.log("Köpet har genomförts");
   };
 
-const PurshaseButton = () =>{
+const PurchaseButton = () =>{
   return(
     <PurchaseButtonContainer>
         <Button onClick={handleClick}>Complete purchase</Button>
@@ -39,4 +39,4 @@ const PurshaseButton = () =>{
 
 };
 
-export default PurshaseButton;
+export default PurchaseButton;
