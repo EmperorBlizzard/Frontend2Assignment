@@ -4,16 +4,15 @@ import PurchaseButton from "../individual/PurchaseButton";
 import CheckoutCartItem from "./CheckoutCartItem";
 
 const CheckoutCartContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100%; 
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  width: 55.625rem;
-  gap: 1.25rem;
-  padding: 0.625rem;
-`
+  margin: 1rem; 
+  margin-top: auto;
+  padding: 1rem;
+  gap: 1rem; 
+  max-width: auto;
+  height: 22rem;
+  `
 
 const CheckoutCart = ({CheckoutCartItems}) =>{
     return(

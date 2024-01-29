@@ -7,10 +7,11 @@ const PurchaseButtonContainer = styled.div`
 	align-items: flex-start;
 	gap: 24px;
 	align-self: stretch;
+	
 `;
 
 const Button = styled.button`
-	display: flex;
+display: flex;
 	height: 44px;
 	padding: 0px 14px;
 	justify-content: center;

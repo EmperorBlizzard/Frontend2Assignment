@@ -5,46 +5,52 @@ import ShippingAddress from "../components/sections/checkoutPage/sections/Shippi
 import CheckoutCart from "../components/sections/checkoutPage/sections/CheckoutCart.jsx";
 import styled from "styled-components";
 
-
 const StyledCheckout = styled.div`
+  
+  max-width: 55.9375rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;  
+  flex-direction: column; // Lodrätt på standard (mindre skärmar)
+  margin-bottom: auto;
+
+  
+  
+  @media (min-width: 48rem) {
+    flex-direction: row; // Vågrätt på stora skärmar
+  }
+`;
+
+const SectionContainerText = styled.div`
+  
   display: flex;
-  width: 55.9375rem;
-  flex-direction: column;
-  padding: 10rem;
-  gap: 3rem;
-`;
+  align-self: flex-start;
+  
+ 
+`; 
 
-const StyledH1 = styled.div`
-  font-family: 'Inter', sans-serif;
-  color: #2B3136;
-  font-size: 2.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2.5rem;
-`;
-
-const StyledH5 = styled.h5`
-  font-family: Inter;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.3125rem;
-  margin-bottom: 10px;
-  margin-top: 10px;
-`;
-
-const StyledParagraph = styled.p`
-  color: #2B3136;
-  font-family: Inter;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`;
-
-const StyledFormsContainer = styled.div`
+const SectionContainerBilling = styled.div`
+  
   display: flex;
-  gap: 2rem;
+  align-items: flex-end;
+  margin-top:10rem;
+  
+  
+  
+`;
+
+const SectionContainerShipping = styled.div`
+  display: flex;
+  align-items: flex-end;
+  
+ 
+`;
+
+const SectionContainerCart = styled.div`
+  display: flex;
+  align-items: flex-end;
+  
+   
 `;
 
 const CheckOutPage = () => {
@@ -53,19 +59,28 @@ const CheckOutPage = () => {
       <Header />
 
       <StyledCheckout>
-        <StyledH1>Complete order</StyledH1>
-        <StyledH5>Terms and conditions and cancellation policy</StyledH5>
-        <StyledParagraph>Please note our cancellation policy</StyledParagraph>
-        <StyledFormsContainer>
-        <BillingAddress />        
-        <ShippingAddress />
-        <CheckoutCart />
-        </StyledFormsContainer>
+       <SectionContainerText>
+          <p>Complete order</p>
+          <p>Terms and conditions and cancellation policy</p>
+          <p>Please note our cancellation policy</p>
+        </SectionContainerText> 
+
+        <SectionContainerBilling>
+          <BillingAddress />
+          </SectionContainerBilling>
+
+        <SectionContainerShipping>
+          <ShippingAddress />
+        </SectionContainerShipping>
+
+        <SectionContainerCart>
+          <CheckoutCart />
+        </SectionContainerCart>
       </StyledCheckout>
 
       <Footer />
     </>
   );
-}
+};
 
 export default CheckOutPage;

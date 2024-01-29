@@ -5,18 +5,11 @@ import styled from 'styled-components'
 
 const StyledForm = styled.form`
     max-width: 25rem;
-    margin: 0 auto; 
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @media (max-width: 48rem){
-    max-width: 100%;
-    padding: 1.5rem;
-  
-  }
+    margin: 1rem; 
+    padding-top: 1rem;
+    gap: 1rem;  
   `;
+
 const StyledLabel = styled.label`
     display: block;
     margin-bottom: 0.5rem,
@@ -53,7 +46,7 @@ const BillingAddressForm = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-
+    
       <h3>Billing address</h3>
       <StyledLabel>
         First name:
@@ -68,6 +61,7 @@ const BillingAddressForm = () => {
         <StyledInput type="text" name="postalcode" value={formData.postalcode} onChange={handleChange} />
       </StyledLabel>
       <StyledAddressButton type="submit">Submit</StyledAddressButton>
+      
       </StyledForm>
   );
 };

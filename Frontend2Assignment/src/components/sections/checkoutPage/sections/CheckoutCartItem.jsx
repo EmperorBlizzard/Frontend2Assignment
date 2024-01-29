@@ -13,4 +13,4 @@ const CheckoutCartItem = ({product, price, quantity}) =>{
 
 }
 
-export default CheckoutCartItem
+export default CheckoutCartItem;
