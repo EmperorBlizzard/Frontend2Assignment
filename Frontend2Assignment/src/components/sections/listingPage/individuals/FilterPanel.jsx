@@ -13,7 +13,6 @@ const Panel = styled.div`
 
 const Filter = styled.select`
 	display: flex;
-	width: 106px;
 	height: 40px;
 	padding: 8.5px 16px;
 	justify-content: space-between;
@@ -26,14 +25,15 @@ const Filter = styled.select`
 const FilterPanel = ({ setFilter }) => {
 	const [bike, setBike] = useState("");
 	const [gender, setGender] = useState("");
+	const [popular, setPopular] = useState("");
 
 	useEffect(() => {
 		setFilter(
 			`products?${updateFilterBike(bike)}${updateFilterGender(
 				gender
-			)}populate=*`
+			)}${updateFilterPopular(popular)}populate=*`
 		);
-	}, [bike, gender, setFilter]);
+	}, [bike, gender, popular, setFilter]);
 
 	const updateFilterBike = (bike) => {
 		switch (bike) {
@@ -47,8 +47,8 @@ const FilterPanel = ({ setFilter }) => {
 				return "";
 		}
 	};
-	const updateFilterGender = (bike) => {
-		switch (bike) {
+	const updateFilterGender = (gender) => {
+		switch (gender) {
 			case "Gender":
 				return "";
 			case "Unisex":
@@ -62,12 +62,30 @@ const FilterPanel = ({ setFilter }) => {
 		}
 	};
 
+	const updateFilterPopular = (popular) => {
+		switch (popular) {
+			case "A-Z":
+				return "sort[0]=productName:asc&";
+			case "Z-A":
+				return "sort[0]=productName:desc&";
+			case "PriceHighLow":
+				return "sort[0]=price:desc&";
+			case "PriceLowHigh":
+				return "sort[0]=price:asc&";
+			default:
+				return "";
+		}
+	};
+
 	const handleSortChangeGender = (event) => {
 		setGender(event.target.value);
 	};
 
 	const handleSortChangeBike = (event) => {
 		setBike(event.target.value);
+	};
+	const handleSortChangePopular = (event) => {
+		setPopular(event.target.value);
 	};
 
 	return (
@@ -83,6 +101,13 @@ const FilterPanel = ({ setFilter }) => {
 				<option value="Roadbike">Roadbike</option>
 				<option value="MTB">MTB</option>
 				<option value="Elbike">Elbike</option>
+			</Filter>
+			<Filter onChange={handleSortChangePopular}>
+				<option value="">Sort</option>
+				<option value="A-Z">Sort A-Z</option>
+				<option value="Z-A">Sort Z-A</option>
+				<option value="PriceLowHigh">Price Low-High</option>
+				<option value="PriceHighLow">Price High-Low</option>
 			</Filter>
 		</Panel>
 	);
