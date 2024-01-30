@@ -4,25 +4,25 @@ import styled from "styled-components";
 const PurchaseButtonContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
-	gap: 24px;
+	align-items: flex-end;
+	gap: 1.5rem;
 	align-self: stretch;
 	
 `;
 
 const Button = styled.button`
 display: flex;
-	height: 44px;
-	padding: 0px 14px;
+	height: 2.75rem;
+	padding: 0 0.875rem;
 	justify-content: center;
-	align-items: center;
-	gap: 8px;
+	align-items: flex-end;
+	gap: 0.5rem;
 	align-self: stretch;
 	background-color: #0b539b;
 	color: #fff;
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: 600;
-	line-height: 20px;
+	line-height: 1.25rem;
 	border-radius: 0.7rem;
 `;
 

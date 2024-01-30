@@ -4,6 +4,9 @@ import PurchaseButton from "../individual/PurchaseButton";
 import CheckoutCartItem from "./CheckoutCartItem";
 
 const CheckoutCartContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   margin: 1rem; 

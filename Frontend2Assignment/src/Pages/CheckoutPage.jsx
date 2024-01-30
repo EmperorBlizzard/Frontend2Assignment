@@ -9,10 +9,10 @@ const StyledCheckout = styled.div`
   
   max-width: 55.9375rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 5rem;
   display: flex;  
   flex-direction: column; // Lodrätt på standard (mindre skärmar)
-  margin-bottom: auto;
+  margin-bottom: 2rem;
 
   
   
@@ -25,6 +25,7 @@ const SectionContainerText = styled.div`
   
   display: flex;
   align-self: flex-start;
+  margin-bottom: 2rem;
   
  
 `; 
@@ -33,7 +34,7 @@ const SectionContainerBilling = styled.div`
   
   display: flex;
   align-items: flex-end;
-  margin-top:10rem;
+  margin-top: 5rem;
   
   
   
@@ -43,12 +44,14 @@ const SectionContainerShipping = styled.div`
   display: flex;
   align-items: flex-end;
   
+  
  
 `;
 
 const SectionContainerCart = styled.div`
   display: flex;
   align-items: flex-end;
+  justify-content: flex-start;
   
    
 `;
