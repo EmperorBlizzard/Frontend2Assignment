@@ -26,6 +26,7 @@ const Button = styled.button`
 	font-weight: 600;
 	line-height: 20px;
 	border-radius: 0.7rem;
+	cursor: pointer;
 `;
 
 function handleClick() {
