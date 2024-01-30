@@ -13,7 +13,7 @@ const ReturnContainer = styled.div `
   box-sizing: border-box;
   width: 64.9375rem;
   padding: 2.5rem;
-  gap: 0.625rem
+  margin: 8rem;
 
   h1 {
     font-family: Inter;
