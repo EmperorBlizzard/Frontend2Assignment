@@ -81,7 +81,9 @@ function Footer() {
         <StyledParagraph>Delivery</StyledParagraph>
         </NavLink> 
 
+        <NavLink to="/AboutPage">
         <StyledParagraph>About</StyledParagraph>
+        </NavLink>
       </FooterColumn>
     </FooterContent>
   );

@@ -10,6 +10,7 @@ import ContactPage from "./Pages/ContactPage";
 import ReturnPage from "./Pages/ReturnPage";
 import DeliveryPage from "./Pages/DeliveryPage";
 import TermsAndConditionsPage from "./Pages/TermsAndConditionsPage";
+import AboutPage from "./Pages/AboutPage";
 import SearchPage from "./Pages/SearchPage";
 
 
@@ -27,6 +28,7 @@ function App() {
 				<Route path="/returnpage" element={<ReturnPage />} /> 
 				<Route path="/deliverypage" element={<DeliveryPage />} /> 
 				<Route path="/termsandconditionspage" element={<TermsAndConditionsPage />} />
+				<Route path="/aboutpage" element={<AboutPage />} />
 				<Route path="/searchpage" element={<SearchPage />} />
 				
 			</Routes>
