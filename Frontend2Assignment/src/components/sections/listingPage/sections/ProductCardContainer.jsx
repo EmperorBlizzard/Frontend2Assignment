@@ -36,6 +36,7 @@ const ProductCardContainer = ({filter}) => {
 
 	const Kolla = () => {
 		if (products) {
+			console.log(products)
 			return products.map((product) => (
 				<ProductContext.Provider key={product.id} value={product}>
 					<ProductCard />
