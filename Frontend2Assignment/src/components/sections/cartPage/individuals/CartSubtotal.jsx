@@ -17,6 +17,7 @@ line-height: 1.3125rem; /* 150% */
 
 const CartSubtotal = ({ quantity, pricePerItem }) => {
     const subtotal = quantity * pricePerItem;
+    
   
     return (
       <SubTotalContainer>

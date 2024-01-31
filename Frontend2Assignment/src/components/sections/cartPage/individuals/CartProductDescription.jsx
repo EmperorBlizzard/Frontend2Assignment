@@ -1,5 +1,6 @@
 import styled from "styled-components";
- 
+import { useContext } from "react";
+import { TempCartContext } from "../sections/CartContent.jsx"
 
 const StyledDescription = styled.div`
 display: flex;
@@ -12,14 +13,20 @@ flex: 1 0 0;
 `;
 
 const CartProductDescription = () => {
-    return (  
+    const tempContext = useContext(TempCartContext);
+    const imgLink = `${tempContext.image}`
+    const prodctName = `${tempContext.name}`
+    const prductCategory = `${tempContext.category} `
+
+    return (
         <StyledDescription>
-            <h3>Name</h3>
+            <div>
+                <img src={imgLink} alt="Bild på cyckel" />
+            </div>
+            <h3>{prodctName}</h3>
             <p>Articlenumber</p>
-            <p>Category</p>
+            <p>{prductCategory}</p>
             <p>Sex</p>
-
-
         </StyledDescription>
     );
 }

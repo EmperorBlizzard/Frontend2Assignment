@@ -2,6 +2,8 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import styled from "styled-components";
 
+import ContentContainer from "../components/sections/cartPage/sections/ContentContainer";
+
 import ShoppingCartContainer from "../components/sections/cartPage/individuals/Shoppingcartcontainer";
 import Cartheadrow from "../components/sections/cartPage/individuals/CartHeadRow";
 import CartItemImageRow1 from "../components/sections/cartPage/individuals/CartItemImageRow1";
@@ -23,24 +25,14 @@ gap: 0.625rem;
 
 function Cartpage() {
     return (
-      <>
-       
-        <ShoppingCartContainer />
-        <Cartheadrow />
-  
-        <div style={{ display: "flex", flexDirection: "row", margin: "left" }}>
-          <CartItemImageRow1 />
-          <CartProductDescription />
-          <QuantitySelector />
-          <CartSubtotal />
-        </div>
-  
-        <InputPlusLink />
-  
-        <Footer />
-      </>
+        <>
+            <Header />
+            <h2>CART</h2>
+            <ContentContainer />
+            <Footer />
+        </>
     );
-  }
+}
 
-  export default Cartpage;
-  
+export default Cartpage;
+

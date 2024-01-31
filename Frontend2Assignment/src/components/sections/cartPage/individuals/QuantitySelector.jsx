@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { TempCartContext } from "../sections/CartContent.jsx"
 import styled from "styled-components";
 
 
@@ -64,8 +65,13 @@ const SummaryText = styled.p`
 `;
 
 const QuantitySelector = () => {
+
+    const tempContext = useContext(TempCartContext)
+    const productPrice = parseInt(tempContext.price)
+
     const [quantity, setQuantity] = useState(1);
     const [pricePerItem, setPricePerItem] = useState(null); // Håll reda på priset per artikel
+
 
     const handleIncrease = () => {
         setQuantity(quantity + 1);
@@ -79,14 +85,21 @@ const QuantitySelector = () => {
         }
     };
 
+    useEffect(() => {
+        handleSetPrice();
+
+    }, [])
 
     const handleSetPrice = () => {
         // Här kan du implementera logik för att hämta priset från vald vara
         // I exemplet är priset satt till 10 som standard
-        setPricePerItem(10);
+        setPricePerItem(productPrice);
     };
 
-    const totalPrice = quantity * pricePerItem;
+
+    const totalPriceFunc = () => {
+        return quantity * pricePerItem
+    }
 
     return (
         <SelectorContainer>
@@ -95,7 +108,7 @@ const QuantitySelector = () => {
             <PlusMinusButton onClick={handleIncrease}>{PlusIcon()}</PlusMinusButton>
 
             <SummaryContainer>
-                <SummaryText>Totalt: {totalPrice} kr</SummaryText>
+                <SummaryText>Totalt: {totalPriceFunc()} kr</SummaryText>
             </SummaryContainer>
             <DeleteIcon />
         </SelectorContainer>
