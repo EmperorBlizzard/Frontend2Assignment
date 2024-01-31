@@ -870,6 +870,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::gender.gender'
     >;
     Slider: Attribute.Media;
+    isNew: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
