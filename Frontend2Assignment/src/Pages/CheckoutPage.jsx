@@ -3,6 +3,7 @@ import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx"; 
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import CheckoutCart from "../components/sections/checkoutPage/sections/CheckoutCart.jsx";
+import PaymentMethod from "../components/sections/checkoutPage/sections/PaymentMethod.jsx";
 import styled from "styled-components";
 
 const StyledCheckout = styled.div`
@@ -78,6 +79,7 @@ const CheckOutPage = () => {
 
         <SectionContainerCart>
           <CheckoutCart />
+          <PaymentMethod />
         </SectionContainerCart>
       </StyledCheckout>
 
