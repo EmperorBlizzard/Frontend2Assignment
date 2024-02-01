@@ -57,6 +57,8 @@ const FilterPanel = ({ setFilter }) => {
 				return "filters[gender][title][$eqi]=Female&";
 			case "Male":
 				return "filters[gender][title][$eqi]=Male&";
+			case "Test":
+				return "filters[isNew][$eq]=true&";
 			default:
 				return "";
 		}
@@ -95,6 +97,7 @@ const FilterPanel = ({ setFilter }) => {
 				<option value="Unisex">Unisex</option>
 				<option value="Female">Female</option>
 				<option value="Male">Male</option>
+				<option value="Test">Test</option>
 			</Filter>
 			<Filter onChange={handleSortChangeBike}>
 				<option value="">Bike</option>
