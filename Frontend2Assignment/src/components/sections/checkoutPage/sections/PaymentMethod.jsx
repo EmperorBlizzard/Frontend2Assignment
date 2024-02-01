@@ -2,17 +2,24 @@ import styled from "styled-components";
 import React, { useState } from "react";
 
 const StyledPaymentMethod = styled.div`
-  font-weight: 600;
-  font-size: 1rem;
-  color: blue;
-  cursor: default;
+    max-width: 35rem;
+    margin: 1rem; 
+    padding: 1rem;
+    gap: 1rem;  
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    flex-direction: column;
+
+   
 
   input {
     margin-right: 1rem;
   }
 
   label {
-    margin-right: 5rem;
+    margin-right: 1rem;
   }
 `;
 

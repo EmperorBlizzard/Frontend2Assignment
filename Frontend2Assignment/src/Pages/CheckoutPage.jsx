@@ -11,51 +11,39 @@ const StyledCheckout = styled.div`
   max-width: 55.9375rem;
   width: 100%;
   margin: 5rem;
-  display: flex;  
-  flex-direction: column; // Lodrätt på standard (mindre skärmar)
-  margin-bottom: 2rem;
+  margin: 5rem;  
 
-  
-  
-  @media (min-width: 48rem) {
-    flex-direction: row; // Vågrätt på stora skärmar
-  }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+	@media (max-width: 37.5rem) {
+		flex-direction: column;
+	}
 `;
 
 const SectionContainerText = styled.div`
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
   
-  display: flex;
-  align-self: flex-start;
   margin-bottom: 2rem;
+  font-weight: 600;
+  line-height: 1.75rem; 
+  letter-spacing: -0.03rem; 
   
- 
+  color: #2B3136; 
+  font-family: 'Inter', sans-serif; 
+  font-size: 2rem;
+  box-sizing: border-box;
+  width: 64rem;
+  padding: 1rem;
+  margin: 1rem;
+   
 `; 
 
-const SectionContainerBilling = styled.div`
-  
-  display: flex;
-  align-items: flex-end;
-  margin-top: 5rem;
-  
-  
-  
-`;
 
-const SectionContainerShipping = styled.div`
-  display: flex;
-  align-items: flex-end;
-  
-  
- 
-`;
 
-const SectionContainerCart = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  
-   
-`;
+
 
 const CheckOutPage = () => {
   return (
@@ -65,22 +53,23 @@ const CheckOutPage = () => {
       <StyledCheckout>
        <SectionContainerText>
           <p>Complete order</p>
-          <p>Terms and conditions and cancellation policy</p>
-          <p>Please note our cancellation policy</p>
+          
         </SectionContainerText> 
 
-        <SectionContainerBilling>
+       
           <BillingAddress />
-          </SectionContainerBilling>
+          
 
-        <SectionContainerShipping>
+       
           <ShippingAddress />
-        </SectionContainerShipping>
+       
 
-        <SectionContainerCart>
+       
           <CheckoutCart />
-          <PaymentMethod />
-        </SectionContainerCart>
+       
+
+        <PaymentMethod />
+
       </StyledCheckout>
 
       <Footer />

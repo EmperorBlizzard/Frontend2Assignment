@@ -1,21 +1,10 @@
 
 import styled from "styled-components";
 
-const PurchaseButtonContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
-	gap: 1.5rem;
-	align-self: stretch;
-	
-`;
 
 const Button = styled.button`
-display: flex;
 	height: 2.75rem;
 	padding: 0 0.875rem;
-	justify-content: center;
-	align-items: flex-end;
 	gap: 0.5rem;
 	align-self: stretch;
 	background-color: #0b539b;
@@ -33,9 +22,9 @@ const handleClick = () => {
 
 const PurchaseButton = () =>{
   return(
-    <PurchaseButtonContainer>
+   
         <Button onClick={handleClick}>Complete purchase</Button>
-    </PurchaseButtonContainer>
+   
   );
 
 };

@@ -6,8 +6,14 @@ import styled from 'styled-components'
 const StyledForm = styled.form`
     max-width: 25rem;
     margin: 1rem; 
-    padding-top: 1rem;
-    gap: 1rem; 
+    padding: 1rem;
+    gap: 1rem;  
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5rem;
+    flex-direction: column;  
+
+    
   `;
 
 const StyledLabel = styled.label`
