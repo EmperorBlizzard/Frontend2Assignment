@@ -7,7 +7,6 @@ import ProductCardCheckout from "../components/sections/checkoutPage/sections/Pr
 function Building() {
   const Name = useContext(CartContext);
   const NameList = Name.itemsInCart
-  console.log(NameList);
 
   const Mapping = () => {
 	return NameList.map((namn) => (

@@ -17,17 +17,15 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 function App() {
-	const [itemsInCart, setItemsInCart] = useState([]);
+  const [itemsInCart, setItemsInCart] = useState([]);
 
-	useEffect(() => {
-		console.log('items in cart is updated')
-		console.log(itemsInCart);
-	}, [itemsInCart])
-
-
+  useEffect(() => {}, [itemsInCart]);
 
   return (
-    <CartContext.Provider key={itemsInCart} value={{itemsInCart, setItemsInCart}}>
+    <CartContext.Provider
+      key={itemsInCart}
+      value={{ itemsInCart, setItemsInCart }}
+    >
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<StartPage />} />

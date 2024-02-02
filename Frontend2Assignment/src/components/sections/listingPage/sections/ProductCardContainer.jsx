@@ -24,7 +24,6 @@ const ProductCardContainer = ({ filter }) => {
 	const {itemsInCart, setItemsInCart} = useContext(CartContext)
 
 	const handleButtonClick = (buttonInfo) => {
-		console.log(itemsInCart);
 		const itemIndex = itemsInCart.findIndex((item) => item.id === buttonInfo.id);
 		if (itemIndex !== -1) {
 			const upDatedList = [...itemsInCart];
@@ -40,7 +39,6 @@ const ProductCardContainer = ({ filter }) => {
 			};
 			const upDatedList = [...itemsInCart, item];
 			setItemsInCart(upDatedList);
-			// console.log(itemsInCart);
 		}
 	};
 
