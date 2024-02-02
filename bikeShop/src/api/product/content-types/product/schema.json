@@ -49,14 +49,18 @@
       "target": "api::gender.gender"
     },
     "Slider": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "isNew": {
+      "type": "boolean"
     }
   }
 }

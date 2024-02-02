@@ -29,12 +29,12 @@ const Button = styled.button`
 	cursor: pointer;
 `;
 
-function handleClick() {
-	console.log(`Köp köp köp`);
-}
 
-const PriceBuyButton = () => {
+const PriceBuyButton = ({onButtonClick}) => {
 	const prod = useContext(ProductContext);
+	function handleClick() {
+		onButtonClick(prod)
+	}
 	return (
 		<>
 		<h3>Pris: {prod.attributes.price}</h3>
@@ -51,7 +51,8 @@ const PriceBuyButton = () => {
 };
 
 PriceBuyButton.propTypes = {
-	price: PropTypes.string,
+	
+	onButtonClick: PropTypes.func
 };
 
 export default PriceBuyButton;
