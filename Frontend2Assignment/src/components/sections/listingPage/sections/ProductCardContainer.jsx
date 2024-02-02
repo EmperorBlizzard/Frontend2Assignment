@@ -47,7 +47,10 @@ const ProductCardContainer = ({filter}) => {
 
 	return (
 		<StyledProductCardContainer>
-			<Kolla />
+		<div>
+		<Kolla />
+		</div>
+			
 		</StyledProductCardContainer>
 	);
 };
