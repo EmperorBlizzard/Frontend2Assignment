@@ -36,7 +36,7 @@ const ProductCardContainer = ({ filter }) => {
 				productName: buttonInfo.attributes.productName,
 				price: buttonInfo.attributes.price,
 				amountOfProducts: 1,
-				Image: buttonInfo.attributes.image.data.attributes.url
+				image: buttonInfo.attributes.image.data.attributes.url
 			};
 			const upDatedList = [...itemsInCart, item];
 			setItemsInCart(upDatedList);

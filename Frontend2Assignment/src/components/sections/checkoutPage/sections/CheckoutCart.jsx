@@ -4,7 +4,7 @@ import PurchaseButton from "../individual/PurchaseButton";
 import CheckoutCartItem from "./CheckoutCartItem";
 
 const CheckoutCartContainer = styled.div`
-    max-width: 35rem;
+    /* max-width: 35rem; */
     margin: 1rem; 
     padding: 1rem;
     gap: 1rem;  

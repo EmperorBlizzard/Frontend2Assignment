@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledPCC = styled.div`
 display: flex;
 flex-direction: row;
-    
+
 `
 const ProdInfo = styled.div`
     display: flex;
@@ -11,14 +11,18 @@ const ProdInfo = styled.div`
 `
 
 const ProductCardCheckout  = ({card}) => {
+    const imgLink = `${import.meta.env.VITE_STRAPI_URL}${card.image}`
+    console.log(imgLink)
+    const img = imgLink.replace("http://localhost:1337/api//", "http://localhost:1337/")
+    console.log(img)
     return ( 
         <StyledPCC>
-            <img src={card.image} alt="produktbild" />
+            <img src={img} alt="produktbild" />
             <ProdInfo>
                 <h2>Produktnamn:{card.productName}</h2>
                 <h2>Pris:{card.price}</h2>
                 <h2>Antal:</h2>
-                <h2>{card.image}</h2>
+                
             </ProdInfo>
 
         </StyledPCC>
