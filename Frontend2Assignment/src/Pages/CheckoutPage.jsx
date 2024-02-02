@@ -11,7 +11,7 @@ const StyledCheckout = styled.div`
   max-width: 55.9375rem;
   width: 100%;
   margin: 5rem;
-  margin: 5rem;  
+  
 
   display: flex;
   flex-direction: row;

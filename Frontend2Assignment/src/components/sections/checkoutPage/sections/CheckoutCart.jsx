@@ -4,7 +4,7 @@ import PurchaseButton from "../individual/PurchaseButton";
 import CheckoutCartItem from "./CheckoutCartItem";
 
 const CheckoutCartContainer = styled.div`
-   max-width: 35rem;
+    max-width: 35rem;
     margin: 1rem; 
     padding: 1rem;
     gap: 1rem;  
@@ -22,7 +22,7 @@ const ButtonContainer = styled.div`
 `;
 
 const CheckoutCart = ({ CheckoutCartItems }) => {
-  console.log("Rendering CheckoutCart");
+  console.log("Rendering CheckoutCart"); 
 
   const hasItemsInCart = CheckoutCartItems && CheckoutCartItems.length > 0;
   return (
@@ -35,6 +35,8 @@ const CheckoutCart = ({ CheckoutCartItems }) => {
       ) : (
         <p>Your cart is empty</p>
       )}
+       
+
       <ButtonContainer>
         <PurchaseButton />
       </ButtonContainer>

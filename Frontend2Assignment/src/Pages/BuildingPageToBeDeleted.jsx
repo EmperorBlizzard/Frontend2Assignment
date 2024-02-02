@@ -2,6 +2,7 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import { useContext } from "react";
 import { CartContext } from "../App";
+import ProductCartCheckout from "../components/sections/checkoutPage/sections/ProductCardCheckout"
 
 function Building() {
   const Name = useContext(CartContext);
@@ -11,8 +12,7 @@ function Building() {
   const Mapping = () => {
 	return NameList.map((namn) => (
 	  <div key={namn.id}>
-		<p>{namn.productName}</p>
-		<p>{namn.price}</p>
+		<ProductCartCheckout card = {namn}/>
 	  </div>
 	));
   }
@@ -24,6 +24,7 @@ function Building() {
       <Header />
       <h1>building page</h1>
       <Mapping/>
+      
       <Footer />
     </>
   );
