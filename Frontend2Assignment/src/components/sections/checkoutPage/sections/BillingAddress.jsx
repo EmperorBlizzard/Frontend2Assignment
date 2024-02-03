@@ -4,7 +4,6 @@ import StyledAddressButton from '../individual/AddressButton';
 import styled from 'styled-components'
 
 const StyledForm = styled.form`
-    /* max-width: 25rem; */
     margin: 1rem; 
     padding: 1rem;
     gap: 1rem;  

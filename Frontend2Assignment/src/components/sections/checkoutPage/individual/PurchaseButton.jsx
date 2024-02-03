@@ -1,18 +1,30 @@
 
 import styled from "styled-components";
 
+const PurchaseContainer = styled.div `
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 24px;
+	align-self: stretch;
+`
 
 const Button = styled.button`
-	height: 2.75rem;
-	padding: 0 0.875rem;
-	gap: 0.5rem;
+	display: flex;
+	height: 44px;
+	padding: 0px 14px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
 	align-self: stretch;
 	background-color: #0b539b;
 	color: #fff;
-	font-size: 1.125rem;
+	font-size: 18px;
 	font-weight: 600;
-	line-height: 1.25rem;
+	line-height: 20px;
 	border-radius: 0.7rem;
+	cursor: pointer;
+    
 `;
 
 
@@ -22,9 +34,9 @@ const handleClick = () => {
 
 const PurchaseButton = () =>{
   return(
-   
+		<PurchaseContainer>
         <Button onClick={handleClick}>Complete purchase</Button>
-   
+		</PurchaseContainer>
   );
 
 };

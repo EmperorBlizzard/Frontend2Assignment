@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+
+
 const StyledPCC = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
-  border-radius: 8px;
+  /* border: 1px solid black;
+  border-radius: 8px; */
   margin: 1rem;
 `;
 const ProdInfo = styled.div`
@@ -37,7 +39,7 @@ const ProductCardCheckout = ({ card }) => {
         <StyledP>{card.productName}</StyledP>
         <StyledP>Pris: {card.price}</StyledP>
         <StyledP>Antal: {card.amountOfProducts}</StyledP>
-      </ProdInfo>
+      </ProdInfo>      
     </StyledPCC>
   );
 };
