@@ -31,7 +31,6 @@ const QuantitySelector = () => {
 	const handleIncrease = () => {
 		setQuantity(quantity + 1);
 	};
-
 	const handleDecrease = () => {
 		if (quantity > 1) {
 			setQuantity(quantity - 1);

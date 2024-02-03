@@ -2,7 +2,7 @@ import TopContent from "../individuals/TopContent";
 import PCardDescription from "../individuals/PCardDescription";
 import PriceBuyButton from "../individuals/PriceBuyButton";
 import styled from "styled-components";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const PCard = styled.div`
 	display: flex;
@@ -16,12 +16,12 @@ const PCard = styled.div`
 	box-shadow: 0 0 5px;
 `;
 
-const ProductCard = ({onButtonClick}) => {
+const ProductCard = () => {
 	return (
 		<PCard>
 			<TopContent />
 			<PCardDescription />
-			<PriceBuyButton onButtonClick={onButtonClick}/>
+			<PriceBuyButton />
 		</PCard>
 	);
 };
@@ -29,5 +29,5 @@ const ProductCard = ({onButtonClick}) => {
 export default ProductCard;
 
 ProductCard.propTypes = {
-	onButtonClick: PropTypes.func
-}
+	onButtonClick: PropTypes.func,
+};

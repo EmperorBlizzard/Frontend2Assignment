@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ProductContext } from "../sections/ProductCardContainer";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../../App";
 
 const PriceBuyButtonContainer = styled.div`
 	display: flex;
@@ -29,30 +30,29 @@ const Button = styled.button`
 	cursor: pointer;
 `;
 
-
-const PriceBuyButton = ({onButtonClick}) => {
+const PriceBuyButton = () => {
 	const prod = useContext(ProductContext);
+	const { setAddCart } = useContext(CartContext);
 	function handleClick() {
-		onButtonClick(prod)
+		setAddCart(prod);
 	}
 	return (
 		<>
-		<h3>Pris: {prod.attributes.price}</h3>
-		<PriceBuyButtonContainer>
-			<>	
-				<Button onClick={handleClick}>Add to shopping cart</Button>
-				<Link to={`/ProductDetailPage/${prod.id}`}>
-					<Button>Info</Button>
-				</Link>
-			</>
-		</PriceBuyButtonContainer>
+			<h3>Pris: {prod.attributes.price}</h3>
+			<PriceBuyButtonContainer>
+				<>
+					<Button onClick={handleClick}>Add to shopping cart</Button>
+					<Link to={`/ProductDetailPage/${prod.id}`}>
+						<Button>Info</Button>
+					</Link>
+				</>
+			</PriceBuyButtonContainer>
 		</>
 	);
 };
 
 PriceBuyButton.propTypes = {
-	
-	onButtonClick: PropTypes.func
+	onButtonClick: PropTypes.func,
 };
 
 export default PriceBuyButton;
