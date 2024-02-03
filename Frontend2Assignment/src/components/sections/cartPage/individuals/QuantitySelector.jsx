@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { TempCartContext } from "../sections/CartContent.jsx"
 import styled from "styled-components";
 
 
 const SelectorContainer = styled.div`
 display: flex;
-margin-top: 2rem;
-width: 65rem;
+margin-top: 8rem;
+width: 69rem;
 align-items: flex-start;
 `;
 
@@ -30,6 +30,20 @@ align-items: center;
 gap: 0.625rem;
 flex-shrink: 0;
 `;
+
+const DeleteButton = styled.button`
+display: flex;
+  width: 2.75rem;
+  height: 2.5625rem;
+  padding: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+`
 
 
 const MinusIcon = () => (
@@ -85,6 +99,10 @@ const QuantitySelector = () => {
         }
     };
 
+    const handleDelete = () => {
+        console.log("Deletebutton clicked!");
+    };
+
     useEffect(() => {
         handleSetPrice();
 
@@ -110,7 +128,7 @@ const QuantitySelector = () => {
             <SummaryContainer>
                 <SummaryText>Totalt: {totalPriceFunc()} kr</SummaryText>
             </SummaryContainer>
-            <DeleteIcon />
+            <DeleteButton onClick={handleDelete}>{DeleteIcon()}</DeleteButton>
         </SelectorContainer>
 
     );

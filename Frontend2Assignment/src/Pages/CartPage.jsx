@@ -11,6 +11,7 @@ import CartProductDescription from "../components/sections/cartPage/individuals/
 import QuantitySelector from "../components/sections/cartPage/individuals/QuantitySelector";
 import CartSubtotal from "../components/sections/cartPage/individuals/CartSubtotal";
 import InputPlusLink from "../components/sections/cartPage/individuals/Inputpluslink";
+import CartProductCardContainer from "../components/sections/cartPage/sections/CartProductCardContainer";
 
 const Styledcartpage = styled.div`
  
@@ -27,7 +28,7 @@ function Cartpage() {
     return (
         <>
             <Header />
-            <h2>CART</h2>
+            <h1> cart</h1>
             <ContentContainer />
             <Footer />
         </>

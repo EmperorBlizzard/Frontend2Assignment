@@ -1,12 +1,17 @@
 import CartContent from "./CartContent";
-import SummeryContainer from "./SummeryContainer";
+import SummaryContainer from "./SummaryContainer";
+
+
+
+
 
 function ContentContainer() {
     return (
-        <>
+        <div>
             <CartContent />
-            <SummeryContainer />
-        </>
+            
+            <SummaryContainer />
+         </div>
     )
 }
 

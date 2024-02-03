@@ -17,16 +17,18 @@ const CartProductDescription = () => {
     const imgLink = `${tempContext.image}`
     const prodctName = `${tempContext.name}`
     const prductCategory = `${tempContext.category} `
+    const sex = `${tempContext.sex}` 
+    const id = `${tempContext.id}`
 
     return (
         <StyledDescription>
             <div>
-                <img src={imgLink} alt="Bild på cyckel" />
+            <img src={imgLink} alt="Bild på cyckel" />
             </div>
             <h3>{prodctName}</h3>
-            <p>Articlenumber</p>
+            <p>{id}</p>
             <p>{prductCategory}</p>
-            <p>Sex</p>
+            <p>{sex}</p>
         </StyledDescription>
     );
 }

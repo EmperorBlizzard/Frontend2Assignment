@@ -5,6 +5,7 @@ import CartProductCardContainer from "./CartProductCardContainer";
 import InputPlusLink from "../individuals/Inputpluslink";
 import products from "../../../../Products/Products.json"
 import CartProductDescription from "../individuals/CartProductDescription";
+import SummaryContainer from "./SummaryContainer";
 
 export const TempCartContext = createContext(null)
 
@@ -24,7 +25,9 @@ function CartContent() {
                     )
                 })
             }
+           
             <InputPlusLink />
+            
         </>
     )
 }
