@@ -2,8 +2,8 @@ import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx";
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
-import CheckoutCart from "../components/sections/checkoutPage/sections/CheckoutCart.jsx";
 import PaymentMethod from "../components/sections/checkoutPage/sections/PaymentMethod.jsx";
+import PurchaseButton from "../components/sections/checkoutPage/individual/PurchaseButton.jsx";
 import styled from "styled-components";
 import { useContext } from "react";
 import { CartContext } from "../App.jsx";
@@ -11,7 +11,6 @@ import ProductCardCheckout from "../components/sections/checkoutPage/sections/Pr
 
 const StyledCheckout = styled.div`
   max-width: 55.9375rem;
-  width: 100%;
   margin: 5rem;
 
   display: flex;
@@ -41,6 +40,11 @@ const SectionContainerText = styled.div`
   margin: 1rem;
 `;
 
+const StyledMapping = styled.div`
+  border: 1px solid #2b3136;
+  border-radius: 9px;
+`
+
 const CheckOutPage = () => {
    const Name = useContext(CartContext);
   const NameList = Name.itemsInCart; 
@@ -65,10 +69,13 @@ const CheckOutPage = () => {
         <BillingAddress />
 
         <ShippingAddress />
-        <Mapping />
 
-        <CheckoutCart />
-
+        <StyledMapping>
+          <Mapping />
+          <PurchaseButton />
+         </StyledMapping>
+        
+               
         <PaymentMethod />
       </StyledCheckout>
 
