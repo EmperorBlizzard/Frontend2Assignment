@@ -17,42 +17,63 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 function App() {
-  const [itemsInCart, setItemsInCart] = useState([]);
+	const [itemsInCart, setItemsInCart] = useState([]);
+	const [addCart, setAddCart] = useState([]);
 
-  useEffect(() => {}, [itemsInCart]);
+	useEffect(() => {}, [itemsInCart]);
+	if (addCart != "") {
+		const itemIndex = itemsInCart.findIndex((item) => item.id === addCart.id);
+		if (itemIndex !== -1) {
+			const upDatedList = [...itemsInCart];
+			upDatedList[itemIndex].amountOfProducts += 1;
+			setItemsInCart(upDatedList);
+			setAddCart("");
+		} else {
+			const item = {
+				id: addCart.id,
+				productName: addCart.attributes.productName,
+				price: addCart.attributes.price,
+				amountOfProducts: 1,
+				image: addCart.attributes.image.data.attributes.url,
+			};
+			const upDatedList = [...itemsInCart, item];
+			setItemsInCart(upDatedList);
+			setAddCart("");
+		}
+	}
 
-  return (
-    <CartContext.Provider
-      key={itemsInCart}
-      value={{ itemsInCart, setItemsInCart }}
-    >
-      <BrowserRouter>
-        <Routes>
-          <Route index path="/" element={<StartPage />} />
-          <Route
-            path="/productdetailpage/:id"
-            element={<ProductDetailPage />}
-          />
-          <Route path="/listingpage" element={<ListingPage />} />
-          <Route path="/checkoutpage" element={<CheckoutPage />} />
-          <Route path="/cartpage" element={<CartPage />} />
-          <Route
-            path="/buildingpagetobedeleted"
-            element={<BuildingPageToBeDeleted />}
-          />
-          <Route path="/contactpage" element={<ContactPage />} />
-          <Route path="/returnpage" element={<ReturnPage />} />
-          <Route path="/deliverypage" element={<DeliveryPage />} />
-          <Route
-            path="/termsandconditionspage"
-            element={<TermsAndConditionsPage />}
-          />
-          <Route path="/aboutpage" element={<AboutPage />} />
-          <Route path="/searchpage" element={<SearchPage />} />
-        </Routes>
-      </BrowserRouter>
-    </CartContext.Provider>
-  );
+	return (
+		<CartContext.Provider
+			key={itemsInCart}
+			value={{ itemsInCart, setItemsInCart, setAddCart }}
+		>
+			<BrowserRouter>
+				<Routes>
+					<Route index path="/" element={<StartPage />} />
+					<Route
+						path="/productdetailpage/:id"
+						element={<ProductDetailPage />}
+					/>
+					<Route path="/listingpage" element={<ListingPage />} />
+					<Route path="/checkoutpage" element={<CheckoutPage />} />
+					<Route path="/cartpage" element={<CartPage />} />
+					<Route
+						path="/buildingpagetobedeleted"
+						element={<BuildingPageToBeDeleted />}
+					/>
+					<Route path="/contactpage" element={<ContactPage />} />
+					<Route path="/returnpage" element={<ReturnPage />} />
+					<Route path="/deliverypage" element={<DeliveryPage />} />
+					<Route
+						path="/termsandconditionspage"
+						element={<TermsAndConditionsPage />}
+					/>
+					<Route path="/aboutpage" element={<AboutPage />} />
+					<Route path="/searchpage" element={<SearchPage />} />
+				</Routes>
+			</BrowserRouter>
+		</CartContext.Provider>
+	);
 }
 
 export default App;

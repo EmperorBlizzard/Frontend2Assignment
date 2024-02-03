@@ -9,7 +9,6 @@ const StyledDescription = styled.div`
 
 const ProductDesc = () => {
 	const prod = useContext(DetailContext)
-	console.log(prod)
 	return (
 		<StyledDescription>
 			<h1>Produkt info</h1>

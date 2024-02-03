@@ -1,9 +1,8 @@
 import ProductCard from "./ProductCard";
 import styled from "styled-components";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import GetApi from "../../../../Products/api";
 import PropTypes from "prop-types";
-import { CartContext } from "../../../../App";
 
 const StyledProductCardContainer = styled.div`
 	display: flex;
@@ -20,27 +19,6 @@ export const ProductContext = createContext(null);
 
 const ProductCardContainer = ({ filter }) => {
 	const [products, setProducts] = useState(null);
-	// const [itemInCart, setItemInCart] = useState([]);
-	const {itemsInCart, setItemsInCart} = useContext(CartContext)
-
-	const handleButtonClick = (buttonInfo) => {
-		const itemIndex = itemsInCart.findIndex((item) => item.id === buttonInfo.id);
-		if (itemIndex !== -1) {
-			const upDatedList = [...itemsInCart];
-			upDatedList[itemIndex].amountOfProducts += 1;
-			setItemsInCart(upDatedList);
-		} else {
-			const item = {
-				id: buttonInfo.id,
-				productName: buttonInfo.attributes.productName,
-				price: buttonInfo.attributes.price,
-				amountOfProducts: 1,
-				image: buttonInfo.attributes.image.data.attributes.url
-			};
-			const upDatedList = [...itemsInCart, item];
-			setItemsInCart(upDatedList);
-		}
-	};
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -60,7 +38,7 @@ const ProductCardContainer = ({ filter }) => {
 		if (products) {
 			return products.map((product) => (
 				<ProductContext.Provider key={product.id} value={product}>
-					<ProductCard onButtonClick={handleButtonClick} />
+					<ProductCard />
 				</ProductContext.Provider>
 			));
 		}
@@ -68,10 +46,7 @@ const ProductCardContainer = ({ filter }) => {
 
 	return (
 		<StyledProductCardContainer>
-		
-		<Kolla />
-		
-			
+			<Kolla />
 		</StyledProductCardContainer>
 	);
 };
