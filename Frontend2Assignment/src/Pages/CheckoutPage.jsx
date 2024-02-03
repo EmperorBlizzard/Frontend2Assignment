@@ -44,6 +44,12 @@ const StyledMapping = styled.div`
   border: 1px solid #2b3136;
   border-radius: 9px;
   margin: 1rem;
+
+  p{
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    margin: 1.5rem;
+  }
 `;
 
 const StyledPayment = styled.div`
@@ -86,9 +92,10 @@ const CheckOutPage = () => {
 
         <StyledMapping>
           <Mapping />
+          <p>Totalpris på order: {totalPrice}</p>
           <PurchaseButton />
         </StyledMapping>
-
+        
         <StyledPayment>
           <PaymentMethod />
         </StyledPayment>

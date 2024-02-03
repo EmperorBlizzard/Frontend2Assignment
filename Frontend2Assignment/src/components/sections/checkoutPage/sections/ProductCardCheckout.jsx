@@ -43,8 +43,7 @@ const ProductCardCheckout = ({ card, totalPrice }) => {
         <StyledP>{card.productName}</StyledP>
         <StyledP>Pris: {card.price}</StyledP>
         <StyledP>Antal: {card.amountOfProducts}</StyledP>
-        <StyledP>Totalpris på order: {totalPrice}</StyledP>
-        
+                
       </ProdInfo>
     </StyledPCC>
   );
