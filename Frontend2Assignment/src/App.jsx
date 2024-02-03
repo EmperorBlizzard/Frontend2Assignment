@@ -77,7 +77,6 @@ function App() {
 	// Funktion för att minska antalet produkter i varukorgen
 	const decreaseQuantity = (productId) => {
 		const updatedList = [...itemsInCart];
-		console.log(updatedList)
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
 		if (itemIndex !== -1 && updatedList[itemIndex].amountOfProducts > 1) {
 			updatedList[itemIndex].amountOfProducts -= 1;

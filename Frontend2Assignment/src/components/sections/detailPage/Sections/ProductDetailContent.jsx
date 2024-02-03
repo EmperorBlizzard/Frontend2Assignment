@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import ProductDesc from "../individual/ProductDesc";
+import Thumbnails from "../individual/Thumbnails";
 
 const StyledProduductDetailContent = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: start;
-	gap: 5rem;
+	gap: 0rem;
 `;
 
 const StyledProductName = styled.p`
@@ -21,13 +22,13 @@ const StyledProductName = styled.p`
 	line-height: 2.6875rem;
 `;
 
-
 export const DetailContext = createContext();
 
-function ProductDetailContent() {
+const ProductDetailContent = () => {
 	const { id } = useParams();
 	const [prod, setProd] = useState(null);
-
+	const [dispImage, setDispImage] = useState("http://localhost:1337/"+prod)
+	
 	useEffect(() => {
 		const fetshData = async () => {
 			try {
@@ -45,11 +46,13 @@ function ProductDetailContent() {
 	if (!prod) {
 		return <p>Loading...</p>;
 	}
+
 	return (
-		<DetailContext.Provider key={prod.id} value={prod}>
+		<DetailContext.Provider value={prod}>
 			<StyledProduductDetailContent>
 				<StyledProductName>{prod.attributes.productName}</StyledProductName>
 				<ProductSectionPDS />
+				{ !prod.attributes.Slider.data ? "" : <Thumbnails/>}
 				<ProductDesc/>
 			</StyledProduductDetailContent>
 		</DetailContext.Provider>
