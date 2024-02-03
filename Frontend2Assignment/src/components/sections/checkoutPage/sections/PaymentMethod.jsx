@@ -2,15 +2,16 @@ import styled from "styled-components";
 import React, { useState } from "react";
 
 const StyledPaymentMethod = styled.div`
-    max-width: 35rem;
+ 
     margin: 1rem; 
     padding: 1rem;
     gap: 1rem;  
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: 5rem;
+    margin-top: 1rem;
     flex-direction: column;
+    
 
    
 

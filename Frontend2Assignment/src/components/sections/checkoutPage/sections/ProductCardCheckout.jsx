@@ -1,6 +1,7 @@
+import { useContext } from "react";
 import styled from "styled-components";
-
-
+import CartContent from "../../cartPage/sections/CartContent";
+import { CartContext } from "../../../../App";
 
 const StyledPCC = styled.div`
   display: flex;
@@ -26,12 +27,15 @@ const StyledP = styled.p`
   font-weight: bold;
 `;
 
-const ProductCardCheckout = ({ card }) => {
+const ProductCardCheckout = ({ card, totalPrice }) => {
+  
   const imgLink = `${import.meta.env.VITE_STRAPI_URL}${card.image}`;
   const img = imgLink.replace(
     "http://localhost:1337/api//",
     "http://localhost:1337/"
   );
+  
+
   return (
     <StyledPCC>
       <StyledImg src={img} alt="produktbild" className="test" />
@@ -39,7 +43,9 @@ const ProductCardCheckout = ({ card }) => {
         <StyledP>{card.productName}</StyledP>
         <StyledP>Pris: {card.price}</StyledP>
         <StyledP>Antal: {card.amountOfProducts}</StyledP>
-      </ProdInfo>      
+        <StyledP>Totalpris på order: {totalPrice}</StyledP>
+        
+      </ProdInfo>
     </StyledPCC>
   );
 };

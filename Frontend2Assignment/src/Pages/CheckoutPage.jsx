@@ -43,19 +43,33 @@ const SectionContainerText = styled.div`
 const StyledMapping = styled.div`
   border: 1px solid #2b3136;
   border-radius: 9px;
-`
+  margin: 1rem;
+`;
+
+const StyledPayment = styled.div`
+  border: 1px solid #2b3136;
+  border-radius: 9px;
+  margin: 1rem;
+`;
 
 const CheckOutPage = () => {
-   const Name = useContext(CartContext);
-  const NameList = Name.itemsInCart; 
+  const Name = useContext(CartContext);
+  const NameList = Name.itemsInCart;
+  
+  const {totalPrice} = useContext(CartContext); 
 
-     const Mapping = () => {
-      return NameList.map((namn) => (
-        <div key={namn.id}>
-          <ProductCardCheckout card={namn} />
-        </div> 
-   )); 
-      };
+
+
+
+  const Mapping = () => {
+    return NameList.map((namn) => (
+      <div key={namn.id}>
+        <ProductCardCheckout card={namn} totalPrice={totalPrice} />
+        
+      </div>
+    ));
+  
+  };
 
   return (
     <>
@@ -73,10 +87,11 @@ const CheckOutPage = () => {
         <StyledMapping>
           <Mapping />
           <PurchaseButton />
-         </StyledMapping>
-        
-               
-        <PaymentMethod />
+        </StyledMapping>
+
+        <StyledPayment>
+          <PaymentMethod />
+        </StyledPayment>
       </StyledCheckout>
 
       <Footer />

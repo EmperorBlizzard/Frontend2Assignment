@@ -7,6 +7,7 @@ const PurchaseContainer = styled.div `
 	align-items: flex-start;
 	gap: 24px;
 	align-self: stretch;
+	margin: 15px;
 `
 
 const Button = styled.button`

@@ -10,7 +10,8 @@ const StyledForm = styled.form`
     display: flex;
     align-items: flex-start;
     margin-top: 5rem;
-    flex-direction: column;  
+    flex-direction: column; 
+    
 
     
   `;
