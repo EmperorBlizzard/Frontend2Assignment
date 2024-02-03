@@ -19,33 +19,76 @@ export const CartContext = createContext();
 function App() {
 	const [itemsInCart, setItemsInCart] = useState([]);
 	const [addCart, setAddCart] = useState([]);
+	const [totalPrice, setTotalPrice] = useState(0);
 
-	useEffect(() => {}, [itemsInCart]);
-	if (addCart != "") {
-		const itemIndex = itemsInCart.findIndex((item) => item.id === addCart.id);
-		if (itemIndex !== -1) {
-			const upDatedList = [...itemsInCart];
-			upDatedList[itemIndex].amountOfProducts += 1;
-			setItemsInCart(upDatedList);
-			setAddCart("");
-		} else {
-			const item = {
-				id: addCart.id,
-				productName: addCart.attributes.productName,
-				price: addCart.attributes.price,
-				amountOfProducts: 1,
-				image: addCart.attributes.image.data.attributes.url,
-			};
-			const upDatedList = [...itemsInCart, item];
-			setItemsInCart(upDatedList);
+	useEffect(() => {
+		if (Object.keys(addCart).length !== 0) {
+			const itemIndex = itemsInCart.findIndex((item) => item.id === addCart.id);
+			if (itemIndex !== -1) {
+				const upDatedList = [...itemsInCart];
+				upDatedList[itemIndex].amountOfProducts += 1;
+				setItemsInCart(upDatedList);
+			} else {
+				const item = {
+					id: addCart.id,
+					productName: addCart.attributes.productName,
+					price: addCart.attributes.price,
+					amountOfProducts: 1,
+					image: addCart.attributes.image.data.attributes.url,
+				};
+				const upDatedList = [...itemsInCart, item];
+				setItemsInCart(upDatedList);
+			}
 			setAddCart("");
 		}
-	}
+	}, [addCart, itemsInCart]);
+
+	useEffect(() => {
+		const calculateTotalPrice = () => {
+			let total = 0;
+			itemsInCart.forEach((item) => {
+				total += item.price * item.amountOfProducts;
+			});
+			setTotalPrice(total)
+		}
+		calculateTotalPrice();
+	}), [itemsInCart]
+
+	// Funktion för att öka antalet produkter i varukorgen
+	const increaseQuantity = (productId) => {
+		const updatedList = [...itemsInCart];
+		const itemIndex = updatedList.findIndex((item) => item.id === productId);
+		if (itemIndex !== -1) {
+			updatedList[itemIndex].amountOfProducts += 1;
+			setItemsInCart(updatedList);
+		} else {
+			alert(
+				"Det finns ingen produkt i varukorg, vänligen lägg till i varukorgen först"
+			);
+		}
+	};
+
+	// Funktion för att minska antalet produkter i varukorgen
+	const decreaseQuantity = (productId) => {
+		const updatedList = [...itemsInCart];
+		const itemIndex = updatedList.findIndex((item) => item.id === productId);
+		if (itemIndex !== -1 && updatedList[itemIndex].amountOfProducts > 1) {
+			updatedList[itemIndex].amountOfProducts -= 1;
+			setItemsInCart(updatedList);
+		}
+	};
 
 	return (
 		<CartContext.Provider
 			key={itemsInCart}
-			value={{ itemsInCart, setItemsInCart, setAddCart }}
+			value={{
+				itemsInCart,
+				setItemsInCart,
+				setAddCart,
+				increaseQuantity,
+				decreaseQuantity,
+				totalPrice,
+			}}
 		>
 			<BrowserRouter>
 				<Routes>
