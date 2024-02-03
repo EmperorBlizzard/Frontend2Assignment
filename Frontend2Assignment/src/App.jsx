@@ -23,6 +23,7 @@ function App() {
 
 	useEffect(() => {
 		if (Object.keys(addCart).length !== 0) {
+			console.log(addCart)
 			const itemIndex = itemsInCart.findIndex((item) => item.id === addCart.id);
 			if (itemIndex !== -1) {
 				const upDatedList = [...itemsInCart];
@@ -34,6 +35,7 @@ function App() {
 					productName: addCart.attributes.productName,
 					price: addCart.attributes.price,
 					amountOfProducts: 1,
+					stock: addCart.attributes.stock,
 					image: addCart.attributes.image.data.attributes.url,
 				};
 				const upDatedList = [...itemsInCart, item];
@@ -60,7 +62,11 @@ function App() {
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
 		if (itemIndex !== -1) {
 			updatedList[itemIndex].amountOfProducts += 1;
-			setItemsInCart(updatedList);
+			if (updatedList[itemIndex].amountOfProducts > updatedList[itemIndex].stock ) {
+				alert("för många mot lager")
+			} else {
+				setItemsInCart(updatedList);
+			}
 		} else {
 			alert(
 				"Det finns ingen produkt i varukorg, vänligen lägg till i varukorgen först"
@@ -71,6 +77,7 @@ function App() {
 	// Funktion för att minska antalet produkter i varukorgen
 	const decreaseQuantity = (productId) => {
 		const updatedList = [...itemsInCart];
+		console.log(updatedList)
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
 		if (itemIndex !== -1 && updatedList[itemIndex].amountOfProducts > 1) {
 			updatedList[itemIndex].amountOfProducts -= 1;

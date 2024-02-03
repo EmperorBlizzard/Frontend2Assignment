@@ -58,7 +58,7 @@ const FilterPanel = ({ setFilter }) => {
 			case "Male":
 				return "filters[gender][title][$eqi]=Male&";
 			case "Test":
-				return "filters[isNew][$eq]=true&";
+				return "sort[0]=stock:desc&";
 			default:
 				return "";
 		}

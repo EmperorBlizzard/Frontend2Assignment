@@ -4,7 +4,6 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { CartContext } from "../../../../App";
 
-
 const Button = styled.button`
 	display: flex;
 	height: 44px;
@@ -24,49 +23,40 @@ const Button = styled.button`
 
 const PriceArea = () => {
 	const prod = useContext(DetailContext);
-	const {setAddCart, increaseQuantity, decreaseQuantity, getTotalPrice} = useContext(CartContext)
+	const {
+		itemsInCart,
+		setAddCart,
+		increaseQuantity,
+		decreaseQuantity,
+	} = useContext(CartContext);
 	function handleClick() {
-		setAddCart(prod)
+		setAddCart(prod);
 	}
 	const increase = () => {
-		increaseQuantity(prod.id)
-		console.log(getTotalPrice())
-	}
+		increaseQuantity(prod.id);
+	};
 	const decrease = () => {
-		decreaseQuantity(prod.id)
-		console.log(getTotalPrice())
+		console.log("test")
+		decreaseQuantity(prod.id);
+
+	};
+	
+	const itemIndex = itemsInCart.findIndex((item) => item.id === prod.id);
+	if (itemIndex !== -1) {
+		// console.log(itemIndex)
+		// console.log(itemsInCart[itemIndex].amountOfProducts)
 	}
-	return (
-		<div>
-			<h1>Price {prod.attributes.price}</h1>
-			<h3>Antal i lager: {prod.attributes.stock}</h3>
-			{/* <QuantitySelector/> */}
-			<button onClick={increase}>Öka</button>
-			<button onClick={decrease}>minska</button>
-			<Button onClick={handleClick}>Köp för fan</Button>
-		</div>
-	);
+		return (
+			<div>
+				<h1>Price {prod.attributes.price}</h1>
+				<h3>Antal i lager: {prod.attributes.stock}</h3>
+				{
+					itemIndex !== -1 ? <h3>Antal i varukorg: {itemsInCart[itemIndex].amountOfProducts}</h3> : ""
+				}
+				<button onClick={increase}>Öka</button>
+				<button onClick={decrease}>minska</button>
+				<Button onClick={handleClick}>Köp för fan</Button>
+			</div>
+		);
 };
-
 export default PriceArea;
-
-// const PriceBuyButton = () => {
-// 	const prod = useContext(ProductContext);
-// 	const { setAddCart } = useContext(CartContext);
-// 	function handleClick() {
-// 		setAddCart(prod);
-// 	}
-// 	return (
-// 		<>
-// 			<h3>Pris: {prod.attributes.price}</h3>
-// 			<PriceBuyButtonContainer>
-// 				<>
-// 					<Button onClick={handleClick}>Add to shopping cart</Button>
-// 					<Link to={`/ProductDetailPage/${prod.id}`}>
-// 						<Button>Info</Button>
-// 					</Link>
-// 				</>
-// 			</PriceBuyButtonContainer>
-// 		</>
-// 	);
-// };
