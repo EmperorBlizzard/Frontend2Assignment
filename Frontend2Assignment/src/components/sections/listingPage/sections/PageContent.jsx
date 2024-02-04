@@ -17,9 +17,9 @@ const PageContent = () => {
 	return (
 		<PageContentStyle>
 			<FilterPanel filter={filter} setFilter={setFilter}/>
-			<TopPagination />
+			{/* <TopPagination /> */}
 			<ProductCardContainer filter={filter} />
-			<Pagination />
+			{/* <Pagination /> */}
 		</PageContentStyle>
 	);
 }

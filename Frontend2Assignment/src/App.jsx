@@ -78,7 +78,7 @@ function App() {
 	const decreaseQuantity = (productId) => {
 		const updatedList = [...itemsInCart];
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
-		if (itemIndex !== -1 && updatedList[itemIndex].amountOfProducts > 1) {
+		if (itemIndex !== -1 && updatedList[itemIndex].amountOfProducts >= 1) {
 			updatedList[itemIndex].amountOfProducts -= 1;
 			setItemsInCart(updatedList);
 		}

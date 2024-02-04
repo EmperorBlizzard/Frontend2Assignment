@@ -48,7 +48,7 @@ const ProductDetailContent = () => {
 	}
 
 	return (
-		<DetailContext.Provider value={prod}>
+		<DetailContext.Provider key={prod.id} value={prod}>
 			<StyledProduductDetailContent>
 				<StyledProductName>{prod.attributes.productName}</StyledProductName>
 				<ProductSectionPDS />
