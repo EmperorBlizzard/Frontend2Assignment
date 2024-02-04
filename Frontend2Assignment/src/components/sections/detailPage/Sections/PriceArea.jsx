@@ -65,14 +65,14 @@ const PriceArea = () => {
 
 	return (
 		<div>
-			<h1>Price {prod.attributes.price}</h1>
+			<h1>Pris: {prod.attributes.price} :-</h1>
 			<h3>Antal i lager: {prod.attributes.stock}</h3>
 			{itemIndex !== -1 && itemsInCart[itemIndex].amountOfProducts >= 1 ? (
 				<IfInCart />
 			) : (
 				""
 			)}
-			<Button onClick={handleClick}>Köp för fan</Button>
+			<Button onClick={handleClick}>Lägg i kundkorg</Button>
 		</div>
 	);
 };

@@ -95,22 +95,21 @@ const FilterPanel = ({ setFilter }) => {
 			<Filter onChange={handleSortChangeGender}>
 				<option value="Gender">Gender</option>
 				<option value="Unisex">Unisex</option>
-				<option value="Female">Female</option>
-				<option value="Male">Male</option>
-				<option value="Test">Test</option>
+				<option value="Female">Dam</option>
+				<option value="Male">Herr</option>
 			</Filter>
 			<Filter onChange={handleSortChangeBike}>
-				<option value="">Bike</option>
-				<option value="Roadbike">Roadbike</option>
+				<option value="">Cykel typ</option>
+				<option value="Roadbike">Landsväg</option>
 				<option value="MTB">MTB</option>
-				<option value="Elbike">Elbike</option>
+				<option value="Elbike">El-cykel</option>
 			</Filter>
 			<Filter onChange={handleSortChangePopular}>
-				<option value="">Sort</option>
-				<option value="A-Z">Sort A-Z</option>
-				<option value="Z-A">Sort Z-A</option>
-				<option value="PriceLowHigh">Price Low-High</option>
-				<option value="PriceHighLow">Price High-Low</option>
+				<option value="">Sortering</option>
+				<option value="A-Z">Sortera A-Z</option>
+				<option value="Z-A">Sortera Z-A</option>
+				<option value="PriceLowHigh">Pris Lågt-Högt</option>
+				<option value="PriceHighLow">Pris Högt-Lågt</option>
 			</Filter>
 		</Panel>
 	);

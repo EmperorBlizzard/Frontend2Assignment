@@ -41,9 +41,9 @@ const PriceBuyButton = () => {
 			<h3>Pris: {prod.attributes.price}</h3>
 			<PriceBuyButtonContainer>
 				<>
-					<Button onClick={handleClick}>Add to shopping cart</Button>
+					<Button onClick={handleClick}>Lägg i varukorgen</Button>
 					<Link to={`/ProductDetailPage/${prod.id}`}>
-						<Button>Info</Button>
+						<Button>Information</Button>
 					</Link>
 				</>
 			</PriceBuyButtonContainer>
