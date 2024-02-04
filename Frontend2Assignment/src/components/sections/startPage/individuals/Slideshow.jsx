@@ -69,7 +69,7 @@ function Slideshow() {
       </div>
       <div className='sideText'>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur corporis voluptas voluptatibus nemo voluptatem alias adipisci, voluptate qui possimus, similique commodi enim ea temporibus aliquid delectus eligendi blanditiis harum aspernatur.</p>
-        <MenuLinks name="See all products" link="/listingpage" />
+        <MenuLinks name="Se alla produkter" link="/listingpage" />
       </div>
     </div>
   )
