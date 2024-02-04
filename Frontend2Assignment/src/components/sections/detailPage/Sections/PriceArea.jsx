@@ -21,14 +21,17 @@ const Button = styled.button`
 	cursor: pointer;
 `;
 
+const StyledIncDec = styled.div`
+	display: flex;
+	justify-content: start;
+	margin: 1rem 0rem;
+	gap: 1rem
+`;
+
 const PriceArea = () => {
 	const prod = useContext(DetailContext);
-	const {
-		itemsInCart,
-		setAddCart,
-		increaseQuantity,
-		decreaseQuantity,
-	} = useContext(CartContext);
+	const { itemsInCart, setAddCart, increaseQuantity, decreaseQuantity } =
+		useContext(CartContext);
 	function handleClick() {
 		setAddCart(prod);
 	}
@@ -36,27 +39,41 @@ const PriceArea = () => {
 		increaseQuantity(prod.id);
 	};
 	const decrease = () => {
-		console.log("test")
 		decreaseQuantity(prod.id);
-
 	};
-	
-	const itemIndex = itemsInCart.findIndex((item) => item.id === prod.id);
-	if (itemIndex !== -1) {
-		// console.log(itemIndex)
-		// console.log(itemsInCart[itemIndex].amountOfProducts)
-	}
+	const IfInCart = () => {
 		return (
 			<div>
-				<h1>Price {prod.attributes.price}</h1>
-				<h3>Antal i lager: {prod.attributes.stock}</h3>
-				{
-					itemIndex !== -1 ? <h3>Antal i varukorg: {itemsInCart[itemIndex].amountOfProducts}</h3> : ""
-				}
-				<button onClick={increase}>Öka</button>
-				<button onClick={decrease}>minska</button>
-				<Button onClick={handleClick}>Köp för fan</Button>
+				<h3>Antal i varukorg: {itemsInCart[itemIndex].amountOfProducts}</h3>
+				<StyledIncDec>
+					{itemsInCart[itemIndex].amountOfProducts == prod.attributes.stock ? (
+						""
+					) : (
+						<button onClick={increase}>Öka</button>
+					)}
+					{itemsInCart[itemIndex].amountOfProducts == 0 ? (
+						""
+					) : (
+						<button onClick={decrease}>minska</button>
+					)}
+				</StyledIncDec>
 			</div>
 		);
+	};
+
+	const itemIndex = itemsInCart.findIndex((item) => item.id === prod.id);
+
+	return (
+		<div>
+			<h1>Price {prod.attributes.price}</h1>
+			<h3>Antal i lager: {prod.attributes.stock}</h3>
+			{itemIndex !== -1 && itemsInCart[itemIndex].amountOfProducts >= 1 ? (
+				<IfInCart />
+			) : (
+				""
+			)}
+			<Button onClick={handleClick}>Köp för fan</Button>
+		</div>
+	);
 };
 export default PriceArea;
