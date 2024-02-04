@@ -18,9 +18,9 @@ const DescriptionCon = styled.div`
 	align-self: stretch;
 `;
 const StyledP = styled.p`
-	fontsize: 14px;
-	fontweight: 400;
-	lineheight: 21px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
 	margin: 0;
 `;
 
