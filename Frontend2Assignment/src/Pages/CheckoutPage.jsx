@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { CartContext } from "../App.jsx";
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx";
@@ -5,9 +7,8 @@ import ShippingAddress from "../components/sections/checkoutPage/sections/Shippi
 import PaymentMethod from "../components/sections/checkoutPage/sections/PaymentMethod.jsx";
 import PurchaseButton from "../components/sections/checkoutPage/individual/PurchaseButton.jsx";
 import styled from "styled-components";
-import { useContext } from "react";
-import { CartContext } from "../App.jsx";
 import ProductCardCheckout from "../components/sections/checkoutPage/sections/ProductCardCheckout.jsx";
+import QuantityButton from "../components/sections/checkoutPage/individual/QuantityButton.jsx";
 
 const StyledCheckout = styled.div`
   max-width: 55.9375rem;
@@ -65,12 +66,11 @@ const CheckOutPage = () => {
   const {totalPrice} = useContext(CartContext); 
 
 
-
-
   const Mapping = () => {
     return NameList.map((namn) => (
       <div key={namn.id}>
         <ProductCardCheckout card={namn} totalPrice={totalPrice} />
+        <QuantityButton productId={namn.id} />
         
       </div>
     ));
@@ -94,6 +94,7 @@ const CheckOutPage = () => {
           <Mapping />
           <p>Totalpris på order: {totalPrice}</p>
           <PurchaseButton />
+          <QuantityButton />
         </StyledMapping>
         
         <StyledPayment>

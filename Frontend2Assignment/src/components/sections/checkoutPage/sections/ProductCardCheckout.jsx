@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import styled from "styled-components";
-import CartContent from "../../cartPage/sections/CartContent";
-import { CartContext } from "../../../../App";
+
+
 
 const StyledPCC = styled.div`
   display: flex;
