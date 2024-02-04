@@ -5,7 +5,7 @@ import NewProducts from '../individuals/NewProducts'
 
 function StartPageContainer() {
   return (
-    <div>
+    <div className='startpageContainer'>
       <Slideshow />
       <NewProducts />
     </div>

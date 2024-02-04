@@ -1,9 +1,16 @@
+.slideshowContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+
 /* Slideshow */
 
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 500px;
+  max-width: 33.75rem;
 }
 
 
@@ -14,11 +21,37 @@
 
 .slide {
   display: inline-block;
-
-
-  height: 400px;
-  width: 100%;
+  background-size: 100%;
+  height: 360px;
+  width: 33.75rem;
   border-radius: 40px;
+}
+
+@media screen and (min-width: 1000px) {
+  .slideshowContainer{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 33.75rem;
+  }
+  
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    display: inline-block;
+  
+    height: 360px;
+    width: 33.75rem;
+    border-radius: 40px;
+  }
 }
 
 /* Buttons */
@@ -41,4 +74,28 @@
 
 .slideshowDot.active {
   background-color: #6a0dad;
+}
+
+/*Side Text*/
+
+.sideText {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 12em;
+}
+
+.sideText a{
+  position: absolute;
+  bottom: 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0b539b;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1em;
+  border: solid 1px;
+  border-radius: 0.7rem;
+  margin-bottom: 1em;
 }

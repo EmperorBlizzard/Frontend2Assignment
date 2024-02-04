@@ -155,7 +155,7 @@
   color: red !important;
 }
 
-@media screen and (min-width: 800px ) {
+@media screen and (min-width: 1000px ) {
   .header{
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;

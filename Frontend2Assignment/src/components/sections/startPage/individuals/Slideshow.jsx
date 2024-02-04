@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../../../../styling/StartPageStyle.module.css"
 import { useState, useEffect, useRef } from 'react'
+import MenuLinks from "../../../individuals/MenuLinks"
 
 import "../../../../styling/Slideshow.css"
 import img1 from "../../../../images/StartPageSlideshow/bikeRide1.jpg"
@@ -27,7 +28,7 @@ function Slideshow() {
     timeoutRef.current = setTimeout(
       () => 
         setIndex((prevIndex) => 
-          prevIndex === colors.length -1 ? 0 : prevIndex +1
+          prevIndex === images.length -1 ? 0 : prevIndex +1
         ),
       delay
     );
@@ -38,30 +39,37 @@ function Slideshow() {
   }, [index]);
 
   return (
-    <div className='slideshow'>
-      <div 
-        className='slideshowSlider'
-        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
-      >
-        {colors.map((backgroundColor, index) =>(
-          <div 
-            className='slide' 
-            key={index} 
-            style={{backgroundColor}}>
-          </div>
-        ))}
-      </div>
+    <div className='slideshowContainer'>
+      <div className='slideshow'>
+        <div 
+          className='slideshowSlider'
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+        >
+          {images.map((backgroundImage, index) =>(
+            <div 
+              className='slide' 
+              key={index} 
+              style={{"backgroundImage": `url(${backgroundImage})`}}>
+            </div>
+          ))}
+        </div>
+        
 
-      <div className='slideshowDots'>
-        {colors.map((_, idx) => (
-          <div 
-            key={idx} 
-            className={`slideshowDot${index === idx ? " active" : ""}`}
-            onClick={() => {
-              setIndex(idx)
-            }}>     
-          </div>
-        ))}
+        <div className='slideshowDots'>
+          {images.map((_, idx) => (
+            <div 
+              key={idx} 
+              className={`slideshowDot${index === idx ? " active" : ""}`}
+              onClick={() => {
+                setIndex(idx)
+              }}>     
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className='sideText'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur corporis voluptas voluptatibus nemo voluptatem alias adipisci, voluptate qui possimus, similique commodi enim ea temporibus aliquid delectus eligendi blanditiis harum aspernatur.</p>
+        <MenuLinks name="See all products" link="/listingpage" />
       </div>
     </div>
   )
