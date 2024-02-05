@@ -26,7 +26,13 @@ const Button = styled.button`
 	border-radius: 0.7rem;
 	cursor: pointer;
     
+	&:hover {
+    background-color: #2b3136;
+  }
+
 `;
+
+
 
 
 const handleClick = () => {
