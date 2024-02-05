@@ -1,7 +1,6 @@
 import ProductCardContainer from "./ProductCardContainer";
 import FilterPanel from "../individuals/FilterPanel";
 import styled from "styled-components";
-import { EmailService } from "../individuals/EmailService";
 import { useState } from "react";
 
 const PageContentStyle = styled.div`
@@ -16,9 +15,7 @@ const PageContent = () => {
 	return (
 		<PageContentStyle>
 			<FilterPanel filter={filter} setFilter={setFilter}/>
-			{/* <TopPagination /> */}
 			<ProductCardContainer filter={filter} />
-			<EmailService />
 		</PageContentStyle>
 	);
 }

@@ -30,6 +30,13 @@ const Button = styled.button`
 	cursor: pointer;
 `;
 
+const CustomerInfo = styled.div`
+	display: flex;
+	align-items: flex-start;
+	align-self: stretch;
+	justify-content: space-between;
+`
+
 const PriceBuyButton = () => {
 	const prod = useContext(ProductContext);
 	const { setAddCart } = useContext(CartContext);
@@ -38,7 +45,12 @@ const PriceBuyButton = () => {
 	}
 	return (
 		<>
+			<CustomerInfo>
+				<>
 			<h3>Pris: {prod.attributes.price}</h3>
+			<h3>Lagersaldo: {prod.attributes.stock}</h3>
+				</>
+			</CustomerInfo>
 			<PriceBuyButtonContainer>
 				<>
 					<Button onClick={handleClick}>Lägg i varukorgen</Button>

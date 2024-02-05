@@ -1,7 +1,8 @@
-import React from 'react'
 import styled from 'styled-components';
 import Header from '../components/sections/Header'
 import Footer from "../components/sections/Footer"
+import { EmailService } from '../MailService/EmailService';
+
 
 const ContactContainer = styled.div `
   display: flex;
@@ -35,14 +36,11 @@ function Contact() {
         <Header />
         <ContactContainer>
         <h3>Kontaktinformation</h3>
-        <ContactInfo>Email: info@example.com</ContactInfo>
+        <EmailService/>
         <ContactInfo>Telefon: 123-456-7890</ContactInfo>
         </ContactContainer>
-              
 		<Footer />
       </div>
-
-      
     );
   }
   
