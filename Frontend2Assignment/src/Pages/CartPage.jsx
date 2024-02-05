@@ -7,7 +7,7 @@ import ContentContainer from "../components/sections/cartPage/sections/ContentCo
 import ShoppingCartContainer from "../components/sections/cartPage/individuals/Shoppingcartcontainer";
 import Cartheadrow from "../components/sections/cartPage/individuals/CartHeadRow";
 import CartItemImageRow1 from "../components/sections/cartPage/individuals/CartItemImageRow1";
-import CartProductDescription from "../components/sections/cartPage/individuals/CartProductDescription";
+
 import QuantitySelector from "../components/sections/cartPage/individuals/QuantitySelector";
 import CartSubtotal from "../components/sections/cartPage/individuals/CartSubtotal";
 import InputPlusLink from "../components/sections/cartPage/individuals/Inputpluslink";
@@ -29,7 +29,7 @@ function Cartpage() {
         <Styledcartpage>
             <Header />
             <h1> cart</h1>
-            <ContentContainer />
+            {/* <ContentContainer /> */}
             <Footer />
         </Styledcartpage>
     );

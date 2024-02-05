@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CartContext } from "../App";
-import CartProductDescription from "../individuals/CartProductDescription";
+// import { CartContext } from "../App";
+// import CartProductDescription from "../individuals/CartProductDescription";
 import QuantitySelector from "../individuals/QuantitySelector";
 import styled from "styled-components";
 

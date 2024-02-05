@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import {CartContext} from "../App.jsx";
+// import {CartContext} from "../App.jsx";
 import Cartheadrow from "../individuals/CartHeadRow";
 import CartProductCardContainer from "./CartProductCardContainer";
 import InputPlusLink from "../individuals/Inputpluslink";
@@ -14,9 +14,9 @@ function CartContent() {
 
     return (
         <>
-            <Cartheadrow />
-            <CartProductCardContainer />
-            <InputPlusLink />
+            {/* <Cartheadrow /> */}
+            {/* <CartProductCardContainer /> */}
+            {/* <InputPlusLink /> */}
             
         </>
     )
