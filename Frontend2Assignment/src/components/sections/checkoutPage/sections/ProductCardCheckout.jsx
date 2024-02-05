@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
-
-
 const StyledPCC = styled.div`
   display: flex;
   flex-direction: row;
-  /* border: 1px solid black;
-  border-radius: 8px; */
   margin: 1rem;
 `;
 const ProdInfo = styled.div`
@@ -29,15 +25,12 @@ const StyledP = styled.p`
 const ProductCardCheckout = ({ card, totalPrice }) => {
   
   const imgLink = `${import.meta.env.VITE_STRAPI_URL}${card.image}`;
-  const img = imgLink.replace(
-    "http://localhost:1337/api//",
-    "http://localhost:1337/"
-  );
+  const img = imgLink.replace("/api/", "")
   
 
   return (
     <StyledPCC>
-      <StyledImg src={img} alt="produktbild" className="test" />
+      <StyledImg src={img} alt="produktbild"/>
       <ProdInfo>
         <StyledP>{card.productName}</StyledP>
         <StyledP>Pris: {card.price}</StyledP>
