@@ -83,7 +83,7 @@ const CheckOutPage = () => {
 
       <StyledCheckout>
         <SectionContainerText>
-          <p>Complete order</p>
+          <p>Kassa</p>
         </SectionContainerText>
 
         <BillingAddress />
@@ -92,9 +92,8 @@ const CheckOutPage = () => {
 
         <StyledMapping>
           <Mapping />
-          <p>Totalpris på order: {totalPrice}</p>
+          <p>Summa: {totalPrice}</p>
           <PurchaseButton />
-          <QuantityButton />
         </StyledMapping>
         
         <StyledPayment>

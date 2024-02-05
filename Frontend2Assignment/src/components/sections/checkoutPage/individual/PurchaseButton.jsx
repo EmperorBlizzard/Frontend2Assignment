@@ -42,7 +42,7 @@ const handleClick = () => {
 const PurchaseButton = () =>{
   return(
 		<PurchaseContainer>
-        <Button onClick={handleClick}>Complete purchase</Button>
+        <Button onClick={handleClick}>Genomför köp</Button>
 		</PurchaseContainer>
   );
 
