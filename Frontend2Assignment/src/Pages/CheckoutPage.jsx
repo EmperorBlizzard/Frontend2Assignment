@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../App.jsx";
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
@@ -13,7 +13,6 @@ import QuantityButton from "../components/sections/checkoutPage/individual/Quant
 const StyledCheckout = styled.div`
   max-width: 55.9375rem;
   margin: 5rem;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -26,14 +25,12 @@ const SectionContainerText = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
-
   margin-bottom: 2rem;
   font-weight: 600;
   line-height: 1.75rem;
   letter-spacing: -0.03rem;
-
   color: #2b3136;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   box-sizing: border-box;
   width: 64rem;
@@ -41,13 +38,18 @@ const SectionContainerText = styled.div`
   margin: 1rem;
 `;
 
+const StyledFormWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+`;
+
 const StyledMapping = styled.div`
   border: 1px solid #2b3136;
   border-radius: 9px;
   margin: 1rem;
-
-  p{
-    font-family: "Inter", sans-serif;
+  p {
+    font-family: 'Inter', sans-serif;
     font-weight: 800;
     margin: 1.5rem;
   }
@@ -60,47 +62,51 @@ const StyledPayment = styled.div`
 `;
 
 const CheckOutPage = () => {
+  
   const Name = useContext(CartContext);
   const NameList = Name.itemsInCart;
+  const { totalPrice } = useContext(CartContext);
+
   
-  const {totalPrice} = useContext(CartContext); 
-
-
   const Mapping = () => {
     return NameList.map((namn) => (
       <div key={namn.id}>
         <ProductCardCheckout card={namn} totalPrice={totalPrice} />
         <QuantityButton productId={namn.id} />
-        
       </div>
     ));
-  
   };
 
   return (
     <>
+      
       <Header />
 
+    
       <StyledCheckout>
+      
         <SectionContainerText>
           <p>Kassa</p>
         </SectionContainerText>
 
-        <BillingAddress />
-
-        <ShippingAddress />
-
+        <StyledFormWrapper>
+          <BillingAddress />
+          <ShippingAddress />  
+          </StyledFormWrapper>   
+         
         <StyledMapping>
           <Mapping />
           <p>Summa: {totalPrice}</p>
           <PurchaseButton />
         </StyledMapping>
+
         
         <StyledPayment>
           <PaymentMethod />
         </StyledPayment>
       </StyledCheckout>
 
+     
       <Footer />
     </>
   );

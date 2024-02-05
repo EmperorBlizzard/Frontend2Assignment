@@ -1,27 +1,45 @@
 
 import React, { useState } from 'react';
-import StyledAddressButton from '../individual/AddressButton';
+import AddressButton from '../individual/AddressButton';
 import styled from 'styled-components'
 
+const AddressButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 7rem;
+  margin: 1rem; 
+`;
+
 const StyledForm = styled.form`
-    padding: 1rem;
-    gap: 1rem;  
-    display: flex;
-    align-items: flex-start;
-    margin-top: 5rem;
-    flex-direction: column; 
-  `;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin: 1.5rem;
+  }
+
+  @media (max-width: 37.5rem) {
+    flex-direction: column;
+  }
+`;
 
 const StyledLabel = styled.label`
-    display: block;
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
 `;
 
-const StyledInput = styled.input `
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
+const StyledInput = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 `;
+
 
 
 const ShippingAddressForm = () => {
@@ -63,7 +81,9 @@ const ShippingAddressForm = () => {
         Stad: 
         <StyledInput type="text" name="city" value={formData.city} onChange={handleChange} />
         </StyledLabel>
-      <StyledAddressButton type="submit">Skicka</StyledAddressButton>
+        <AddressButtonWrapper>
+      <AddressButton type="submit">Skicka</AddressButton>
+      </AddressButtonWrapper>
       </StyledForm>
   );
 };
