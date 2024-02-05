@@ -8,7 +8,7 @@ const StyledDescription = styled.div`
 `
 
 const ProductDesc = () => {
-	const prod = useContext(DetailContext)
+	const {prod} = useContext(DetailContext)
 	return (
 		<StyledDescription>
 			<h1>Produkt info</h1>

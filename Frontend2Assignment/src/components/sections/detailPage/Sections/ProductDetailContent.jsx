@@ -27,8 +27,8 @@ export const DetailContext = createContext();
 const ProductDetailContent = () => {
 	const { id } = useParams();
 	const [prod, setProd] = useState(null);
-	const [dispImage, setDispImage] = useState("http://localhost:1337/"+prod)
-	
+	const [dispImage, setDispImage] = useState();
+
 	useEffect(() => {
 		const fetshData = async () => {
 			try {
@@ -43,20 +43,28 @@ const ProductDetailContent = () => {
 		fetshData();
 	}, [id]);
 
+	useEffect(() => {
+		if (prod != null || prod != undefined) {
+			const tempFilePath =
+				import.meta.env.VITE_STRAPI_URL +
+				prod.attributes.image.data.attributes.url;
+			const filePath = tempFilePath.replace("/api/", "");
+			setDispImage(filePath);
+		}
+	}, [prod]);
 	if (!prod) {
 		return <p>Loading...</p>;
 	}
-
 	return (
-		<DetailContext.Provider key={prod.id} value={prod}>
+		<DetailContext.Provider key={id} value={{prod, setDispImage, dispImage}}>
 			<StyledProduductDetailContent>
 				<StyledProductName>{prod.attributes.productName}</StyledProductName>
 				<ProductSectionPDS />
-				{ !prod.attributes.Slider.data ? "" : <Thumbnails/>}
-				<ProductDesc/>
+				{!prod.attributes.Slider.data ? "" : <Thumbnails />}
+				<ProductDesc />
 			</StyledProduductDetailContent>
 		</DetailContext.Provider>
 	);
-}
+};
 
 export default ProductDetailContent;

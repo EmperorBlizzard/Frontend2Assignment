@@ -29,7 +29,7 @@ const StyledIncDec = styled.div`
 `;
 
 const PriceArea = () => {
-	const prod = useContext(DetailContext);
+	const {prod} = useContext(DetailContext);
 	const { itemsInCart, setAddCart, increaseQuantity, decreaseQuantity } =
 		useContext(CartContext);
 	function handleClick() {

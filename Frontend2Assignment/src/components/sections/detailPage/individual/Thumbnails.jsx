@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Thumbnail from "./Thumbnail";
 import { useContext } from "react";
-import  {DetailContext} from "../Sections/ProductDetailContent";
+import { DetailContext } from "../Sections/ProductDetailContent";
 
 const StyleThumbnails = styled.div`
 	display: flex;
@@ -15,16 +15,16 @@ const StyledSlider = styled.div`
 `;
 
 const Thumbnails = () => {
-	const tumbNail  = useContext(DetailContext);
-	const Test = () => {
-		const dataSlider = tumbNail.attributes.Slider.data;
-		const adress = "http://localhost:1337";
+	const { prod } = useContext(DetailContext);
 
+	const Slider = () => {
+		const dataSlider = prod.attributes.Slider.data;
+		const adress = "http://localhost:1337";
 		return (
 			<StyledSlider>
 				{dataSlider.map((img) => {
 					const prop = adress + img.attributes.url;
-					return <Thumbnail kolla={prop} key={img.id} />;
+					return <Thumbnail prop={prop} key={img.id} />;
 				})}
 			</StyledSlider>
 		);
@@ -46,7 +46,7 @@ const Thumbnails = () => {
 					fill="#BCC1C7"
 				/>
 			</svg>
-			<Test />
+			<Slider />
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="23"
@@ -63,6 +63,6 @@ const Thumbnails = () => {
 			</svg>
 		</StyleThumbnails>
 	);
-}
+};
 
 export default Thumbnails;

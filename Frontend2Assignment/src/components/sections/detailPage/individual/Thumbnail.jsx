@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
+import { useContext } from "react";
+import { DetailContext } from "../Sections/ProductDetailContent";
 
 const StyledThumbnail = styled.div`
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
 	padding: 1rem;
 	justify-content: center;
 	align-items: center;
@@ -14,24 +16,21 @@ const StyledImg = styled.img`
 	widht: 4rem;
 `;
 
-const test = () => {
-    console.log
-}
-
-const Thumbnail = ({ kolla }) => {
+const Thumbnail = ({prop}) => {
+	const { setDispImage } = useContext(DetailContext);
+	function handleClick() {
+		setDispImage(prop);
+	}
+	
 	return (
 		<StyledThumbnail>
-            <button onClick={() => {
-                test(kolla)
-            }}>
-			<StyledImg src={kolla} alt="Bild" />
-            </button>
+			<StyledImg src={prop} onClick={handleClick} alt="Bild" />
 		</StyledThumbnail>
 	);
-}
+};
 
 Thumbnail.propTypes = {
-    kolla: PropTypes.string
-}
+	prop: PropTypes.string,
+};
 
 export default Thumbnail;
