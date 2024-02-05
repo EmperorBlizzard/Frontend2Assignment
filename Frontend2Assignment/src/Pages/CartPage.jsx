@@ -26,12 +26,12 @@ gap: 0.625rem;
 
 function Cartpage() {
     return (
-        <>
+        <Styledcartpage>
             <Header />
             <h1> cart</h1>
             <ContentContainer />
             <Footer />
-        </>
+        </Styledcartpage>
     );
 }
 

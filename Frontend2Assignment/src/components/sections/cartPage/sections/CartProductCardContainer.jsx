@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { CartContext } from "../App";
 import CartProductDescription from "../individuals/CartProductDescription";
 import QuantitySelector from "../individuals/QuantitySelector";
 import styled from "styled-components";
@@ -11,7 +12,7 @@ const CartProductCardContainerDiv = styled.div`
 
 function CartProductCardContainer() {
 
-    const card = useContext(Cartcontext);
+    const card = useContext(CartContext);
     const NameList = card.itemsInCart;
 
     const Test = () => {
@@ -28,7 +29,7 @@ function CartProductCardContainer() {
         <CartProductCardContainerDiv>
          <Test/>
             
-            <QuantitySelector />
+            {/*<QuantitySelector />*/}
         </CartProductCardContainerDiv>
     )
 }
