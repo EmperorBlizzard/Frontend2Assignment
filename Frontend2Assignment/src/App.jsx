@@ -14,7 +14,7 @@ import AboutPage from "./Pages/AboutPage";
 import SearchPage from "./Pages/SearchPage";
 import { createContext, useEffect, useState } from "react";
 
-export const CartContext = createContext();
+export const CartContext = createContext(null);
 
 function App() {
 	const [itemsInCart, setItemsInCart] = useState([]);
@@ -62,7 +62,7 @@ function App() {
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
 		if (itemIndex !== -1) {
 			updatedList[itemIndex].amountOfProducts += 1;
-			if (updatedList[itemIndex].amountOfProducts > updatedList[itemIndex].stock ) {
+			if (updatedList[itemIndex].amountOfProducts > updatedList[itemIndex].stock) {
 				alert("för många mot lager")
 			} else {
 				setItemsInCart(updatedList);
@@ -84,6 +84,15 @@ function App() {
 		}
 	};
 
+	const deleteProductFromCart = (productId) => {
+		const upDatedList = [...itemsInCart];
+		const itemIndex = upDatedList.findIndex((item) => item.id === productId);
+		if (itemIndex !== -1) {
+			upDatedList.splice(itemIndex, 1);
+			setItemsInCart(upDatedList);
+		}
+	}
+
 	return (
 		<CartContext.Provider
 			key={itemsInCart}
@@ -94,6 +103,7 @@ function App() {
 				increaseQuantity,
 				decreaseQuantity,
 				totalPrice,
+				deleteProductFromCart,
 			}}
 		>
 			<BrowserRouter>

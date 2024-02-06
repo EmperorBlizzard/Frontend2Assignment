@@ -6,7 +6,7 @@ import { CartContext } from "../../../../App";
 const StyledDescription = styled.div`
 display: flex;
 padding-top: 0.5rem;
-align-items: flex-start;
+align-items: center;
 gap: 1rem;
 flex: 1 0 0;
 
@@ -80,6 +80,36 @@ const SummaryText = styled.p`
   margin: 0;
 `;
 
+const CartProductImage = styled.img`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    width: 7rem;
+    align-items: center;
+    border: 0.1rem solid black; 
+
+    `;
+
+const CartProductInfo = styled.div`
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 8rem;
+        border: 0.1rem solid black;
+
+    `;
+const Quantitydiv = styled.div`
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid black;
+    
+    
+   `;
+const CartProductDescriptionDiv = styled.div`
+    display:flex;
+    align-items:center;
+   `;
 
 
 const CartProductDescription = ({ card }) => {
@@ -94,7 +124,7 @@ const CartProductDescription = ({ card }) => {
     const cartQuantity = parseInt(card.amountOfProducts)
 
     const [quantity, setQuantity] = useState(1);
-    const [pricePerItem, setPricePerItem] = useState(null); // Håll reda på priset per artikel
+    const [pricePerItem, setPricePerItem] = useState(null); 
 
 
     const handleIncrease = () => {
@@ -106,7 +136,7 @@ const CartProductDescription = ({ card }) => {
     };
 
     const handleDelete = () => {
-        console.log("Deletebutton clicked!");
+        cart.deleteProductFromCart(card.id)
     };
 
     useEffect(() => {
@@ -115,8 +145,7 @@ const CartProductDescription = ({ card }) => {
     }, [productPrice, productPrice])
 
     const handleSetPriceAndSetQuantity = () => {
-        // Här kan du implementera logik för att hämta priset från vald vara
-        // I exemplet är priset satt till 10 som standard
+    
         setPricePerItem(productPrice);
         setQuantity(cartQuantity);
     };
@@ -126,47 +155,17 @@ const CartProductDescription = ({ card }) => {
         return quantity * pricePerItem
     }
 
-    const CartProductImage = styled.img`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   
-    width: 7rem;
-    align-items: center;
-    border: 0.1rem solid black; 
-
-    `;
-
-    const CartProductInfo = styled.div`
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 8rem;
-        border: 0.1rem solid black;
-
-    `;
-    const Quantitydiv = styled.div`
-    display: flex;
-    align-items: center;
-    border: 0.1rem solid black;
-    
-    
-   `;
-    const CartProductDescriptionDiv = styled.div`
-    display:flex;
-   `;
-
     return (
         <CartProductDescriptionDiv>
             <StyledDescription>
-                
-                    <CartProductImage src={img} alt="" />
-                    <CartProductInfo>
-                        <p> Artikelnummer: {card.id} </p>
-                        <p> produktnamn: {card.productName} </p>
-                        <p> pris: {card.price} </p>
-                    </CartProductInfo>
-                
+
+                <CartProductImage src={img} alt="" />
+                <CartProductInfo>
+                    <p> Artikelnummer: {card.id} </p>
+                    <p> produktnamn: {card.productName} </p>
+                    <p> pris: {card.price} </p>
+                </CartProductInfo>
+
             </StyledDescription>
 
             <Quantitydiv>

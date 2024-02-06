@@ -1,14 +1,17 @@
 import { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
-
+import MenuLinks from "../../../individuals/MenuLinks";
+import styles from "../../../../styling/CartPageStyle.module.css"
+import { CartContext } from "../../../../App";
 
 const SummaryCartplusbutton = styled.div`
 display: flex;
-width: 26.625rem;
-flex-direction: row;
+width: 22.625rem;
+flex-direction: column;
 gap: 1rem;
 align-items: center;
 
+background: var(--Gray-shades-100, #F9F9F9); 
 `;
 const CheckoutSummary = styled.div`
 display: flex;
@@ -17,7 +20,7 @@ flex-direction: column;
 align-items: center;
 gap: 1.5rem;
 align-self: stretch;
-background: var(--Gray-shades-100, #F9F9F9);
+
 width: 16rem;
 `;
 
@@ -70,8 +73,11 @@ gap: 1em;
 `
 
 function SummaryContainer() {
+
+    const card = useContext(CartContext)
+
     return (
-        <SummaryCartplusbutton>
+        <SummaryCartplusbutton className={styles.summarycontainer}>
             <CheckoutSummary>
                 <SummaryContent>
 
@@ -81,15 +87,13 @@ function SummaryContainer() {
                     <TopContent>
 
                         <SubtotalPrice>
-                            <p>Subtotal: </p>
-                            <p>40</p>
+                            <p>Total Pris: {card.totalPrice} </p>
+                           
 
                         </SubtotalPrice>
 
                         <SubtotalPrice>
 
-                            <p>Shipping costs: </p>
-                            <p>90</p>
                         </SubtotalPrice>
                     </TopContent>
                     <BottomContent>
@@ -98,7 +102,6 @@ function SummaryContainer() {
 
                         </div>
 
-
                     </BottomContent>
 
 
@@ -106,6 +109,7 @@ function SummaryContainer() {
                 </SummaryContent>
 
             </CheckoutSummary>
+            <MenuLinks name="Utcheckning" link="/checkoutpage" />
         </SummaryCartplusbutton>
     )
 }

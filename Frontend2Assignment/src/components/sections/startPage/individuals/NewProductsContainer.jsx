@@ -39,7 +39,7 @@ function NewProductsContainer() {
 
   return (
     <div>
-      <Kolla />
+      {/* <Kolla /> */}
     </div>
   )
 }

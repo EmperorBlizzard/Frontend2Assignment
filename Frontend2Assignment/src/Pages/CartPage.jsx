@@ -6,12 +6,8 @@ import ContentContainer from "../components/sections/cartPage/sections/ContentCo
 
 const Styledcartpage = styled.div`
  
-display: flex;
-width: 85rem;
-padding: 1.25rem 0rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.625rem;
+width:100%
+
 
 `;
 
