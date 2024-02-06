@@ -5,7 +5,37 @@ import styled from "styled-components";
 const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
+
+  label {
+    margin-bottom: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="submit"] {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+   
+    &:focus {
+      outline: none;
+      border-color: #0b539b; /* Example color, change as needed */
+    }
+  }
+
+  input[type="submit"] {
+    background-color: #0b539b; 
+    color: #fff;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #2b3136; 
+    }
+  }
 `;
+
 
 const ReceiptService = () => {
   const form = useRef();
@@ -38,9 +68,10 @@ const ReceiptService = () => {
   return (
     <>
       <StyledForm ref={form} onSubmit={sendEmail}>
-        <label>Namn</label>
+        <p>Kvitto</p>
+        <p>Namn:</p>
         <input type="text" name="user_name" />
-        <label>E-mail</label>
+        <p>Email:</p>
         <input type="email" name="user_email" />
         <input type="submit" value="Skicka" />
       </StyledForm>

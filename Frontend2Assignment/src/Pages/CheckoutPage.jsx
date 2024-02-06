@@ -93,7 +93,12 @@ const CheckOutPage = () => {
         <StyledFormWrapper>
           <BillingAddress />
           <ShippingAddress />  
-          </StyledFormWrapper>   
+          </StyledFormWrapper>  
+
+           <StyledPayment>
+           <ReceiptService />
+          <PaymentMethod />                
+        </StyledPayment> 
          
         <StyledMapping>
           <Mapping />
@@ -101,12 +106,8 @@ const CheckOutPage = () => {
           <PurchaseButton />
         </StyledMapping>
 
-        
-        <StyledPayment>
-          <PaymentMethod />
-          <ReceiptService />
-      
-        </StyledPayment>
+              
+
       </StyledCheckout>
 
      
