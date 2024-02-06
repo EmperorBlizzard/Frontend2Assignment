@@ -13,6 +13,8 @@ import TermsAndConditionsPage from "./Pages/TermsAndConditionsPage";
 import AboutPage from "./Pages/AboutPage";
 import SearchPage from "./Pages/SearchPage";
 import { createContext, useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext(null);
 
@@ -23,8 +25,8 @@ function App() {
 
 	useEffect(() => {
 		if (Object.keys(addCart).length !== 0) {
-			console.log(addCart)
 			const itemIndex = itemsInCart.findIndex((item) => item.id === addCart.id);
+
 			if (itemIndex !== -1) {
 				const upDatedList = [...itemsInCart];
 				upDatedList[itemIndex].amountOfProducts += 1;
@@ -38,7 +40,6 @@ function App() {
 					stock: addCart.attributes.stock,
 					image: addCart.attributes.image.data.attributes.url,
 				};
-				console.log(item)
 				const upDatedList = [...itemsInCart, item];
 				setItemsInCart(upDatedList);
 			}
@@ -48,23 +49,30 @@ function App() {
 
 	useEffect(() => {
 		const calculateTotalPrice = () => {
+			if (itemsInCart.length >= 1) {
+				const last = itemsInCart.length - 1;
+				notify("Till varukorg: " + itemsInCart[last].productName);
+			}
 			let total = 0;
 			itemsInCart.forEach((item) => {
 				total += item.price * item.amountOfProducts;
 			});
-			setTotalPrice(total)
-		}
+			setTotalPrice(total);
+		};
 		calculateTotalPrice();
-	}), [itemsInCart]
+	}),	[itemsInCart];
 
+	const notify = (mess) => toast(mess);
 	// Funktion för att öka antalet produkter i varukorgen
 	const increaseQuantity = (productId) => {
 		const updatedList = [...itemsInCart];
 		const itemIndex = updatedList.findIndex((item) => item.id === productId);
 		if (itemIndex !== -1) {
 			updatedList[itemIndex].amountOfProducts += 1;
-			if (updatedList[itemIndex].amountOfProducts > updatedList[itemIndex].stock) {
-				alert("för många mot lager")
+			if (
+				updatedList[itemIndex].amountOfProducts > updatedList[itemIndex].stock
+			) {
+				alert("för många mot lager");
 			} else {
 				setItemsInCart(updatedList);
 			}
@@ -92,7 +100,7 @@ function App() {
 			upDatedList.splice(itemIndex, 1);
 			setItemsInCart(upDatedList);
 		}
-	}
+	};
 
 	return (
 		<CartContext.Provider
@@ -104,6 +112,7 @@ function App() {
 				increaseQuantity,
 				decreaseQuantity,
 				totalPrice,
+				addCart,
 				deleteProductFromCart,
 			}}
 		>
@@ -132,6 +141,7 @@ function App() {
 					<Route path="/searchpage" element={<SearchPage />} />
 				</Routes>
 			</BrowserRouter>
+			<ToastContainer />
 		</CartContext.Provider>
 	);
 }

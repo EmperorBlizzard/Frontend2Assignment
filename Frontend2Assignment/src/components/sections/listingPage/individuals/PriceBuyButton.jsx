@@ -50,7 +50,7 @@ const PriceBuyButton = () => {
 		setAddCart(prod);
 	}
 	return (
-		<>
+		<>		
 			<CustomerInfo>
 				<>
 					<h3>Pris: {prod.attributes.price}</h3>

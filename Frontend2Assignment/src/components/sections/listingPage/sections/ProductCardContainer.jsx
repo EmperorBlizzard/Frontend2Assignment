@@ -4,6 +4,8 @@ import { createContext, useEffect, useState } from "react";
 import GetApi from "../../../../Products/api";
 import PropTypes from "prop-types";
 
+
+
 const StyledProductCardContainer = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -19,6 +21,7 @@ export const ProductContext = createContext(null);
 
 const ProductCardContainer = ({ filter }) => {
 	const [products, setProducts] = useState(null);
+	
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -43,7 +46,6 @@ const ProductCardContainer = ({ filter }) => {
 			));
 		}
 	};
-
 	return (
 		<StyledProductCardContainer>
 			<Kolla />

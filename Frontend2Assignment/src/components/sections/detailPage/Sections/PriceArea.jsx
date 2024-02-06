@@ -43,12 +43,16 @@ const StyledInStock = styled.div`
 const PriceArea = () => {
 	const { prod } = useContext(DetailContext);
 	const { setAddCart } = useContext(CartContext);
+
+	
+	
 	function handleClick() {
 		if (num == 0) {
 			""
 		} else {
 			prod.amountOfProducts = num;
 			setAddCart(prod);
+			
 		}
 	}
 
@@ -118,6 +122,7 @@ const PriceArea = () => {
 				<StyledLink to="/listingpage">
 					<Button onClick={handleClick}>Lägg i kundkorg</Button>
 				</StyledLink>
+				
 			</StyledInStock>
 		);
 	};
