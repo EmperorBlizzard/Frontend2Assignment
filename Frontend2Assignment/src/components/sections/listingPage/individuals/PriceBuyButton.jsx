@@ -64,7 +64,7 @@ const PriceBuyButton = () => {
 					<Button onClick={handleClick}>Lägg i varukorgen</Button>
 				)}
 				<StyledLink to={`/ProductDetailPage/${prod.id}`}>
-					<Button fullwidth={!prod.attributes.stock}>Information</Button>
+					<Button>Information</Button>
 				</StyledLink>
 			</PriceBuyButtonContainer>
 		</>
