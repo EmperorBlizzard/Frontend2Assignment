@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
-import QuantitySelector from "../individuals/QuantitySelector";
+
 
 const SummaryCartplusbutton = styled.div`
 display: flex;
@@ -64,43 +64,48 @@ line-height: 2.125rem; /* 121.429% */
 
 `;
 
+const SubtotalPrice = styled.div`
+display:flex;
+gap: 1em;
+`
 
 function SummaryContainer() {
     return (
         <SummaryCartplusbutton>
-        <CheckoutSummary>
-            <SummaryContent>
-                
-                
-
-                <SummaryText>Summary</SummaryText>
-                <TopContent>
-                    
-                    <div>
-                    <p>Subtotal</p>
-                    <p>Shipping costs</p>
-                    
-                    </div>
-                    <div>
-                    <p>40</p>
-                    <p>90</p>
-
-                    </div>
-                </TopContent>
-                <BottomContent>
-
-                   <div>
-
-                   </div>
-                  
-                
-                </BottomContent>
+            <CheckoutSummary>
+                <SummaryContent>
 
 
-                
-            </SummaryContent>
-        
-        </CheckoutSummary>
+
+                    <SummaryText>Summary</SummaryText>
+                    <TopContent>
+
+                        <SubtotalPrice>
+                            <p>Subtotal: </p>
+                            <p>40</p>
+
+                        </SubtotalPrice>
+
+                        <SubtotalPrice>
+
+                            <p>Shipping costs: </p>
+                            <p>90</p>
+                        </SubtotalPrice>
+                    </TopContent>
+                    <BottomContent>
+
+                        <div>
+
+                        </div>
+
+
+                    </BottomContent>
+
+
+
+                </SummaryContent>
+
+            </CheckoutSummary>
         </SummaryCartplusbutton>
     )
 }

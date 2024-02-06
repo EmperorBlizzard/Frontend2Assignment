@@ -1,24 +1,21 @@
 import { createContext } from "react";
-// import {CartContext} from "../App.jsx";
+import styled from "styled-components";
 import Cartheadrow from "../individuals/CartHeadRow";
 import CartProductCardContainer from "./CartProductCardContainer";
-import InputPlusLink from "../individuals/Inputpluslink";
-import products from "../../../../Products/Products.json"
-import SummaryContainer from "./SummaryContainer";
 
-export const TempCartContext = createContext(null)
+
+const CartContentDiv = styled.div`
+    
+`
 
 function CartContent() {
-
-
-
     return (
-        <>
-            {/* <Cartheadrow /> */}
-            {/* <CartProductCardContainer /> */}
+        <div>
+            <Cartheadrow />
+            <CartProductCardContainer />
             {/* <InputPlusLink /> */}
-            
-        </>
+
+        </div>
     )
 }
 
