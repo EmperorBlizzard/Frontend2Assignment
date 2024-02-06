@@ -22,37 +22,12 @@
 .slide {
   display: inline-block;
   background-size: 100%;
-  height: 360px;
-  width: 33.75rem;
+  height: auto;
+  width: 100%;
   border-radius: 40px;
 }
 
-@media screen and (min-width: 1000px) {
-  .slideshowContainer{
-    display: flex;
-    flex-direction: row;
-  }
 
-  .slideshow {
-    margin: 0 auto;
-    overflow: hidden;
-    max-width: 33.75rem;
-  }
-  
-  
-  .slideshowSlider {
-    white-space: nowrap;
-    transition: ease 1000ms;
-  }
-  
-  .slide {
-    display: inline-block;
-  
-    height: 360px;
-    width: 33.75rem;
-    border-radius: 40px;
-  }
-}
 
 /* Buttons */
 
@@ -81,15 +56,17 @@
 .sideText {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
+  flex-direction: column;
   width: 100%;
-  height: 12em;
+  height: 14em;
 }
 
 .sideText a{
-  position: absolute;
-  bottom: 0;
+  width: 10rem;
   text-decoration: none;
+  text-align: center;
   color: #fff;
   background-color: #0b539b;
   font-size: 18px;
@@ -98,4 +75,59 @@
   border: solid 1px;
   border-radius: 0.7rem;
   margin-bottom: 1em;
+}
+
+/*Media*/
+@media screen and (min-width: 1000px) {
+  .slideshowContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: lightblue;
+    padding: 1em;
+    border: solid 1px;
+    border-radius: 40px;
+  }
+
+  .slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 33.75rem;
+  }
+
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    display: inline-block;
+  
+    height: 360px;
+    width: 33.75rem;
+    border-radius: 40px;
+  }
+
+  .sideText {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    width: 50%;
+    height: 360px;
+  }
+  
+  .sideText a{
+    position: absolute;
+    bottom: 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0b539b;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 1em;
+    border: solid 1px;
+    border-radius: 0.7rem;
+    margin-bottom: 1em;
+  }
 }

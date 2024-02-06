@@ -9,7 +9,6 @@ import img2 from "../../../../images/StartPageSlideshow/bikeRide2.jpg"
 import img3 from "../../../../images/StartPageSlideshow/bikeRide3.jpg"
 
 const images = [img1, img2, img3];
-const colors = ["#0088FE", "#00C49F", "#FFBB28"];
 const delay = 2500;
 
 function Slideshow() {
@@ -45,12 +44,8 @@ function Slideshow() {
           className='slideshowSlider'
           style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
-          {images.map((backgroundImage, index) =>(
-            <div 
-              className='slide' 
-              key={index} 
-              style={{"backgroundImage": `url(${backgroundImage})`}}>
-            </div>
+          {images.map((Image, index) =>(
+            <img key={index} src={Image} alt="Picture of bike" className='slide'/>
           ))}
         </div>
         

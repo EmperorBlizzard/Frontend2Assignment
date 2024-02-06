@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from "../../../../styling/StartPageStyle.module.css"
 import Slideshow from '../individuals/Slideshow'
-import NewProducts from '../individuals/NewProducts'
+import NewProductsContainer from '../individuals/NewProductsContainer'
 
 function StartPageContainer() {
   return (
     <div className='startpageContainer'>
       <Slideshow />
-      <NewProducts />
+      <NewProductsContainer />
     </div>
   )
 }
