@@ -11,7 +11,6 @@ const ProductDesc = () => {
 	const {prod} = useContext(DetailContext)
 	return (
 		<StyledDescription>
-			<h1>Produkt info</h1>
 			<p>{prod.attributes.longDescription}</p>
 		</StyledDescription>
 	);
