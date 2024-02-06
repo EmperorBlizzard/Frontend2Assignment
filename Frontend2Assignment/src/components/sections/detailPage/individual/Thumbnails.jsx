@@ -18,10 +18,11 @@ const Thumbnails = () => {
 	const { prod } = useContext(DetailContext);
 
 	const Slider = () => {
-		const dataSlider = prod.attributes.Slider.data;
-		const adress = "http://localhost:1337";
-		return (
-			<StyledSlider>
+	const dataSlider = prod.attributes.Slider.data;
+	const tempAdress = import.meta.env.VITE_STRAPI_URL.toString()
+	const adress = tempAdress.replace("/api/", "")
+	return (
+		<StyledSlider>
 				{dataSlider.map((img) => {
 					const prop = adress + img.attributes.url;
 					return <Thumbnail prop={prop} key={img.id} />;

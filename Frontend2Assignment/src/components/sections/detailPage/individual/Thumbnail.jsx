@@ -13,7 +13,6 @@ const StyledThumbnail = styled.div`
 
 const StyledImg = styled.img`
 	height: 4rem;
-	widht: 4rem;
 `;
 
 const Thumbnail = ({prop}) => {
