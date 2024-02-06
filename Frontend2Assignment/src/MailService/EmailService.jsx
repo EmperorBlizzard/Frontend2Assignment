@@ -1,6 +1,9 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const StyledForm = styled.form`
 	display: flex;
@@ -8,6 +11,7 @@ const StyledForm = styled.form`
 `;
 
 export const EmailService = () => {
+	const notify = (mess) => toast(mess);
 	const form = useRef();
 
 	const sendEmail = (e) => {
@@ -21,12 +25,12 @@ export const EmailService = () => {
 				() => {
 					console.log("SUCCESS!");
 					form.current.reset();
-					alert("mailet skickat som planerat");
+					notify("E-posten skickad som planerat")
 				},
 				(error) => {
 					console.log("FAILED...", error.text);
 					form.current.reset();
-					alert("Det gick inte som planerat, vänligen kontakta vår kundtjänst");
+					notify("E-posten gick inte iväg")
 				}
 			);
 	};
@@ -40,6 +44,13 @@ export const EmailService = () => {
 			<label>Meddelande</label>
 			<textarea name="message" />
 			<input type="submit" value="Send" />
+			<ToastContainer/>
 		</StyledForm>
 	);
 };
+
+
+
+
+
+

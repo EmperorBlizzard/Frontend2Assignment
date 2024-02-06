@@ -24,4 +24,3 @@ const CMSGallery = () => {
 
 export default CMSGallery;
 
-{/*  */}
