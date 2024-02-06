@@ -34,10 +34,11 @@ function App() {
 					id: addCart.id,
 					productName: addCart.attributes.productName,
 					price: addCart.attributes.price,
-					amountOfProducts: 1,
+					amountOfProducts: addCart.amountOfProducts || 1,
 					stock: addCart.attributes.stock,
 					image: addCart.attributes.image.data.attributes.url,
 				};
+				console.log(item)
 				const upDatedList = [...itemsInCart, item];
 				setItemsInCart(upDatedList);
 			}

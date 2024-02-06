@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import ProductDesc from "../individual/ProductDesc";
-import Thumbnails from "../individual/Thumbnails";
 
 const StyledProduductDetailContent = styled.div`
 	display: flex;
@@ -60,7 +59,7 @@ const ProductDetailContent = () => {
 			<StyledProduductDetailContent>
 				<StyledProductName>{prod.attributes.productName}</StyledProductName>
 				<ProductSectionPDS />
-				{!prod.attributes.Slider.data ? "" : <Thumbnails />}
+				
 				<ProductDesc />
 			</StyledProduductDetailContent>
 		</DetailContext.Provider>

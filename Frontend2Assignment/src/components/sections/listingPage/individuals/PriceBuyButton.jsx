@@ -28,6 +28,8 @@ const Button = styled.button`
 	line-height: 20px;
 	border-radius: 0.7rem;
 	cursor: pointer;
+
+	width: ${(props) => (props.fullwidth ? "19rem" : "auto")};
 `;
 
 const CustomerInfo = styled.div`
@@ -35,7 +37,11 @@ const CustomerInfo = styled.div`
 	align-items: flex-start;
 	align-self: stretch;
 	justify-content: space-between;
-`
+`;
+
+const StyledLink = styled(Link)`
+	text-decoration: none;
+`;
 
 const PriceBuyButton = () => {
 	const prod = useContext(ProductContext);
@@ -47,17 +53,19 @@ const PriceBuyButton = () => {
 		<>
 			<CustomerInfo>
 				<>
-			<h3>Pris: {prod.attributes.price}</h3>
-			<h3>Lagersaldo: {prod.attributes.stock}</h3>
+					<h3>Pris: {prod.attributes.price}</h3>
+					<h3>Lagersaldo: {prod.attributes.stock}</h3>
 				</>
 			</CustomerInfo>
 			<PriceBuyButtonContainer>
-				<>
+				{!prod.attributes.stock ? (
+					""
+				) : (
 					<Button onClick={handleClick}>Lägg i varukorgen</Button>
-					<Link to={`/ProductDetailPage/${prod.id}`}>
-						<Button>Information</Button>
-					</Link>
-				</>
+				)}
+				<StyledLink to={`/ProductDetailPage/${prod.id}`}>
+					<Button fullwidth={!prod.attributes.stock}>Information</Button>
+				</StyledLink>
 			</PriceBuyButtonContainer>
 		</>
 	);
