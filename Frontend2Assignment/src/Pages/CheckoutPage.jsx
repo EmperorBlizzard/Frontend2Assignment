@@ -68,7 +68,7 @@ const CheckOutPage = () => {
   const NameList = Name.itemsInCart;
   const { totalPrice } = useContext(CartContext);
 
-    
+  console.log(NameList)  
   const Mapping = () => {
     return NameList.map((namn) => (
       <div key={namn.id}>
