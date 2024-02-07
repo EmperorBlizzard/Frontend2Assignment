@@ -21,7 +21,7 @@ const ShoppingCartContainer = () => {
     return(
 
         <div>
-            <StyledHeadline>Shopping cart</StyledHeadline>
+            <StyledHeadline>Varukorg</StyledHeadline>
             
             
 
