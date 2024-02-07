@@ -21,7 +21,7 @@ const CartSubtotal = ({ quantity, pricePerItem }) => {
   
     return (
       <SubTotalContainer>
-        <h2>Subtotal:</h2>
+        <h2>Summa:</h2>
         <p>{formatCurrency(subtotal)}</p>
       </SubTotalContainer>
     );

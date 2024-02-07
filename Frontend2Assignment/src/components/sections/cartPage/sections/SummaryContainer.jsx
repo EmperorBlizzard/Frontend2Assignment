@@ -83,7 +83,7 @@ function SummaryContainer() {
 
 
 
-                    <SummaryText>Summary</SummaryText>
+                    <SummaryText>Ordersammanställning</SummaryText>
                     <TopContent>
 
                         <SubtotalPrice>

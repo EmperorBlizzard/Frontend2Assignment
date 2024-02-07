@@ -31,9 +31,9 @@ const Cartheadrow = () => {
     return (  
       
         <StyledCartheadrow>
-            <HeadRowItem>Product</HeadRowItem>
-            <HeadRowItem>Quantity</HeadRowItem>
-            <HeadRowItem>Subtotal</HeadRowItem>
+            <HeadRowItem>Produkter</HeadRowItem>
+            <HeadRowItem>Antal</HeadRowItem>
+            <HeadRowItem>Pris</HeadRowItem>
         </StyledCartheadrow>
 
         );

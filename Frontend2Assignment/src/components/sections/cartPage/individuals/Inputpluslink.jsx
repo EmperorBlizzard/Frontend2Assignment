@@ -77,7 +77,7 @@ const InputPlusLink = () => {
         <InputContainer>
           <InputText>
             <input
-              placeholder="Enter productnumber..."
+              placeholder="Ange Artikelnummer..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />

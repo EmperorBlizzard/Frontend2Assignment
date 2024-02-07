@@ -15,7 +15,7 @@ function Cartpage() {
     return (
         <Styledcartpage>
             <Header />
-            <h1> cart</h1>
+            <h1>Varukorg</h1>
             <ContentContainer />
             <Footer />
         </Styledcartpage>
