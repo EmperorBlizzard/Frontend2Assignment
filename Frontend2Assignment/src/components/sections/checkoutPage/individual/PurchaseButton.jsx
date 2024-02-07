@@ -31,13 +31,6 @@ const Button = styled.button`
   }
 `;
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-`;
-
 const PurchaseButton = () => {
   const form = useRef();
 

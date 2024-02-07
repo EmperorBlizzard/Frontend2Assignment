@@ -6,7 +6,6 @@ import BillingAddress from "../components/sections/checkoutPage/sections/Billing
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import PaymentMethod from "../components/sections/checkoutPage/sections/PaymentMethod.jsx";
 import PurchaseButton from "../components/sections/checkoutPage/individual/PurchaseButton.jsx";
-/* import ReceiptService from '../MailService/ReceiptService.jsx'; */
 import styled from "styled-components";
 import ProductCardCheckout from "../components/sections/checkoutPage/sections/ProductCardCheckout.jsx";
 import QuantityButton from "../components/sections/checkoutPage/individual/QuantityButton.jsx";
@@ -102,7 +101,7 @@ const CheckOutPage = () => {
         <StyledMapping>
           <Mapping />
           <p>Summa: {totalPrice}</p>
-          {/* <ReceiptService /> */}
+         
           <PurchaseButton />
         </StyledMapping>
 
