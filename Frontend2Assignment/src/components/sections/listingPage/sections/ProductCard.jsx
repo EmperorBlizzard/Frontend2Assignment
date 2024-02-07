@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const PCard = styled.div`
 	display: flex;
-	width: 305px;
+	width: 300px;
 	padding: 16px;
 	flex-direction: column;
 	justify-content: space-between;

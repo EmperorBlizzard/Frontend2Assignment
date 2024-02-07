@@ -6,7 +6,7 @@ const StyledImg = styled.img`
 	max-width: 100%; /* Bilden kommer inte att vara bredare än dess naturliga storlek */
 	height: auto; /* Behåll proportionerna när bredden ändras */
 	display: block; /* Ta bort extra mellanrum under bilden */
-	margin: auto; /* Centrera bilden i dess förälderselement */
+	margin: auto 0; /* Centrera bilden i dess förälderselement */
 `;
 
 const Slider = () => {

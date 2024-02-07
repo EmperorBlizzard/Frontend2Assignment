@@ -37,7 +37,7 @@ const ProductCardContainer = ({ filter }) => {
 		}
 	}, [filter]);
 
-	const Kolla = () => {
+	const PCard = () => {
 		if (products) {
 			return products.map((product) => (
 				<ProductContext.Provider key={product.id} value={product}>
@@ -48,7 +48,7 @@ const ProductCardContainer = ({ filter }) => {
 	};
 	return (
 		<StyledProductCardContainer>
-			<Kolla />
+			<PCard />
 		</StyledProductCardContainer>
 	);
 };
