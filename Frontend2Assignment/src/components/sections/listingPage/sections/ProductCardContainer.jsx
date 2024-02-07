@@ -27,7 +27,7 @@ const ProductCardContainer = ({ filter }) => {
 		const fetchData = async () => {
 			try {
 				const result = await GetApi(filter);
-				setProducts(result.data.data);
+				setProducts(result.data);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
 			}

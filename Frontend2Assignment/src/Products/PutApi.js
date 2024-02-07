@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export const GetApi = async (filters) => {
+const PutApi = async (id, number) => {
 	try {
-		const response = await axios.get(
-			`${import.meta.env.VITE_STRAPI_URL}${filters}`
+		const response = await axios.put(
+			`${import.meta.env.VITE_STRAPI_URL}products/${id}`,
+			{ data: { stock: number } }
 		);
 
 		// Kontrollera om svarskoden är inom det förväntade intervallet
@@ -13,9 +14,9 @@ export const GetApi = async (filters) => {
 			throw new Error(`Felaktigt svar från servern: ${response.status}`);
 		}
 	} catch (error) {
-		console.error("Fel vid GET API-anrop:", error);
+		console.error("Fel vid PUT API-anrop:", error);
 		throw error; // Kasta felet så att det kan hanteras där funktionen anropas
 	}
 };
 
-export default GetApi;
+export default PutApi;

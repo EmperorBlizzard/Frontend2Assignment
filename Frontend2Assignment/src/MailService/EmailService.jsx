@@ -63,7 +63,7 @@ export const EmailService = () => {
 			<label>E-mail</label>
 			<input type="email" name="user_email" />
 			<label>Meddelande</label>
-			<textArea name="message" />
+			<textarea name="message" />
 			<input id="btn" type="submit" value="Skicka" />
 			<ToastContainer/>
 		</StyledForm>
