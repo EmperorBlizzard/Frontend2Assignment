@@ -5,6 +5,7 @@ import { DetailContext } from "../Sections/ProductDetailContent";
 const StyledDescription = styled.div`
 	display: flex;
 	flex-direction: column;
+	padding: 0 2rem 0 0;
 `
 
 const ProductDesc = () => {

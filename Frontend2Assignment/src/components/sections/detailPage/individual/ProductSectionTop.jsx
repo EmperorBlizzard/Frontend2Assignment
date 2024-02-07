@@ -1,5 +1,4 @@
 import CMSGallery from "../Sections/CMSGallery";
-import PriceArea from "../Sections/PriceArea";
 import styled from "styled-components";
 const StyledPST = styled.div`
 	display: flex;
@@ -13,7 +12,6 @@ function ProductSectionTop() {
 	return (
 		<StyledPST>
 			<CMSGallery />
-			<PriceArea />
 		</StyledPST>
 	);
 }

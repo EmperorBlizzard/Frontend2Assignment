@@ -32,6 +32,10 @@ const Button = styled.button`
 	width: ${(props) => (props.fullwidth ? "19rem" : "auto")};
 `;
 
+const EmptyButton = styled(Button)` 
+	width: 19rem
+`
+
 const CustomerInfo = styled.div`
 	display: flex;
 	align-items: flex-start;
@@ -63,9 +67,16 @@ const PriceBuyButton = () => {
 				) : (
 					<Button onClick={handleClick}>Lägg i varukorgen</Button>
 				)}
-				<StyledLink to={`/ProductDetailPage/${prod.id}`}>
+				{!prod.attributes.stock ? (
+					<StyledLink to={`/ProductDetailPage/${prod.id}`}>
+					<EmptyButton>Information</EmptyButton>
+				</StyledLink>
+				) : (
+					<StyledLink to={`/ProductDetailPage/${prod.id}`}>
 					<Button>Information</Button>
 				</StyledLink>
+				)}
+				
 			</PriceBuyButtonContainer>
 		</>
 	);

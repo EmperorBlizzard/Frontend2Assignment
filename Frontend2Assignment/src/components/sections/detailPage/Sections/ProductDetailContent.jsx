@@ -59,7 +59,6 @@ const ProductDetailContent = () => {
 			<StyledProduductDetailContent>
 				<StyledProductName>{prod.attributes.productName}</StyledProductName>
 				<ProductSectionPDS />
-				
 				<ProductDesc />
 			</StyledProduductDetailContent>
 		</DetailContext.Provider>

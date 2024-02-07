@@ -31,12 +31,37 @@ const StyledPriceArea = styled.div`
 	flex-direction: row;
 `;
 
-const StyledInStock = styled.div`
+const StyledStock = styled.div`
 	display: flex;
+	flex-direction: column;
+	h1 {
+		display: flex;
+		margin: 0;
+	}
+`;
+
+const StyledInStock = styled(StyledStock)`
 	flex-direction: row;
 	gap: 2rem;
-	h1 {
-		margin: 0;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+`
+// mindre än 600 = column
+
+const StyledSelect = styled.div`
+	display: flex;
+	border: 1px solid black;
+	border-radius: 0.7rem;
+	div {
+		display: flex;
+		height: 3rem;
+		width: 3rem;
+		align-items: center;
+		font-size: 1.5rem;
+		font-weight: bold;
+		justify-content: center;
+		cursor: pointer;
 	}
 `;
 
@@ -44,53 +69,16 @@ const PriceArea = () => {
 	const { prod } = useContext(DetailContext);
 	const { setAddCart } = useContext(CartContext);
 
-	
-	
 	function handleClick() {
-		if (num == 0) {
-			""
+		if (num === 0) {
+			("");
 		} else {
 			prod.amountOfProducts = num;
 			setAddCart(prod);
-			
 		}
 	}
 
-	const StyledOutOfStock = styled.div`
-		display: flex;
-		gap: 2rem;
-	`
 
-
-	const OutOfStock = () => {
-		return (
-			<StyledOutOfStock>
-				<h3>
-					Vi är hemskt ledsna att produkten är slut på lager men skicka gärna
-					ett mail om ni önskar att vi tar in produkten igen
-				</h3>
-				<StyledLink to="/contactpage">
-					<Button>Kontakta oss</Button>
-				</StyledLink>
-			</StyledOutOfStock>
-		);
-	};
-
-	const StyledSelect = styled.div`
-		display: flex;
-		border: 1px solid black;
-		border-radius: 0.7rem;
-		div {
-			display: flex;
-			height: 3rem;
-			width: 3rem;
-			align-items: center;
-			font-size: 1.5rem;
-			font-weight: bold;
-			justify-content: center;
-			cursor: pointer;
-		}
-	`;
 	const inc = () => {
 		const tempnum = num + 1;
 		setNum(tempnum);
@@ -114,6 +102,21 @@ const PriceArea = () => {
 		);
 	};
 
+	const OutOfStock = () => {
+		return (
+			<StyledStock>
+				<h1>Pris: {prod.attributes.price} :-</h1>
+				<h3>
+					Vi är hemskt ledsna att produkten är slut på lager men skicka gärna
+					ett mail om ni önskar att vi tar in produkten igen
+				</h3>
+				<StyledLink to="/contactpage">
+					<Button>Kontakta oss</Button>
+				</StyledLink>
+			</StyledStock>
+		);
+	};
+
 	const InStock = () => {
 		return (
 			<StyledInStock>
@@ -122,12 +125,9 @@ const PriceArea = () => {
 				<StyledLink to="/listingpage">
 					<Button onClick={handleClick}>Lägg i kundkorg</Button>
 				</StyledLink>
-				
 			</StyledInStock>
 		);
 	};
-
-	// const itemIndex = itemsInCart.findIndex((item) => item.id === prod.id);
 
 	return (
 		<StyledPriceArea>
