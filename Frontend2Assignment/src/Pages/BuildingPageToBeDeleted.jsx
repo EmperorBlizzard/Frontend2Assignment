@@ -5,13 +5,11 @@ import { useContext } from "react";
 import { CartContext } from "../App";
 
 function Building() {
-	const data = useContext(CartContext);
-	const ProdList = data.itemsInCart;
-	console.log(ProdList);
-
+	const {itemsInCart, setItemsInCart} = useContext(CartContext);
+  console.log(itemsInCart)
 	const handleClick = async () => {
 		try {
-      for (const element of ProdList) {
+      for (const element of itemsInCart) {
         let newStock = element.stock - element.amountOfProducts
         const id = element.id
         if (newStock <=0) {
@@ -19,9 +17,10 @@ function Building() {
         }
         console.log(newStock)
         console.log(id)
-        const resultet = await PutApi(id, newStock);
-        console.log(resultet)
+        await PutApi(id, newStock);
+
       }
+      setItemsInCart([])
 		} catch (error) {
 			console.error(error);
 		}
