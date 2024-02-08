@@ -130,7 +130,13 @@ const CartProductDescription = ({ card }) => {
 
 
     const handleIncrease = () => {
-        cart.decreaseQuantity(card.id)
+        if (card.amountOfProducts > 1) {
+            cart.decreaseQuantity(card.id)
+        }
+        else {
+            cart.deleteProductFromCart(card.id)
+        }
+
     };
 
     const handleDecrease = () => {
