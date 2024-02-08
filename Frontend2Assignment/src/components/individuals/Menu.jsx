@@ -11,6 +11,7 @@ function Menu() {
       <MenuLinks name="Produkter" link="/listingpage" />
       <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
       <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
+      <MenuLinks name="EmailTestPage" link="/emailtestpage" />
 
       <Outlet />
     </nav>
