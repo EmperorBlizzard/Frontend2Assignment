@@ -5,6 +5,7 @@ import { CartContext } from "../../../../App";
 
 const StyledDescription = styled.div`
 display: flex;
+border: solid 1px;
 padding-top: 0.5rem;
 align-items: center;
 gap: 1rem;
@@ -72,7 +73,7 @@ const SummaryContainer = styled.div`
   border: 1px solid #ccc;
   display: flex;
   align-items: center;
-  margin-left: 15rem;
+  margin-left: 7rem;
 `;
 
 const SummaryText = styled.p`
@@ -87,7 +88,6 @@ const CartProductImage = styled.img`
    
     width: 7rem;
     align-items: center;
-    border: 0.1rem solid black; 
 
     `;
 
@@ -96,12 +96,13 @@ const CartProductInfo = styled.div`
         flex-direction: column;
         justify-content: center;
         width: 8rem;
-        border: 0.1rem solid black;
+        
 
     `;
 const Quantitydiv = styled.div`
     display: flex;
     align-items: center;
+    margin: 0 5rem;
     border: 0.1rem solid black;
     
     
@@ -109,6 +110,7 @@ const Quantitydiv = styled.div`
 const CartProductDescriptionDiv = styled.div`
     display:flex;
     align-items:center;
+    gap:1em;
    `;
 
 
@@ -124,7 +126,7 @@ const CartProductDescription = ({ card }) => {
     const cartQuantity = parseInt(card.amountOfProducts)
 
     const [quantity, setQuantity] = useState(1);
-    const [pricePerItem, setPricePerItem] = useState(null); 
+    const [pricePerItem, setPricePerItem] = useState(null);
 
 
     const handleIncrease = () => {
@@ -145,7 +147,7 @@ const CartProductDescription = ({ card }) => {
     }, [productPrice, productPrice])
 
     const handleSetPriceAndSetQuantity = () => {
-    
+
         setPricePerItem(productPrice);
         setQuantity(cartQuantity);
     };

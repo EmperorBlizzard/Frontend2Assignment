@@ -6,6 +6,7 @@
 .summarycontainer a{
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     text-align: center;
     color: #fff;

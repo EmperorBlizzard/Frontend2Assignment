@@ -6,16 +6,17 @@ import { CartContext } from "../../../../App";
 
 const SummaryCartplusbutton = styled.div`
 display: flex;
-width: 22.625rem;
+width: 20rem;
 flex-direction: column;
-gap: 1rem;
+gap: 3rem;
 align-items: center;
 
 background: var(--Gray-shades-100, #F9F9F9); 
 `;
+
 const CheckoutSummary = styled.div`
 display: flex;
-padding: 1rem 1rem 2rem 1rem;
+
 flex-direction: column;
 align-items: center;
 gap: 1.5rem;
@@ -40,37 +41,27 @@ flex-direction: column;
 align-items: column;
 justify-content: space-between;
 
-align-items: row;
 align-self: stretch;
 `;
 
-const BottomContent = styled.div`
-display: flex;
-height: 3rem;
-flex-direction: column;
-
-align-items: column;
-align-self: stretch;
-
-`;
-
-const SummaryText = styled.div`
+const SummaryText = styled.h5`
 color: var(--Typestyle-Headlines, #2B3136);
 font-feature-settings: 'clig' off, 'liga' off;
-
+display:flex;
 /* Headlines/H2 */
 font-family: Inter;
-font-size: 1.75rem;
+font-size: 1.2rem;
 font-style: normal;
-font-weight: 700;
+font-weight: bold;
 line-height: 2.125rem; /* 121.429% */
-
+align-items: center;
+justify-content: center;
 `;
 
 const SubtotalPrice = styled.div`
 display:flex;
 gap: 1em;
-`
+`;
 
 function SummaryContainer() {
 
@@ -88,28 +79,16 @@ function SummaryContainer() {
 
                         <SubtotalPrice>
                             <p>Total Pris: {card.totalPrice} </p>
-                           
 
-                        </SubtotalPrice>
-
-                        <SubtotalPrice>
 
                         </SubtotalPrice>
                     </TopContent>
-                    <BottomContent>
-
-                        <div>
-
-                        </div>
-
-                    </BottomContent>
-
-
-
                 </SummaryContent>
 
             </CheckoutSummary>
+
             <MenuLinks name="Utcheckning" link="/checkoutpage" />
+
         </SummaryCartplusbutton>
     )
 }
