@@ -12,6 +12,7 @@ import DeliveryPage from "./Pages/DeliveryPage";
 import TermsAndConditionsPage from "./Pages/TermsAndConditionsPage";
 import AboutPage from "./Pages/AboutPage";
 import SearchPage from "./Pages/SearchPage";
+import EmailTestPage from "./Pages/EmailTestPage";
 import { createContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -139,6 +140,7 @@ function App() {
 					/>
 					<Route path="/aboutpage" element={<AboutPage />} />
 					<Route path="/searchpage" element={<SearchPage />} />
+					<Route path="/emailtestpage" element={<EmailTestPage/>} />
 				</Routes>
 			</BrowserRouter>
 			<ToastContainer />

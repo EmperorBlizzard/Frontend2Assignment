@@ -1,6 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
+import { CartContext } from "../../../../App";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
+import PutApi from "../../../../Products/PutApi"
+
 
 const PurchaseContainer = styled.div`
   display: flex;
@@ -33,6 +36,7 @@ const Button = styled.button`
 
 const PurchaseButton = () => {
   const form = useRef();
+  const { itemsInCart, setItemsInCart } = useContext(CartContext);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -56,12 +60,30 @@ const PurchaseButton = () => {
           form.current.reset();
           alert("Du måste ange email");
         }
-      );
+      )
+      .finally(() => {
+        form.current.reset(); 
+      });
   };
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    sendEmail(e);
+    try {
+      for (const element of itemsInCart) {
+        let newStock = element.stock - element.amountOfProducts;
+        const id = element.id;
+        if (newStock <= 0) {
+          newStock = 0;
+        }
+        console.log(newStock);
+        console.log(id);
+        await PutApi(id, newStock);
+      }
+      setItemsInCart([]);
+      sendEmail(e);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
