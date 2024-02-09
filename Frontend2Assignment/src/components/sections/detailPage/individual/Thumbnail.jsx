@@ -23,7 +23,7 @@ const Thumbnail = ({prop}) => {
 	
 	return (
 		<StyledThumbnail>
-			<StyledImg src={prop} onClick={handleClick} alt="Bild" />
+			<StyledImg src={prop} onMouseOver={handleClick} alt="Bild" />
 		</StyledThumbnail>
 	);
 };
