@@ -11,9 +11,13 @@ const PCard = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	border: 1px solid #798490;
+	// border: 1px solid #798490;
 	border-radius: 0.7rem;
-	box-shadow: 0 0 5px;
+	
+	&:hover {
+		box-shadow: 0 0 5px;
+    
+  }
 `;
 
 const ProductCard = () => {
