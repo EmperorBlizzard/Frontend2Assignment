@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "../App.jsx";
+import styled from "styled-components";
 import Header from "../components/sections/Header";
 import Footer from "../components/sections/Footer";
 import BillingAddress from "../components/sections/checkoutPage/sections/BillingAddress.jsx";
 import ShippingAddress from "../components/sections/checkoutPage/sections/ShippingAddress.jsx";
 import PaymentMethod from "../components/sections/checkoutPage/sections/PaymentMethod.jsx";
 import PurchaseButton from "../components/sections/checkoutPage/individual/PurchaseButton.jsx";
-import styled from "styled-components";
 import ProductCardCheckout from "../components/sections/checkoutPage/sections/ProductCardCheckout.jsx";
 import QuantityButton from "../components/sections/checkoutPage/individual/QuantityButton.jsx";
 
@@ -102,7 +102,7 @@ const CheckOutPage = () => {
           <Mapping />
           <p>Summa: {totalPrice}</p>
          
-          <PurchaseButton />
+          <PurchaseButton totalPrice={totalPrice} />
         </StyledMapping>
 
               

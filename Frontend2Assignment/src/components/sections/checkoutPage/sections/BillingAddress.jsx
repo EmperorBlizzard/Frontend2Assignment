@@ -8,6 +8,7 @@ const AddressButtonWrapper = styled.div`
   align-items: center;
   width: 7rem;
   margin-top: 1.5rem; 
+  
 `;
 
 const StyledForm = styled.form`
@@ -20,7 +21,7 @@ display: flex;
   h3 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    margin: 1.5rem;
+   
   }
 
   @media (max-width: 37.5rem) {

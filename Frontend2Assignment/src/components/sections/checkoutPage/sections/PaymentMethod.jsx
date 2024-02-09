@@ -11,6 +11,8 @@ const StyledPaymentMethod = styled.div`
     justify-content: flex-start;
     margin-top: 1rem;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
     
 
    
@@ -42,17 +44,17 @@ const PaymentMethod = () => {
             value="Card"
             onChange={(e) => handlePaymentChange(e)}
           />
-          <label htmlFor="card">Card</label>
+          <label htmlFor="card">Betalkort</label>
         </div>
 
         <div>
           <input
             type="radio"
             name="paymentMethod"
-            value="Swish"
+            value="Invoice"
             onChange={(e) => handlePaymentChange(e)}
           />
-          <label htmlFor="swish">Swish</label>
+          <label htmlFor="invoice">Faktura</label>
         </div>
 
         <div>
