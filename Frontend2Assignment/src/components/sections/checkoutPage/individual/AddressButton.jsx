@@ -15,13 +15,11 @@ const StyledAddressButton = styled.button`
   font-style: normal;
   font-weight: 800;
   line-height: 1rem;
+  border-radius: 0.7rem;
   cursor: pointer;
   background-color: #0b539b;
   color: #fff;
 
-  &:hover {
-    background-color: #2b3136
-  }
 `;
 
 function AddressButton() {

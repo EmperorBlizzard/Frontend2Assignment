@@ -1,9 +1,9 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../../../App";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import PutApi from "../../../../Products/PutApi"
-
+import PutApi from "../../../../Products/PutApi";
 
 const PurchaseContainer = styled.div`
   display: flex;
@@ -29,41 +29,44 @@ const Button = styled.button`
   line-height: 2rem;
   border-radius: 0.7rem;
   cursor: pointer;
-  &:hover {
-    background-color: #2b3136;
-  }
 `;
 
 const PurchaseButton = () => {
   const form = useRef();
-  const { itemsInCart, setItemsInCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
-  const sendEmail = (e) => {
+  const { itemsInCart, setItemsInCart, totalPrice } = useContext(CartContext);
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const userEmail = form.current.user_email.value;
-    console.log("user_email:", userEmail);
 
-    emailjs
-      .sendForm("service_pxdiem5", "template_kladx0c", form.current, {
-        publicKey: "fazBHO9MG1s-qOff9",
-        to_email: userEmail,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          form.current.reset();
-          alert("Beställningen är mottagen, kvittot skickas till din e-post");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          form.current.reset();
-          alert("Du måste ange email");
+    try {
+      await emailjs.sendForm(
+        "service_pxdiem5",
+        "template_kladx0c",
+        form.current,
+        {
+          publicKey: "fazBHO9MG1s-qOff9",
+          to_email: userEmail,
+          total: totalPrice,
+          itemsInCart: itemsInCart,
         }
-      )
-      .finally(() => {
-        form.current.reset(); 
-      });
+      );
+      console.log("SUCCESS!");
+
+      if (form.current) {
+        form.current.reset();
+      }
+      alert("Beställningen är mottagen, kvittot skickas till din e-post");
+    } catch (error) {
+      console.log("FAILED...", error.text);
+      alert("Något gick fel vid skickandet av e-post");
+    }
+
+    setLoading(false);
   };
 
   const handleClick = async (e) => {
@@ -75,12 +78,11 @@ const PurchaseButton = () => {
         if (newStock <= 0) {
           newStock = 0;
         }
-        console.log(newStock);
-        console.log(id);
         await PutApi(id, newStock);
       }
-      setItemsInCart([]);
-      sendEmail(e);
+  
+      await sendEmail(e);
+      navigate("/orderconfirmation", { state: { itemsInCart, totalPrice } });
     } catch (error) {
       console.error(error);
     }
@@ -93,9 +95,13 @@ const PurchaseButton = () => {
         <input type="text" name="user_name" />
         <p>Email:</p>
         <input type="email" name="user_email" />
+        <input type="hidden" name="itemsInCart" />
+        <input type="hidden" name="totalPrice" />
         <input type="submit" value="Skicka" style={{ display: "none" }} />
       </form>
-      <Button onClick={handleClick}>Genomför köp</Button>
+      <Button onClick={handleClick} disabled={loading}>
+        {loading ? "Skickar..." : "Genomför köp"}
+      </Button>
     </PurchaseContainer>
   );
 };

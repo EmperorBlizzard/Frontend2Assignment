@@ -21,7 +21,7 @@ const StyledForm = styled.form`
   h3 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    margin: 1.5rem;
+    
   }
 
   @media (max-width: 37.5rem) {
