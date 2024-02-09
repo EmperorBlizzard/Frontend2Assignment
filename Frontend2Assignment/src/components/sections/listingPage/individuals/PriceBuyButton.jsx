@@ -32,9 +32,9 @@ const Button = styled.button`
 	width: ${(props) => (props.fullwidth ? "19rem" : "auto")};
 `;
 
-const EmptyButton = styled(Button)` 
-	width: 19rem
-`
+const EmptyButton = styled(Button)`
+	width: 19rem;
+`;
 
 const CustomerInfo = styled.div`
 	display: flex;
@@ -54,11 +54,15 @@ const PriceBuyButton = () => {
 		setAddCart(prod);
 	}
 	return (
-		<>		
+		<>
 			<CustomerInfo>
 				<>
 					<h3>Pris: {prod.attributes.price}</h3>
-					<h3>Lagersaldo: {prod.attributes.stock}</h3>
+					{!prod.attributes.stock ? (
+						<h3 style={{ color: "red" }}>Slut i lager</h3>
+					) : (
+						<h3>Lagersaldo: {prod.attributes.stock}</h3>
+					)}
 				</>
 			</CustomerInfo>
 			<PriceBuyButtonContainer>
@@ -69,14 +73,13 @@ const PriceBuyButton = () => {
 				)}
 				{!prod.attributes.stock ? (
 					<StyledLink to={`/ProductDetailPage/${prod.id}`}>
-					<EmptyButton>Information</EmptyButton>
-				</StyledLink>
+						<EmptyButton>Information</EmptyButton>
+					</StyledLink>
 				) : (
 					<StyledLink to={`/ProductDetailPage/${prod.id}`}>
-					<Button>Information</Button>
-				</StyledLink>
+						<Button>Information</Button>
+					</StyledLink>
 				)}
-				
 			</PriceBuyButtonContainer>
 		</>
 	);

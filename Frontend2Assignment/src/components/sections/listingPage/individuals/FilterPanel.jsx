@@ -97,7 +97,6 @@ const FilterPanel = ({ setFilter }) => {
 				<option value="Unisex">Unisex</option>
 				<option value="Female">Dam</option>
 				<option value="Male">Herr</option>
-				<option value="Test">Test</option>
 			</Filter>
 			<Filter onChange={handleSortChangeBike}>
 				<option value="">Cykel typ</option>
