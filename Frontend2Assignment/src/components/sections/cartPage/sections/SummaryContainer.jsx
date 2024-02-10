@@ -4,6 +4,7 @@ import MenuLinks from "../../../individuals/MenuLinks";
 import styles from "../../../../styling/CartPageStyle.module.css"
 import { CartContext } from "../../../../App";
 
+
 const SummaryCartplusbutton = styled.div`
 display: flex;
 width: 20rem;
@@ -63,9 +64,30 @@ display:flex;
 gap: 1em;
 `;
 
+const Button = styled.button`
+    width: 100%;
+`;
+
 function SummaryContainer() {
 
-    const card = useContext(CartContext)
+    const card = useContext(CartContext);
+    console.log(card.items)
+    const checkout = async () => {
+        await fetch("/api/checkout", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: card.items})
+        }).then(async(response) => {
+            console.log(response)
+            return await response.json();
+        }).then(async(response) => {
+            if(await response.url) {
+                window.location.assign(response.url);
+            }
+        });
+    };
 
     return (
         <SummaryCartplusbutton className={styles.summarycontainer}>
@@ -87,7 +109,13 @@ function SummaryContainer() {
 
             </CheckoutSummary>
 
-            <MenuLinks name="Utcheckning" link="/checkoutpage" />
+            {/* <MenuLinks name="Utcheckning" link="/checkoutpage" /> */}
+            <Button onClick={checkout}>
+                <span>
+                    Köp produkter
+                </span>
+            </Button>
+            
 
         </SummaryCartplusbutton>
     )

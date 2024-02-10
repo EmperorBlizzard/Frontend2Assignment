@@ -12,16 +12,101 @@ import DeliveryPage from "./Pages/DeliveryPage";
 import TermsAndConditionsPage from "./Pages/TermsAndConditionsPage";
 import AboutPage from "./Pages/AboutPage";
 import SearchPage from "./Pages/SearchPage";
+import Payment from "./Payment/Payment";
+import Completion from "./Payment/Completion";
+import Success from "./Payment/success";
+import Cancel from "./Payment/cancel";
 import { createContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 export const CartContext = createContext(null);
 
+
+
 function App() {
+	const priceId = (id) => {
+		let option = id;
+		let price;
+		switch(option){
+			case 1:
+				price = "price_1OiHBvDOLAe1Mz18A2p27pDa"
+				return price;
+			case 2:
+				price = "price_1OiHL7DOLAe1Mz189d2UWtVi"
+				return price;
+			case 3:
+				price = "price_1OiHNtDOLAe1Mz18eaWrN4ZK"
+				return price;
+			case 4:
+				price = "price_1OiHOODOLAe1Mz18ua3XIIuT"
+				return price;
+			case 5:
+				price = "price_1OiHPADOLAe1Mz18bG6Zzeaj"
+				return price;
+			case 6:
+				price = "price_1OiHR8DOLAe1Mz18cGHq8c1z"
+				return price;
+			case 7:
+				price = "price_1OiHRcDOLAe1Mz18NFoZQUr6"
+				return price;
+			case 8:
+				price = "price_1OiHS8DOLAe1Mz18xhXnbDWG"
+				return price;
+			case 9:
+				price = "price_1OiHSaDOLAe1Mz185TWZMVnC"
+				return price;
+			case 10:
+				price = "price_1OiHTADOLAe1Mz18F3J7RSTI"
+				return price;
+			case 11:
+				price = "price_1OiHWaDOLAe1Mz18Q0kfWBBf"
+				return price;
+			case 12:
+				price = "price_1OiHXjDOLAe1Mz18iky4F9I7"
+				return price;
+			case 13:
+				price = "price_1OiHZDDOLAe1Mz18umWKDYme"
+				return price;
+			case 14:
+				price = "price_1OiHZeDOLAe1Mz189iohx1CR"
+				return price;
+			case 15:
+				price = "price_1OiHaTDOLAe1Mz18PdN3U6dn"
+				return price;
+			case 16:
+				price = "price_1OiHb0DOLAe1Mz18KyskVp5S"
+				return price;
+			case 17:
+				price = "price_1OiHbZDOLAe1Mz18jEiRebrq"
+				return price;
+			case 18:
+				price = "price_1OiHcADOLAe1Mz18XIJnBAl9"
+				return price;
+			case 19:
+				price = "price_1OiHcsDOLAe1Mz18QFOd5ZW9"
+				return price;
+			case 20:
+				price = "price_1OiHdHDOLAe1Mz18zmjoUWvJ"
+				return price;
+			case 21:
+				price = "price_1OiHeHDOLAe1Mz185LsCCey5"
+				return price;
+			case 22:
+				price = "price_1OiHelDOLAe1Mz18JIxtZnDo"
+				return price;
+			case 23:
+				price = "price_1OiHfIDOLAe1Mz18Jwq26VJi"
+				return price;
+		}
+	}
+	
 	const [itemsInCart, setItemsInCart] = useState([]);
 	const [addCart, setAddCart] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [cartProducts, setCartProducts] = useState([]);
+	const items = cartProducts;
 
 	useEffect(() => {
 		if (Object.keys(addCart).length !== 0) {
@@ -29,8 +114,11 @@ function App() {
 
 			if (itemIndex !== -1) {
 				const upDatedList = [...itemsInCart];
+				const upDatedProductCart = [...cartProducts];
 				upDatedList[itemIndex].amountOfProducts += 1;
+				upDatedProductCart[itemIndex].quantity += 1;
 				setItemsInCart(upDatedList);
+				setCartProducts(upDatedProductCart);
 			} else {
 				const item = {
 					id: addCart.id,
@@ -40,6 +128,13 @@ function App() {
 					stock: addCart.attributes.stock,
 					image: addCart.attributes.image.data.attributes.url,
 				};
+				const item2 = {
+					id: priceId(addCart.id),
+					quantity: addCart.amountOfProducts || 1,
+				}
+				const upDatedProductCart = [...cartProducts, item2];
+				setCartProducts(upDatedProductCart);
+
 				const upDatedList = [...itemsInCart, item];
 				setItemsInCart(upDatedList);
 			}
@@ -106,6 +201,7 @@ function App() {
 		<CartContext.Provider
 			key={itemsInCart}
 			value={{
+				items,
 				itemsInCart,
 				setItemsInCart,
 				setAddCart,
@@ -139,6 +235,10 @@ function App() {
 					/>
 					<Route path="/aboutpage" element={<AboutPage />} />
 					<Route path="/searchpage" element={<SearchPage />} />
+					<Route path="/stripe" element={<Payment />} />
+					<Route path="/completion" element={<Completion />} />
+					<Route path="/success" element={<Success />} />
+					<Route path="/cancel" element={<Cancel />} />
 				</Routes>
 			</BrowserRouter>
 			<ToastContainer />
