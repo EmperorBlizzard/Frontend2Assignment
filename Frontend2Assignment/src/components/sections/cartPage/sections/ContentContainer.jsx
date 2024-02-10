@@ -9,7 +9,12 @@ display:flex;
 
 `
 
-
+const Text = styled.div`
+font-family: Inter;
+font-size: Bold;
+font-weight: 600;
+    
+`
 
 function ContentContainer() {
     const cart = useContext(CartContext)
@@ -27,7 +32,7 @@ function ContentContainer() {
 
                     :
 
-                    <p>Kundvagnen är tom</p>
+                    <Text>Din kundkorg är tom.</Text>
             }
         </div>
 

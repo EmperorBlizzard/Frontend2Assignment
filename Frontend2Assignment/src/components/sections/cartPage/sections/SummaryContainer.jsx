@@ -61,6 +61,9 @@ justify-content: center;
 const SubtotalPrice = styled.div`
 display:flex;
 gap: 1em;
+font-size: Bold;
+font-weight: 800;
+font-family: Inter;
 `;
 
 function SummaryContainer() {
@@ -78,7 +81,7 @@ function SummaryContainer() {
                     <TopContent>
 
                         <SubtotalPrice>
-                            <p>Total Pris: {card.totalPrice} kr</p>
+                            <p>Totalt Pris: {card.totalPrice} kr</p>
 
 
                         </SubtotalPrice>
