@@ -22,7 +22,7 @@ const StyledP = styled.p`
   font-weight: bold;
 `;
 
-const ProductCardCheckout = ({ card, totalPrice }) => {
+const ProductCardCheckout = ({ card }) => {
   
   const imgLink = `${import.meta.env.VITE_STRAPI_URL}${card.image}`;
   const img = imgLink.replace("/api/", "")
