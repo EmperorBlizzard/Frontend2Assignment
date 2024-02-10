@@ -9,9 +9,9 @@ function Menu() {
     <nav className={styles.navigationBar}>
       <MenuLinks name="StartSida" link="/" />
       <MenuLinks name="Produkter" link="/listingpage" />
-      <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
+      {/* <MenuLinks name="CheckoutPage" link="/checkoutpage"/>
       <MenuLinks name="BuildingPageToBeDeleted" link="/buildingpagetobedeleted" />
-      <MenuLinks name="EmailTestPage" link="/emailtestpage" />
+      <MenuLinks name="EmailTestPage" link="/emailtestpage" /> */}
 
       <Outlet />
     </nav>

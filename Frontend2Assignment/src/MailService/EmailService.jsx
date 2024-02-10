@@ -7,8 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const StyledForm = styled.form`
 	display: flex;
+	padding: 0;
 	flex-direction: column;
 	font-family: "Inter", sans-serif;
+	max-width: 800px;
+	min-width: 400px;
+	/* margin: 0; */
 	#btn {
 		display: flex;
 		height: 44px;
@@ -24,11 +28,23 @@ const StyledForm = styled.form`
 		line-height: 20px;
 		border-radius: 0.7rem;
 		cursor: pointer;
-		margin: .7rem 0;
+		margin: .7rem auto;
+		width: 40%;
+		
 	}
 	input {
 		height: 1.5rem;
+		width: 90%;
+		
 	}
+	textarea {
+		width: 90%;
+		height: 6rem;
+	}
+
+	input,textarea {
+		margin-top: 1rem;
+	} 
 `;
 
 export const EmailService = () => {
@@ -58,12 +74,9 @@ export const EmailService = () => {
 
 	return (
 		<StyledForm ref={form} onSubmit={sendEmail}>
-			<label>Namn</label>
-			<input type="text" name="user_name" />
-			<label>E-mail</label>
-			<input type="email" name="user_email" />
-			<label>Meddelande</label>
-			<textarea name="message" />
+			<input type="text" name="user_name" placeholder="Namn" />
+			<input type="email" name="user_email" placeholder="E-mail" />
+			<textarea name="message" placeholder="Meddelande"/>
 			<input id="btn" type="submit" value="Skicka" />
 			<ToastContainer/>
 		</StyledForm>
