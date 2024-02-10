@@ -32,8 +32,13 @@ const ProductList = styled.div`
   gap: 2rem;
 `;
 
+const TotalPrice = styled.p`
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+`;
+
 const OrderConfirmation = () => {
-  const { itemsInCart } = useContext(CartContext);
+  const { itemsInCart, totalPrice } = useContext(CartContext);
 
   return (
     <OrderConfirmationContainer>
@@ -47,6 +52,7 @@ const OrderConfirmation = () => {
           <ProductCardCheckout key={item.id} card={item} />
         ))}
       </ProductList>
+      <TotalPrice>Totalpris: {totalPrice}</TotalPrice>
       <Footer />
     </OrderConfirmationContainer>
   );
