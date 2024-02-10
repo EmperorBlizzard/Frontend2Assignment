@@ -78,7 +78,7 @@ function SummaryContainer() {
                     <TopContent>
 
                         <SubtotalPrice>
-                            <p>Total Pris: {card.totalPrice} </p>
+                            <p>Total Pris: {card.totalPrice} kr</p>
 
 
                         </SubtotalPrice>

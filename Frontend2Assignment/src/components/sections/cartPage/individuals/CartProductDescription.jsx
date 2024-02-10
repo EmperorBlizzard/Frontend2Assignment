@@ -171,7 +171,7 @@ const CartProductDescription = ({ card }) => {
                 <CartProductInfo>
                     <p> Artikelnummer: {card.id} </p>
                     <p> produktnamn: {card.productName} </p>
-                    <p> pris: {card.price} </p>
+                    <p> pris: {card.price} kr </p>
                 </CartProductInfo>
 
             </StyledDescription>
