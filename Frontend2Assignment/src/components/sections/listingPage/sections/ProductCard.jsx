@@ -11,7 +11,6 @@ const PCard = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	// border: 1px solid #798490;
 	border-radius: 0.7rem;
 	
 	&:hover {
