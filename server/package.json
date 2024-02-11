@@ -4,7 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "server": "nodemon server.js",
+    "client": "npm vite --prefix ../Frontend2Assignment/",
+    "dev": "concurrently \"npm run start\" \"cd ../Frontend2Assignment && npm run dev\" \"cd ../bikeShop && npm run develop\""
+
   },
   "keywords": [],
   "author": "",
@@ -17,6 +21,7 @@
     "stripe": "^14.16.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "nodemon": "^3.0.3"
   }
 }
